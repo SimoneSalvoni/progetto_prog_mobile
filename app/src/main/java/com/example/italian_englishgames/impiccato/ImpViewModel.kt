@@ -45,7 +45,7 @@ class ImpViewModel: ViewModel() {
 
     private fun letterIsPresent(letter: Char, pos: IntArray ) {
         var arr = _shownWord.value!!.toCharArray()
-        for (i in 0..pos.size-1)  arr[pos[i]] = letter
+        for (element in pos)  arr[element] = letter
         _shownWord.value = String(arr)
         chosenLetters.add(letter)
         if (_shownWord==_chosenWord) _gameState.value=State.WIN
@@ -59,8 +59,8 @@ class ImpViewModel: ViewModel() {
 
     fun checkLetter(c: Char) {
         val ind = mutableListOf<Int>()
-        for (i in 0.._chosenWord.value!!.length-1)
-            if (c==chosenWord.value!!.get(i)) ind.add(i)
+        for (i in _chosenWord.value!!.indices)
+            if (c== _chosenWord.value!![i]) ind.add(i)
         if (ind.size==0) letterIsNotPresent(c)
         else letterIsPresent(c, ind.toIntArray() )
     }
