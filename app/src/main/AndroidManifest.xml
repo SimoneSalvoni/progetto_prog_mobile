@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ItalianEnglishGames" >
         <activity
-            android:name=".impiccato.ImpMain"
+            android:name=".impiccato.ImpGameFragment"
             android:label="@string/title_activity_imp_main"
             android:theme="@style/Theme.ItalianEnglishGames.NoActionBar" >
         </activity>

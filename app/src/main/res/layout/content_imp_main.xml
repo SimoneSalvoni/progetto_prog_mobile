@@ -36,14 +36,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/guessButton"
-        android:layout_width="60dp"
-        android:layout_height="49dp"
-        android:layout_marginStart="176dp"
-        android:layout_marginTop="556dp"
-        app:icon="@android:drawable/ic_input_add"
+    <EditText
+        android:id="@+id/guessText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="192dp"
+        android:layout_marginTop="552dp"
+        android:imeOptions="actionDone"
+        android:maxLength="1"
+        android:text="+"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:inputType="textLongMessage" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
