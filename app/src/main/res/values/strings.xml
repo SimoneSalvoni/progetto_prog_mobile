@@ -6,9 +6,19 @@
     <string name="second_fragment_label">Second Fragment</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
-
+    <string name="gioca">gioca!</string>
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="maxScoreImpiccato">Nummero massimo di parole indovinate:</string>
+    <string name="profilo">Profilo</string>
+    <string name="contatti">Contatti</string>
+    <string name="impostazioni">Impostazioni</string>
+    <string name="faq">FAQ</string>
+    <string name="logout">Logout</string>
+    <string name="impiccato">Impiccato</string>
+    <string name="about">about</string>
+    <string name="info_impiccato">Questa è una stringa di informazioni sul gioco dell'impiccato</string>
+    <string name="info_game">info</string>string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="vittoria">HAI VINTO!</string>

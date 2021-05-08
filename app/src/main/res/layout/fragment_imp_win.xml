@@ -2,7 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/frameLayout"
+    android:id="@+id/constraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".impiccato.ImpWinFragment">
@@ -12,7 +12,7 @@
         android:layout_width="343dp"
         android:layout_height="66dp"
         android:layout_marginStart="33dp"
-        android:layout_marginTop="232dp"
+        android:layout_marginTop="192dp"
         android:layout_marginEnd="33dp"
         android:text="@string/vittoria"
         android:textAlignment="center"
@@ -30,6 +30,7 @@
         android:layout_marginStart="34dp"
         android:layout_marginTop="257dp"
         android:backgroundTint="@color/rosa"
+        android:onClick="retry"
         android:text="@string/riprova"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
@@ -41,6 +42,7 @@
         android:layout_marginStart="76dp"
         android:layout_marginTop="260dp"
         android:backgroundTint="@color/rosa"
+        android:onClick="goBack"
         android:text="@string/torna"
         app:layout_constraintStart_toEndOf="@+id/button2"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />

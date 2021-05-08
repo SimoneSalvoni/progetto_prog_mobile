@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import com.example.italian_englishgames.R
 
 
@@ -22,6 +23,14 @@ class ImpWinFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+    }
+
+    fun retry (v:View){
+        v.findNavController().navigate(R.id.action_impLoseFragment_to_impGameFragment)
+    }
+
+    fun goBack(v:View){
+        v.findNavController().navigate(R.id.action_impLoseFragment_to_impMenuFragment)
     }
 
 }
