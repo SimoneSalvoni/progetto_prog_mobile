@@ -3,17 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:backgroundTint="@color/azzurro"
+    android:background="@color/azzurro"
     tools:context=".impiccato.ImpMenuFragment">
 
-
-    <ImageButton
-        android:id="@+id/infobutton"
-        android:layout_width="83dp"
-        android:layout_height="64dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="60dp"
-        android:backgroundTint="@color/white" />
 
     <TextView
         android:id="@+id/textView"
@@ -37,5 +29,14 @@
         android:textColor="@color/blu_scuro"
         android:textSize="30sp"
         android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/InfoButton"
+        android:layout_width="109dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="46dp"
+        android:backgroundTint="@color/blu"
+        android:text="@string/info_game" />
 
 </FrameLayout>

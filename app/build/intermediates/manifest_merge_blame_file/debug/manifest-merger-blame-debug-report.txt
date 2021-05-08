@@ -1,0 +1,56 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.italian_englishgames"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="25"
+8-->C:\Users\staff\Desktop\UNIVERSITA\progetto programmazione mobile\progetto_prog_mobile\app\src\main\AndroidManifest.xml
+9        android:targetSdkVersion="30" />
+9-->C:\Users\staff\Desktop\UNIVERSITA\progetto programmazione mobile\progetto_prog_mobile\app\src\main\AndroidManifest.xml
+10
+11    <application
+11-->C:\Users\staff\Desktop\UNIVERSITA\progetto programmazione mobile\progetto_prog_mobile\app\src\main\AndroidManifest.xml:5:5-24:19
+12        android:allowBackup="true"
+12-->C:\Users\staff\Desktop\UNIVERSITA\progetto programmazione mobile\progetto_prog_mobile\app\src\main\AndroidManifest.xml:6:9-35
+13        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+13-->[androidx.core:core:1.3.2] C:\Users\staff\.gradle\caches\transforms-2\files-2.1\a9c6a55cc251760197a2b4a79cd5aacb\core-1.3.2\AndroidManifest.xml:24:18-86
+14        android:debuggable="true"
+15        android:extractNativeLibs="false"
+16        android:icon="@mipmap/ic_launcher"
+16-->C:\Users\staff\Desktop\UNIVERSITA\progetto programmazione mobile\progetto_prog_mobile\app\src\main\AndroidManifest.xml:7:9-43
+17        android:label="@string/app_name"
+17-->C:\Users\staff\Desktop\UNIVERSITA\progetto programmazione mobile\progetto_prog_mobile\app\src\main\AndroidManifest.xml:8:9-41
+18        android:roundIcon="@mipmap/ic_launcher_round"
+18-->C:\Users\staff\Desktop\UNIVERSITA\progetto programmazione mobile\progetto_prog_mobile\app\src\main\AndroidManifest.xml:9:9-54
+19        android:supportsRtl="true"
+19-->C:\Users\staff\Desktop\UNIVERSITA\progetto programmazione mobile\progetto_prog_mobile\app\src\main\AndroidManifest.xml:10:9-35
+20        android:theme="@style/Theme.ItalianEnglishGames" >
+20-->C:\Users\staff\Desktop\UNIVERSITA\progetto programmazione mobile\progetto_prog_mobile\app\src\main\AndroidManifest.xml:11:9-57
+21        <activity
+21-->C:\Users\staff\Desktop\UNIVERSITA\progetto programmazione mobile\progetto_prog_mobile\app\src\main\AndroidManifest.xml:12:9-16:20
+22            android:name="com.example.italian_englishgames.impiccato.ImpGameFragment"
+22-->C:\Users\staff\Desktop\UNIVERSITA\progetto programmazione mobile\progetto_prog_mobile\app\src\main\AndroidManifest.xml:13:13-54
+23            android:label="@string/title_activity_imp_main"
+23-->C:\Users\staff\Desktop\UNIVERSITA\progetto programmazione mobile\progetto_prog_mobile\app\src\main\AndroidManifest.xml:14:13-60
+24            android:theme="@style/Theme.ItalianEnglishGames.NoActionBar" >
+24-->C:\Users\staff\Desktop\UNIVERSITA\progetto programmazione mobile\progetto_prog_mobile\app\src\main\AndroidManifest.xml:15:13-73
+25        </activity>
+26        <activity android:name="com.example.italian_englishgames.MainActivity" >
+26-->C:\Users\staff\Desktop\UNIVERSITA\progetto programmazione mobile\progetto_prog_mobile\app\src\main\AndroidManifest.xml:17:9-23:20
+26-->C:\Users\staff\Desktop\UNIVERSITA\progetto programmazione mobile\progetto_prog_mobile\app\src\main\AndroidManifest.xml:17:19-47
+27            <intent-filter>
+27-->C:\Users\staff\Desktop\UNIVERSITA\progetto programmazione mobile\progetto_prog_mobile\app\src\main\AndroidManifest.xml:18:13-22:29
+28                <action android:name="android.intent.action.MAIN" />
+28-->C:\Users\staff\Desktop\UNIVERSITA\progetto programmazione mobile\progetto_prog_mobile\app\src\main\AndroidManifest.xml:19:17-69
+28-->C:\Users\staff\Desktop\UNIVERSITA\progetto programmazione mobile\progetto_prog_mobile\app\src\main\AndroidManifest.xml:19:25-66
+29
+30                <category android:name="android.intent.category.LAUNCHER" />
+30-->C:\Users\staff\Desktop\UNIVERSITA\progetto programmazione mobile\progetto_prog_mobile\app\src\main\AndroidManifest.xml:21:17-77
+30-->C:\Users\staff\Desktop\UNIVERSITA\progetto programmazione mobile\progetto_prog_mobile\app\src\main\AndroidManifest.xml:21:27-74
+31            </intent-filter>
+32        </activity>
+33    </application>
+34
+35</manifest>
