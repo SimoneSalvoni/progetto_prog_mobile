@@ -7,7 +7,6 @@
     <string name="next">Next</string>
     <string name="previous">Previous</string>
     <string name="gioca">gioca!</string>
-
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="maxScoreImpiccato">Nummero massimo di parole indovinate:</string>
@@ -20,5 +19,10 @@
     <string name="about">about</string>
     <string name="info_impiccato">Questa è una stringa di informazioni sul gioco dell'impiccato</string>
     <string name="info_game">info</string>string>
-
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="vittoria">HAI VINTO!</string>
+    <string name="sconfitta">HAI PERSO...</string>
+    <string name="riprova">RIPROVA</string>
+    <string name="torna">TORNA AL MENU'</string>
 </resources>
