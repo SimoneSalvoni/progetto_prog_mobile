@@ -1,3 +1,0 @@
-C:\Users\staff\Desktop\UNIVERSITA\progetto programmazione mobile\progetto_prog_mobile\app\src\main\java\com\example\italian_englishgames\MainActivity.kt
-C:\Users\staff\Desktop\UNIVERSITA\progetto programmazione mobile\progetto_prog_mobile\app\src\main\java\com\example\italian_englishgames\impiccato\ImpMain.kt
-C:\Users\staff\Desktop\UNIVERSITA\progetto programmazione mobile\progetto_prog_mobile\app\src\main\java\com\example\italian_englishgames\impiccato\ImpViewModel.kt

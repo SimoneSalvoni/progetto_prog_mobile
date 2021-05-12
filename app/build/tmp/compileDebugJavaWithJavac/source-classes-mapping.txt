@@ -1,0 +1,6 @@
+com/example/italian_englishgames/DataBindingTriggerClass.java
+ com.example.italian_englishgames.DataBindingTriggerClass
+com/example/italian_englishgames/BuildConfig.java
+ com.example.italian_englishgames.BuildConfig
+com/example/italian_englishgames/databinding/FragmentImpGameBinding.java
+ com.example.italian_englishgames.databinding.FragmentImpGameBinding

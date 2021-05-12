@@ -8,19 +8,19 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.ItalianEnglishGames">
-        <activity android:name=".impiccato.ImpActivity"></activity>
+        android:theme="@style/Theme.ItalianEnglishGames.NoActionBar">
+        <activity android:name=".impiccato.ImpActivity" />
         <activity
-            android:name=".impiccato.ImpGameFragment"
+            android:name=".MainActivity"
             android:label="@string/title_activity_imp_main"
-            android:theme="@style/Theme.ItalianEnglishGames.NoActionBar"></activity>
-        <activity android:name=".MainActivity">
+            android:theme="@style/Theme.ItalianEnglishGames.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
     </application>
 
 </manifest>

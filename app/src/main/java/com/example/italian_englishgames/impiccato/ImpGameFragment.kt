@@ -7,13 +7,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.EditorInfo
-import android.widget.EditText
-import android.widget.ImageView
-import android.widget.TextView
-import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import com.example.italian_englishgames.R
+import com.example.italian_englishgames.databinding.FragmentImpGameBinding
+import com.google.android.material.snackbar.Snackbar
 
 class ImpGameFragment : Fragment() {
 
@@ -29,27 +28,35 @@ class ImpGameFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-         binding = inflater.inflate(R.layout.fragment_imp_game, container, false)
+         //binding = inflater.inflate(R.layout.fragment_imp_game, container, false)
+        binding= DataBindingUtil.inflate(inflater,R.layout.fragment_imp_game,container,false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.gameViewModel = viewModel
+        binding.impViewModel = viewModel
 
-        binding.chooseWord()
-        findViewById<ImageView>(R.id.impImageView).setImageResource(R.drawable.imp00)
-        findViewById<TextView>(R.id.displayedText).text = binding.shownword.get()
-        findViewById<TextView>(R.id.wrongChoice).text = binding.chosenLetters.get()
+        viewModel.chooseWord()
+        binding.impImageView.setImageResource(R.drawable.imp00)
+        binding.wrongChoice.text = "Lettere utilizzate: "
 
-        findViewById<EditText>(R.id.guessText).setOnEditorActionListener { v, actionId, event ->
+        binding.guessText.setOnEditorActionListener { v, actionId, event ->
             return@setOnEditorActionListener when (actionId) {
                 EditorInfo.IME_ACTION_SEND -> {
-                    val car = binding.guessText.text.toString()
-                    binding.checkLetter(car)
-                    checkErrors()
-                    checkGameState()
-                    true
+                    val car = binding.guessText.text.toString() as Char
+                    if (car !in 'A'..'Z' && car !in 'a'..'z')
+                        Snackbar.make(binding.guessText, "Inserisci una lettera", Snackbar.LENGTH_SHORT)
+                            .show()
+                    else  if (!viewModel.ChosenLetterUsable(car))
+                        Snackbar.make(binding.guessText, "Lettera già utilizzata", Snackbar.LENGTH_SHORT)
+                            .show()
+                    else {
+                        viewModel.checkLetter(car)
+                        checkErrors()
+                        checkGameState()
+                   }
+                   true
                 }
                 else -> false
 
@@ -59,8 +66,8 @@ class ImpGameFragment : Fragment() {
     }
 
     fun checkErrors(){
-        var impiccato = findViewById<ImageView>(R.id.impImageView)
-        when(binding.errors){
+        var impiccato = binding.impImageView
+        when(viewModel.errors.value){
             1 -> impiccato.setImageResource(R.drawable.imp01)
             2 -> impiccato.setImageResource(R.drawable.imp02)
             3 -> impiccato.setImageResource(R.drawable.imp03)
@@ -71,9 +78,9 @@ class ImpGameFragment : Fragment() {
     }
 
     fun checkGameState(){
-        when(binding.gameState){
-            "WIN" -> view?.findNavController()?.navigate(R.id.action_impMenuFragment_to_impWinFragment)
-            "LOSE" -> view?.findNavController()?.navigate(R.id.action_impMenuFragment_to_impLoseFragment)
+        when(viewModel.gameState.value){
+            ImpViewModel.State.WIN -> view?.findNavController()?.navigate(R.id.action_impGameFragment_to_impWinFragment)
+            ImpViewModel.State.LOSE -> view?.findNavController()?.navigate(R.id.action_impGameFragment_to_impLoseFragment)
         }
     }
 
