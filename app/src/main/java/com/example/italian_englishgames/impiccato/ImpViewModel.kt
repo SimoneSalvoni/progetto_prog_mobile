@@ -13,7 +13,6 @@ import kotlin.random.Random
 
 class ImpViewModel(application: Application): AndroidViewModel(application) {
 
-    /* NON SO COME SI DOVREBBE PASSARE L'APPLICATION DALLA VIEW....*/
 
     enum class State {
         PLAYING, WIN, LOSE
@@ -21,7 +20,7 @@ class ImpViewModel(application: Application): AndroidViewModel(application) {
     private val _chosenWord = MutableLiveData<String>("")
     val chosenWord: LiveData<String>
         get() = _chosenWord
-    private val _shownWord = MutableLiveData<String>()
+    private val _shownWord = MutableLiveData<String>("prova")
     val shownWord: LiveData<String>
         get() = _shownWord
     private val _errors = MutableLiveData<Int>(0)

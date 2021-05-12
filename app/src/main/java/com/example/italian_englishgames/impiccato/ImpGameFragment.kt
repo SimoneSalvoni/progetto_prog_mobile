@@ -1,6 +1,7 @@
 package com.example.italian_englishgames.impiccato
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.viewModels
 
 import android.view.LayoutInflater
@@ -15,7 +16,6 @@ import com.example.italian_englishgames.databinding.FragmentImpGameBinding
 import com.google.android.material.snackbar.Snackbar
 
 class ImpGameFragment : Fragment() {
-
     lateinit var binding: FragmentImpGameBinding
     val viewModel: ImpViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,15 +36,20 @@ class ImpGameFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.impViewModel = viewModel
-
+        binding.lifecycleOwner = viewLifecycleOwner
         viewModel.chooseWord()
         binding.impImageView.setImageResource(R.drawable.imp00)
-        binding.wrongChoice.text = "Lettere utilizzate: "
 
+
+        binding.guessText.setOnFocusChangeListener { v, hasFocus ->
+            binding.guessText.setText("")
+        }
+        
         binding.guessText.setOnEditorActionListener { v, actionId, event ->
             return@setOnEditorActionListener when (actionId) {
                 EditorInfo.IME_ACTION_SEND -> {
                     val car = binding.guessText.text.toString() as Char
+                    var x = 2
                     if (car !in 'A'..'Z' && car !in 'a'..'z')
                         Snackbar.make(binding.guessText, "Inserisci una lettera", Snackbar.LENGTH_SHORT)
                             .show()

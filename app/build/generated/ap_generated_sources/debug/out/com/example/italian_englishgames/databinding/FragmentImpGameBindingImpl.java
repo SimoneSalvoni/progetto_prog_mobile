@@ -14,9 +14,9 @@ public class FragmentImpGameBindingImpl extends FragmentImpGameBinding  {
     static {
         sIncludes = null;
         sViewsWithIds = new android.util.SparseIntArray();
-        sViewsWithIds.put(R.id.impImageView, 2);
-        sViewsWithIds.put(R.id.wrongChoice, 3);
-        sViewsWithIds.put(R.id.guessText, 4);
+        sViewsWithIds.put(R.id.toolbar2, 3);
+        sViewsWithIds.put(R.id.impImageView, 4);
+        sViewsWithIds.put(R.id.guessText, 5);
     }
     // views
     @NonNull
@@ -27,18 +27,20 @@ public class FragmentImpGameBindingImpl extends FragmentImpGameBinding  {
     // Inverse Binding Event Handlers
 
     public FragmentImpGameBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 5, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 6, sIncludes, sViewsWithIds));
     }
     private FragmentImpGameBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
-        super(bindingComponent, root, 1
+        super(bindingComponent, root, 2
+            , (android.widget.TextView) bindings[2]
+            , (android.widget.EditText) bindings[5]
+            , (android.widget.ImageView) bindings[4]
+            , (androidx.appcompat.widget.Toolbar) bindings[3]
             , (android.widget.TextView) bindings[1]
-            , (android.widget.EditText) bindings[4]
-            , (android.widget.ImageView) bindings[2]
-            , (android.widget.TextView) bindings[3]
             );
         this.displayedText.setTag(null);
         this.mboundView0 = (androidx.constraintlayout.widget.ConstraintLayout) bindings[0];
         this.mboundView0.setTag(null);
+        this.wrongChoice.setTag(null);
         setRootTag(root);
         // listeners
         invalidateAll();
@@ -47,7 +49,7 @@ public class FragmentImpGameBindingImpl extends FragmentImpGameBinding  {
     @Override
     public void invalidateAll() {
         synchronized(this) {
-                mDirtyFlags = 0x4L;
+                mDirtyFlags = 0x8L;
         }
         requestRebind();
     }
@@ -77,7 +79,7 @@ public class FragmentImpGameBindingImpl extends FragmentImpGameBinding  {
     public void setImpViewModel(@Nullable com.example.italian_englishgames.impiccato.ImpViewModel ImpViewModel) {
         this.mImpViewModel = ImpViewModel;
         synchronized(this) {
-            mDirtyFlags |= 0x2L;
+            mDirtyFlags |= 0x4L;
         }
         notifyPropertyChanged(BR.impViewModel);
         super.requestRebind();
@@ -87,14 +89,25 @@ public class FragmentImpGameBindingImpl extends FragmentImpGameBinding  {
     protected boolean onFieldChange(int localFieldId, Object object, int fieldId) {
         switch (localFieldId) {
             case 0 :
+                return onChangeImpViewModelWrongLettersString((androidx.lifecycle.LiveData<java.lang.String>) object, fieldId);
+            case 1 :
                 return onChangeImpViewModelShownWord((androidx.lifecycle.LiveData<java.lang.String>) object, fieldId);
+        }
+        return false;
+    }
+    private boolean onChangeImpViewModelWrongLettersString(androidx.lifecycle.LiveData<java.lang.String> ImpViewModelWrongLettersString, int fieldId) {
+        if (fieldId == BR._all) {
+            synchronized(this) {
+                    mDirtyFlags |= 0x1L;
+            }
+            return true;
         }
         return false;
     }
     private boolean onChangeImpViewModelShownWord(androidx.lifecycle.LiveData<java.lang.String> ImpViewModelShownWord, int fieldId) {
         if (fieldId == BR._all) {
             synchronized(this) {
-                    mDirtyFlags |= 0x1L;
+                    mDirtyFlags |= 0x2L;
             }
             return true;
         }
@@ -109,37 +122,67 @@ public class FragmentImpGameBindingImpl extends FragmentImpGameBinding  {
             mDirtyFlags = 0;
         }
         com.example.italian_englishgames.impiccato.ImpViewModel impViewModel = mImpViewModel;
+        java.lang.String impViewModelWrongLettersStringGetValue = null;
         java.lang.String impViewModelShownWordGetValue = null;
-        androidx.lifecycle.LiveData<java.lang.String> impViewModelShownWord = null;
         java.lang.String impViewModelShownWordToString = null;
+        androidx.lifecycle.LiveData<java.lang.String> impViewModelWrongLettersString = null;
+        androidx.lifecycle.LiveData<java.lang.String> impViewModelShownWord = null;
+        java.lang.String impViewModelWrongLettersStringToString = null;
 
-        if ((dirtyFlags & 0x7L) != 0) {
-
-
-
-                if (impViewModel != null) {
-                    // read impViewModel.shownWord
-                    impViewModelShownWord = impViewModel.getShownWord();
-                }
-                updateLiveDataRegistration(0, impViewModelShownWord);
+        if ((dirtyFlags & 0xfL) != 0) {
 
 
-                if (impViewModelShownWord != null) {
-                    // read impViewModel.shownWord.getValue()
-                    impViewModelShownWordGetValue = impViewModelShownWord.getValue();
-                }
+            if ((dirtyFlags & 0xdL) != 0) {
+
+                    if (impViewModel != null) {
+                        // read impViewModel.wrongLettersString
+                        impViewModelWrongLettersString = impViewModel.getWrongLettersString();
+                    }
+                    updateLiveDataRegistration(0, impViewModelWrongLettersString);
 
 
-                if (impViewModelShownWordGetValue != null) {
-                    // read impViewModel.shownWord.getValue().toString()
-                    impViewModelShownWordToString = impViewModelShownWordGetValue.toString();
-                }
+                    if (impViewModelWrongLettersString != null) {
+                        // read impViewModel.wrongLettersString.getValue()
+                        impViewModelWrongLettersStringGetValue = impViewModelWrongLettersString.getValue();
+                    }
+
+
+                    if (impViewModelWrongLettersStringGetValue != null) {
+                        // read impViewModel.wrongLettersString.getValue().toString()
+                        impViewModelWrongLettersStringToString = impViewModelWrongLettersStringGetValue.toString();
+                    }
+            }
+            if ((dirtyFlags & 0xeL) != 0) {
+
+                    if (impViewModel != null) {
+                        // read impViewModel.shownWord
+                        impViewModelShownWord = impViewModel.getShownWord();
+                    }
+                    updateLiveDataRegistration(1, impViewModelShownWord);
+
+
+                    if (impViewModelShownWord != null) {
+                        // read impViewModel.shownWord.getValue()
+                        impViewModelShownWordGetValue = impViewModelShownWord.getValue();
+                    }
+
+
+                    if (impViewModelShownWordGetValue != null) {
+                        // read impViewModel.shownWord.getValue().toString()
+                        impViewModelShownWordToString = impViewModelShownWordGetValue.toString();
+                    }
+            }
         }
         // batch finished
-        if ((dirtyFlags & 0x7L) != 0) {
+        if ((dirtyFlags & 0xeL) != 0) {
             // api target 1
 
             androidx.databinding.adapters.TextViewBindingAdapter.setText(this.displayedText, impViewModelShownWordToString);
+        }
+        if ((dirtyFlags & 0xdL) != 0) {
+            // api target 1
+
+            androidx.databinding.adapters.TextViewBindingAdapter.setText(this.wrongChoice, impViewModelWrongLettersStringToString);
         }
     }
     // Listener Stub Implementations
@@ -147,9 +190,10 @@ public class FragmentImpGameBindingImpl extends FragmentImpGameBinding  {
     // dirty flag
     private  long mDirtyFlags = 0xffffffffffffffffL;
     /* flag mapping
-        flag 0 (0x1L): impViewModel.shownWord
-        flag 1 (0x2L): impViewModel
-        flag 2 (0x3L): null
+        flag 0 (0x1L): impViewModel.wrongLettersString
+        flag 1 (0x2L): impViewModel.shownWord
+        flag 2 (0x3L): impViewModel
+        flag 3 (0x4L): null
     flag mapping end*/
     //end
 }

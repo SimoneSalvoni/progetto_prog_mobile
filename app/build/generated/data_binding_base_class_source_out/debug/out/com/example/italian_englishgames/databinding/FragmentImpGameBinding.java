@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.Toolbar;
 import androidx.databinding.Bindable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
@@ -28,17 +29,22 @@ public abstract class FragmentImpGameBinding extends ViewDataBinding {
   public final ImageView impImageView;
 
   @NonNull
+  public final Toolbar toolbar2;
+
+  @NonNull
   public final TextView wrongChoice;
 
   @Bindable
   protected ImpViewModel mImpViewModel;
 
   protected FragmentImpGameBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      TextView displayedText, EditText guessText, ImageView impImageView, TextView wrongChoice) {
+      TextView displayedText, EditText guessText, ImageView impImageView, Toolbar toolbar2,
+      TextView wrongChoice) {
     super(_bindingComponent, _root, _localFieldCount);
     this.displayedText = displayedText;
     this.guessText = guessText;
     this.impImageView = impImageView;
+    this.toolbar2 = toolbar2;
     this.wrongChoice = wrongChoice;
   }
 
