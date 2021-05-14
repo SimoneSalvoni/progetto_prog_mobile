@@ -1,9 +1,7 @@
 package com.example.italian_englishgames.impiccato
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.viewModels
-
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
