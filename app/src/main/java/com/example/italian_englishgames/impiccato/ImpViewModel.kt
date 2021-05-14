@@ -36,7 +36,7 @@ class ImpViewModel(application: Application): AndroidViewModel(application) {
     private val ctx = getApplication<Application>().applicationContext
 
 
-    suspend fun readFromFile(br: BufferedReader, times: Int ) {
+    private suspend fun readFromFile(br: BufferedReader, times: Int ) {
         var dest: String = ""
         withContext(Dispatchers.IO) { for (i in 1..times) dest = br.readLine() }
         _chosenWord.value = dest
