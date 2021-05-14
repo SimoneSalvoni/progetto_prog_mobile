@@ -1,6 +1,25 @@
+com/example/italian_englishgames/impiccato/ImpGameFragmentDirections.java
+ com.example.italian_englishgames.impiccato.ImpGameFragmentDirections
+ com.example.italian_englishgames.impiccato.ImpGameFragmentDirections$1
+ com.example.italian_englishgames.impiccato.ImpGameFragmentDirections$ActionImpGameFragmentToImpLoseFragment
+ com.example.italian_englishgames.impiccato.ImpGameFragmentDirections$ActionImpGameFragmentToImpWinFragment
+com/example/italian_englishgames/impiccato/ImpMenuFragmentDirections.java
+ com.example.italian_englishgames.impiccato.ImpMenuFragmentDirections
+com/example/italian_englishgames/impiccato/ImpLoseFragmentDirections.java
+ com.example.italian_englishgames.impiccato.ImpLoseFragmentDirections
 com/example/italian_englishgames/DataBindingTriggerClass.java
  com.example.italian_englishgames.DataBindingTriggerClass
+com/example/italian_englishgames/impiccato/ImpWinFragmentArgs.java
+ com.example.italian_englishgames.impiccato.ImpWinFragmentArgs
+ com.example.italian_englishgames.impiccato.ImpWinFragmentArgs$1
+ com.example.italian_englishgames.impiccato.ImpWinFragmentArgs$Builder
 com/example/italian_englishgames/BuildConfig.java
  com.example.italian_englishgames.BuildConfig
 com/example/italian_englishgames/databinding/FragmentImpGameBinding.java
  com.example.italian_englishgames.databinding.FragmentImpGameBinding
+com/example/italian_englishgames/impiccato/ImpWinFragmentDirections.java
+ com.example.italian_englishgames.impiccato.ImpWinFragmentDirections
+com/example/italian_englishgames/impiccato/ImpLoseFragmentArgs.java
+ com.example.italian_englishgames.impiccato.ImpLoseFragmentArgs
+ com.example.italian_englishgames.impiccato.ImpLoseFragmentArgs$1
+ com.example.italian_englishgames.impiccato.ImpLoseFragmentArgs$Builder

@@ -37,6 +37,9 @@
         <action
             android:id="@+id/action_impLoseFragment_to_impMenuFragment"
             app:destination="@id/impMenuFragment" />
+        <argument
+            android:name="word"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/impWinFragment"
@@ -49,6 +52,9 @@
         <action
             android:id="@+id/action_impWinFragment_to_impMenuFragment"
             app:destination="@id/impMenuFragment" />
+        <argument
+            android:name="word"
+            app:argType="string" />
     </fragment>
 
 </navigation>

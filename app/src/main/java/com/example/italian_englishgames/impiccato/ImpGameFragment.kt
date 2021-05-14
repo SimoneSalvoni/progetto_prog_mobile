@@ -107,8 +107,16 @@ class ImpGameFragment : Fragment() {
 
     fun checkGameState(){
         when(viewModel.gameState.value){
-            ImpViewModel.State.WIN -> view?.findNavController()?.navigate(R.id.action_impGameFragment_to_impWinFragment)
-            ImpViewModel.State.LOSE -> view?.findNavController()?.navigate(R.id.action_impGameFragment_to_impLoseFragment)
+            ImpViewModel.State.WIN -> {
+                val word = viewModel.chosenWord.value
+                val action = ImpGameFragmentDirections.actionImpGameFragmentToImpWinFragment(word!!)
+                requireView().findNavController().navigate(action)
+            }
+            ImpViewModel.State.LOSE -> {
+                val word = viewModel.chosenWord.value
+                val action = ImpGameFragmentDirections.actionImpGameFragmentToImpLoseFragment(word!!)
+                requireView().findNavController().navigate(action)
+            }
             else -> {}
         }
     }

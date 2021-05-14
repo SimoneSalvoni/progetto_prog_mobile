@@ -1836,8 +1836,6 @@ id beginning
 id blocking
 id bottom
 id bounce
-id button2
-id button3
 id buttonImp
 id buttonPanel
 id cache_measures
@@ -1931,6 +1929,7 @@ id fragmentContainerView
 id fragment_container_view_tag
 id ghost_view
 id ghost_view_holder
+id goHomeButton
 id gone
 id graph
 id graph_wrap
@@ -2069,6 +2068,7 @@ id progress_horizontal
 id radio
 id ratio
 id rectangles
+id retryButton
 id reverseSawtooth
 id right
 id rightToLeft
@@ -2111,6 +2111,7 @@ id snackbar_action
 id snackbar_text
 id snap
 id snapMargins
+id solution
 id spacer
 id spline
 id split_action_bar
@@ -2156,6 +2157,7 @@ id textTop
 id textView
 id textView2
 id textView3
+id textView4
 id textWatcher
 id text_input_end_icon
 id text_input_error_icon
