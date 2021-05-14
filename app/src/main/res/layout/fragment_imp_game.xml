@@ -47,20 +47,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/guessText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="192dp"
-        android:layout_marginTop="572dp"
-        android:imeOptions="actionDone"
-        android:maxLength="1"
-        android:text="+"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:inputType="textLongMessage" />
-
-    <TextView
+        <TextView
         android:id="@+id/displayedText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -70,8 +57,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+        <Button
+            android:id="@+id/guessText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+"
+            tools:layout_editor_absoluteX="161dp"
+            tools:layout_editor_absoluteY="578dp" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
 
 

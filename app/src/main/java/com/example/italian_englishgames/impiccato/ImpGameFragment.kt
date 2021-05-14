@@ -6,6 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.EditorInfo
+import android.widget.EditText
+import androidx.appcompat.app.AlertDialog
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
@@ -38,34 +40,46 @@ class ImpGameFragment : Fragment() {
         viewModel.chooseWord()
         binding.impImageView.setImageResource(R.drawable.imp00)
 
+        inputText()
 
-        binding.guessText.setOnFocusChangeListener { v, hasFocus ->
-            binding.guessText.setText("")
-        }
-        
-        binding.guessText.setOnEditorActionListener { v, actionId, event ->
-            return@setOnEditorActionListener when (actionId) {
-                EditorInfo.IME_ACTION_SEND -> {
-                    val car = binding.guessText.text.toString() as Char
-                    var x = 2
+
+    }
+
+    fun inputText(){
+        binding.guessText.setOnClickListener {
+            val builder = AlertDialog.Builder(this)
+            val inflater = LayoutInflater
+            val dialogLayout = inflater.inflate(R.layout.imp_input_prompt)
+            val inputText = dialogLayout.FindViewById<EditText>(R.id.inputLetter)
+
+            with(builder) {
+
+                setTitle("Inserisci una lettera")
+                setPositiveButton("OK"){dialog, which->
+                    val car = dialogLayout.inputLetter.text.toString() as Char
                     if (car !in 'A'..'Z' && car !in 'a'..'z')
                         Snackbar.make(binding.guessText, "Inserisci una lettera", Snackbar.LENGTH_SHORT)
                             .show()
-                    else  if (!viewModel.ChosenLetterUsable(car))
-                        Snackbar.make(binding.guessText, "Lettera già utilizzata", Snackbar.LENGTH_SHORT)
+                    else if (!viewModel.ChosenLetterUsable(car))
+                        Snackbar.make(
+                            binding.guessText,
+                            "Lettera già utilizzata",
+                            Snackbar.LENGTH_SHORT
+                        )
                             .show()
                     else {
                         viewModel.checkLetter(car)
                         checkErrors()
                         checkGameState()
-                   }
-                   true
+                    }
                 }
-                else -> false
-
+                setNegativeButton("Annulla"){
+                    dialogLayout.FindViewById<EditText>(R.id.inputLetter).text = ""
+                }
+                setView(dialogLayout)
+                show()
             }
         }
-
     }
 
     fun checkErrors(){
