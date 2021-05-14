@@ -2,6 +2,7 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -9,8 +10,9 @@
         android:id="@+id/inputLetter"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
+        android:ems="1"
         android:inputType="textShortMessage|textPersonName"
+        android:maxLength="1"
         tools:layout_editor_absoluteX="94dp"
         tools:layout_editor_absoluteY="84dp" />
 </LinearLayout>

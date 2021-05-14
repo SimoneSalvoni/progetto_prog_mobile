@@ -32,7 +32,7 @@ public class FragmentImpGameBindingImpl extends FragmentImpGameBinding  {
     private FragmentImpGameBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 2
             , (android.widget.TextView) bindings[2]
-            , (android.widget.EditText) bindings[5]
+            , (android.widget.Button) bindings[5]
             , (android.widget.ImageView) bindings[4]
             , (androidx.appcompat.widget.Toolbar) bindings[3]
             , (android.widget.TextView) bindings[1]

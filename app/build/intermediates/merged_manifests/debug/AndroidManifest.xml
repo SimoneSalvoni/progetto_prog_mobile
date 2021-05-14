@@ -18,12 +18,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:testOnly="true"
-        android:theme="@style/Theme.ItalianEnglishGames.NoActionBar" >
-        <activity android:name="com.example.italian_englishgames.impiccato.ImpActivity" />
+        android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" >
+        <activity
+            android:name="com.example.italian_englishgames.memory.MemActivity"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
+        <activity
+            android:name="com.example.italian_englishgames.impiccato.ImpActivity"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
         <activity
             android:name="com.example.italian_englishgames.MainActivity"
             android:label="@string/title_activity_imp_main"
-            android:theme="@style/Theme.ItalianEnglishGames.NoActionBar" >
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

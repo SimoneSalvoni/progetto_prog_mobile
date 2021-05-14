@@ -20,7 +20,7 @@ class ImpViewModel(application: Application): AndroidViewModel(application) {
     private val _chosenWord = MutableLiveData<String>("")
     val chosenWord: LiveData<String>
         get() = _chosenWord
-    private val _shownWord = MutableLiveData<String>("prova")
+    private val _shownWord = MutableLiveData<String>("")
     val shownWord: LiveData<String>
         get() = _shownWord
     private val _errors = MutableLiveData<Int>(0)

@@ -4,7 +4,7 @@ package com.example.italian_englishgames.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -23,7 +23,7 @@ public abstract class FragmentImpGameBinding extends ViewDataBinding {
   public final TextView displayedText;
 
   @NonNull
-  public final EditText guessText;
+  public final Button guessText;
 
   @NonNull
   public final ImageView impImageView;
@@ -38,7 +38,7 @@ public abstract class FragmentImpGameBinding extends ViewDataBinding {
   protected ImpViewModel mImpViewModel;
 
   protected FragmentImpGameBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      TextView displayedText, EditText guessText, ImageView impImageView, Toolbar toolbar2,
+      TextView displayedText, Button guessText, ImageView impImageView, Toolbar toolbar2,
       TextView wrongChoice) {
     super(_bindingComponent, _root, _localFieldCount);
     this.displayedText = displayedText;

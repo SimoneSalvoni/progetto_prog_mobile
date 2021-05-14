@@ -3,12 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation_graph_imp"
-    app:startDestination="@id/impGameFragment">
+    app:startDestination="@id/impMenuFragment">
 
     <fragment
         android:id="@+id/impMenuFragment"
         android:name="com.example.italian_englishgames.impiccato.ImpMenuFragment"
-        android:label="ImpMenuFragment" >
+        android:label="ImpMenuFragment"
+        tools:layout="@layout/fragment_imp_menu">
         <action
             android:id="@+id/action_impMenuFragment_to_impGameFragment"
             app:destination="@id/impGameFragment" />
