@@ -11,8 +11,9 @@ import java.io.BufferedReader
 import java.io.InputStreamReader
 import kotlin.random.Random
 
-class ImpViewModel(application: Application): AndroidViewModel(application) {
+private const val NUM_OF_WORDS = 3000
 
+class ImpViewModel(application: Application): AndroidViewModel(application) {
 
     enum class State {
         PLAYING, WIN, LOSE
@@ -38,7 +39,7 @@ class ImpViewModel(application: Application): AndroidViewModel(application) {
 
     private suspend fun readFromFile(br: BufferedReader, times: Int ) {
         var dest: String = ""
-        withContext(Dispatchers.IO) { for (i in 1..times) dest = br.readLine() }
+        withContext(Dispatchers.IO) { for (i in 1..times)  dest=br.readLine() }
         _chosenWord.value = dest
         for (i in 1..dest.length) _shownWord.value += "-"
     }
@@ -46,7 +47,7 @@ class ImpViewModel(application: Application): AndroidViewModel(application) {
     fun chooseWord() {
         val isr = InputStreamReader (ctx.resources.openRawResource(R.raw.words_3000))
         val br = BufferedReader(isr)
-        val word: Int = Random.nextInt(1, 3000)
+        val word: Int = Random.nextInt(1, NUM_OF_WORDS)
         viewModelScope.launch{
             readFromFile(br,word)
         }
