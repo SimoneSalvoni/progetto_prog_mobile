@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph_mem"
+    app:startDestination="@id/memMenuFragment">
+
+    <fragment
+        android:id="@+id/memMenuFragment"
+        android:name="com.example.italian_englishgames.memory.MemMenuFragment"
+        android:label="fragment_mem_menu"
+        tools:layout="@layout/fragment_mem_menu" >
+        <action
+            android:id="@+id/action_memMenuFragment_to_memGameFragment"
+            app:destination="@id/memGameFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/memGameFragment"
+        android:name="com.example.italian_englishgames.memory.MemGameFragment"
+        android:label="fragment_mem_game"
+        tools:layout="@layout/fragment_mem_game" >
+        <action
+            android:id="@+id/action_memGameFragment_to_memWinFragment"
+            app:destination="@id/memWinFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/memWinFragment"
+        android:name="com.example.italian_englishgames.memory.MemWinFragment"
+        android:label="fragment_mem_win"
+        tools:layout="@layout/fragment_mem_win" >
+        <action
+            android:id="@+id/action_memWinFragment_to_memGameFragment"
+            app:destination="@id/memGameFragment" />
+        <action
+            android:id="@+id/action_memWinFragment_to_memMenuFragment"
+            app:destination="@id/memMenuFragment" />
+    </fragment>
+</navigation>

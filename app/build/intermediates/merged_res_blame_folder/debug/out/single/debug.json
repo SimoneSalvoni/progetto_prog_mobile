@@ -16,6 +16,10 @@
         "source": "C:\\Users\\ACER\\Desktop\\progetto P_mobile\\ItalianEnglishGames\\app\\src\\main\\res\\layout\\fragment_imp_menu.xml"
     },
     {
+        "merged": "C:\\Users\\ACER\\Desktop\\progetto P_mobile\\ItalianEnglishGames\\app\\build\\intermediates\\res\\merged\\debug\\raw_words_eng_it.txt.flat",
+        "source": "C:\\Users\\ACER\\Desktop\\progetto P_mobile\\ItalianEnglishGames\\app\\src\\main\\res\\raw\\words_eng_it.txt"
+    },
+    {
         "merged": "C:\\Users\\ACER\\Desktop\\progetto P_mobile\\ItalianEnglishGames\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher.png.flat",
         "source": "C:\\Users\\ACER\\Desktop\\progetto P_mobile\\ItalianEnglishGames\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
     },

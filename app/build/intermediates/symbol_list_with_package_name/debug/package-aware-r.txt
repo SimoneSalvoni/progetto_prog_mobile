@@ -2373,6 +2373,7 @@ navigation navigation_graph_imp
 plurals mtrl_badge_content_description
 raw words
 raw words_3000
+raw words_eng_it
 string abc_action_bar_home_description
 string abc_action_bar_up_description
 string abc_action_menu_overflow_description
