@@ -1,60 +1,85 @@
 package com.example.italian_englishgames.memory
 
+import android.animation.AnimatorInflater
+import android.animation.AnimatorSet
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.viewModels
 import com.example.italian_englishgames.R
+import com.example.italian_englishgames.databinding.FragmentMemGameBinding
+import com.example.italian_englishgames.memory.MemViewModel
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [MemGameFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class MemGameFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+
+    lateinit var binding: FragmentMemGameBinding
+    lateinit var front_anim: AnimatorSet
+    lateinit var back_anim: AnimatorSet
+    val viewModel: MemViewModel by viewModels()
+    lateinit var card1: String
+    lateinit var card2: String
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
+
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_mem_game, container, false)
+
+        binding= inflate(inflater,R.layout.fragment_mem_game,container,false)
+        return binding.root
+
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment MemGameFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            MemGameFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.memViewModel = viewModel
+        binding.lifecycleOwner = viewLifecycleOwner
+
+        //animazioni, serve prendere il context
+        front_anim = AnimatorInflater.loadAnimator(applicationContext,R.animator.front_animator)
+                as AnimatorSet
+        back_anim = AnimatorInflater.loadAnimator(applicationContext,R.animator.back_animator)
+                as AnimatorSet
+
+        card.setOnClickListener{
+            if(isBack){
+                if(card1=="") {
+                    backToFront()
+                    isBack = false
+                    card1 = binding..text.toString()
                 }
+                else{
+                    card2 = binding..text.toString()
+                    viewModel.check(card1, card2)
+                    viewModel.checkGameState()
+                }
+            }else{
+                frontToBack()
+                isBack = true
             }
+
+        }
+    }
+    fun backToFront(){
+        front_anim.setTarget(card_front)
+        back_anim.setTarget(card_back)
+        front_anim.start()
+        back_anim.start()
+    }
+
+    fun frontToBack(){
+        front_anim.setTarget(card_back)
+        back_anim.setTarget(card_front)
+        front_anim.start()
+        back_anim.start()
     }
 }
