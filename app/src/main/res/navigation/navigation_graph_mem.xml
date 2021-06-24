@@ -18,7 +18,7 @@
         android:id="@+id/memGameFragment"
         android:name="com.example.italian_englishgames.memory.MemGameFragment"
         android:label="fragment_mem_game"
-        tools:layout="@layout/fragment_mem_game" >
+        tools:layout="@layout/fragment_mem_gameeeeee" >
         <action
             android:id="@+id/action_memGameFragment_to_memWinFragment"
             app:destination="@id/memWinFragment" />

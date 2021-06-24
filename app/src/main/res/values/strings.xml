@@ -29,6 +29,7 @@
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
     <string name="registra">Registrati</string>
+    <string name="plsregister">Non hai ancora un account? Registrati!</string>
     <string name="login">Accedi</string>
     <string name="welcome">"Benvenuto!</string>
     <string name="invalid_username">Username non valido</string>

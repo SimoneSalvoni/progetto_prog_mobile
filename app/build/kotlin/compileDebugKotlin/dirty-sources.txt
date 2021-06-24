@@ -1,0 +1,15 @@
+C:\Users\ACER\Desktop\progetto P_mobile\ItalianEnglishGames\app\src\main\java\com\example\italian_englishgames\impiccato\ImpGameFragment.kt
+C:\Users\ACER\Desktop\progetto P_mobile\ItalianEnglishGames\app\src\main\java\com\example\italian_englishgames\impiccato\ImpLoseFragment.kt
+C:\Users\ACER\Desktop\progetto P_mobile\ItalianEnglishGames\app\src\main\java\com\example\italian_englishgames\impiccato\ImpWinFragment.kt
+C:\Users\ACER\Desktop\progetto P_mobile\ItalianEnglishGames\app\src\main\java\com\example\italian_englishgames\memory\MemGameFragment.kt
+C:\Users\ACER\Desktop\progetto P_mobile\ItalianEnglishGames\app\src\main\java\com\example\italian_englishgames\impiccato\ImpMenuFragment.kt
+C:\Users\ACER\Desktop\progetto P_mobile\ItalianEnglishGames\app\src\main\java\com\example\italian_englishgames\auth\AuthActivity.kt
+C:\Users\ACER\Desktop\progetto P_mobile\ItalianEnglishGames\app\src\main\java\com\example\italian_englishgames\memory\MemMenuFragment.kt
+C:\Users\ACER\Desktop\progetto P_mobile\ItalianEnglishGames\app\src\main\java\com\example\italian_englishgames\impiccato\ImpViewModel.kt
+C:\Users\ACER\Desktop\progetto P_mobile\ItalianEnglishGames\app\src\main\java\com\example\italian_englishgames\memory\MemActivity.kt
+C:\Users\ACER\Desktop\progetto P_mobile\ItalianEnglishGames\app\src\main\java\com\example\italian_englishgames\memory\MemCard.kt
+C:\Users\ACER\Desktop\progetto P_mobile\ItalianEnglishGames\app\src\main\java\com\example\italian_englishgames\memory\MemViewModel.kt
+C:\Users\ACER\Desktop\progetto P_mobile\ItalianEnglishGames\app\src\main\java\com\example\italian_englishgames\memory\GridAdapter.kt
+C:\Users\ACER\Desktop\progetto P_mobile\ItalianEnglishGames\app\src\main\java\com\example\italian_englishgames\impiccato\ImpActivity.kt
+C:\Users\ACER\Desktop\progetto P_mobile\ItalianEnglishGames\app\src\main\java\com\example\italian_englishgames\memory\MemWinFragment.kt
+C:\Users\ACER\Desktop\progetto P_mobile\ItalianEnglishGames\app\src\main\java\com\example\italian_englishgames\MainActivity.kt

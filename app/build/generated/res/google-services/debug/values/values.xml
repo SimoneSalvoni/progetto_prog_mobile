@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">369622671956-khfn42b9g19lh7029s94d7muhnmkn91f.apps.googleusercontent.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">369622671956</string>
+    <string name="google_api_key" translatable="false">AIzaSyCssxThBeQ8QjHsCbR-mlpCBnsMQFPnMuM</string>
+    <string name="google_app_id" translatable="false">1:369622671956:android:e0068e565e41ed412083c1</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyCssxThBeQ8QjHsCbR-mlpCBnsMQFPnMuM</string>
+    <string name="google_storage_bucket" translatable="false">italianenglishgames.appspot.com</string>
+    <string name="project_id" translatable="false">italianenglishgames</string>
+</resources>

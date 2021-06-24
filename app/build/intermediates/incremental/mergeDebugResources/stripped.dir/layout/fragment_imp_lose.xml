@@ -11,7 +11,7 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="66dp"
-        android:layout_marginStart="4dp"
+        android:layout_marginStart="60dp"
         android:layout_marginTop="192dp"
         android:text="@string/sconfitta"
         android:textAlignment="center"
