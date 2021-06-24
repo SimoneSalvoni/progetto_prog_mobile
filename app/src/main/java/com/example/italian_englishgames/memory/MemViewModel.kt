@@ -13,7 +13,6 @@ import java.io.BufferedReader
 import java.io.InputStreamReader
 import kotlin.random.Random
 
-//VALORE PLACEHOLDER
 private const val NUM_OF_WORDS = 286
 
 class MemViewModel(application: Application):AndroidViewModel(application) {
@@ -28,7 +27,7 @@ class MemViewModel(application: Application):AndroidViewModel(application) {
 
     fun init (){
         val indices = mutableSetOf<Int>()
-        for (i in 1..8) while(!indices.add(Random.nextInt(1, NUM_OF_WORDS))) //costanti da cambiare
+        for (i in 1..8) while(!indices.add(Random.nextInt(1, NUM_OF_WORDS))) 
             viewModelScope.launch{
                 var dest=""
                 var destList: List<String>
