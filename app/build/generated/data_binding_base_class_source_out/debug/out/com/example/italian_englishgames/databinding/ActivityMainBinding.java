@@ -5,6 +5,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -21,9 +23,22 @@ public final class ActivityMainBinding implements ViewBinding {
   @NonNull
   public final Button buttonImp;
 
-  private ActivityMainBinding(@NonNull ConstraintLayout rootView, @NonNull Button buttonImp) {
+  @NonNull
+  public final Button buttonMem;
+
+  @NonNull
+  public final ImageView userImgMain;
+
+  @NonNull
+  public final TextView usernameMain;
+
+  private ActivityMainBinding(@NonNull ConstraintLayout rootView, @NonNull Button buttonImp,
+      @NonNull Button buttonMem, @NonNull ImageView userImgMain, @NonNull TextView usernameMain) {
     this.rootView = rootView;
     this.buttonImp = buttonImp;
+    this.buttonMem = buttonMem;
+    this.userImgMain = userImgMain;
+    this.usernameMain = usernameMain;
   }
 
   @Override
@@ -59,7 +74,26 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityMainBinding((ConstraintLayout) rootView, buttonImp);
+      id = R.id.buttonMem;
+      Button buttonMem = rootView.findViewById(id);
+      if (buttonMem == null) {
+        break missingId;
+      }
+
+      id = R.id.userImgMain;
+      ImageView userImgMain = rootView.findViewById(id);
+      if (userImgMain == null) {
+        break missingId;
+      }
+
+      id = R.id.usernameMain;
+      TextView usernameMain = rootView.findViewById(id);
+      if (usernameMain == null) {
+        break missingId;
+      }
+
+      return new ActivityMainBinding((ConstraintLayout) rootView, buttonImp, buttonMem, userImgMain,
+          usernameMain);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

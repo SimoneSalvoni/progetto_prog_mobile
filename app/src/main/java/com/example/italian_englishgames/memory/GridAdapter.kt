@@ -9,7 +9,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.italian_englishgames.R
 
-
+/*
 public class GridAdapter(var context: Context, val dataSet: List<MemCard>) : RecyclerView.Adapter<GridAdapter.ViewHolder>() {
 
 
@@ -47,3 +47,4 @@ public class GridAdapter(var context: Context, val dataSet: List<MemCard>) : Rec
 
 }
 
+*/

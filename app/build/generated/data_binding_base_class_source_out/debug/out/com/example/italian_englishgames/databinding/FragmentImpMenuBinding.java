@@ -20,7 +20,7 @@ public final class FragmentImpMenuBinding implements ViewBinding {
   private final FrameLayout rootView;
 
   @NonNull
-  public final Button InfoButton;
+  public final Button infoButtonImp;
 
   @NonNull
   public final Button startbutton;
@@ -28,10 +28,10 @@ public final class FragmentImpMenuBinding implements ViewBinding {
   @NonNull
   public final TextView textView;
 
-  private FragmentImpMenuBinding(@NonNull FrameLayout rootView, @NonNull Button InfoButton,
+  private FragmentImpMenuBinding(@NonNull FrameLayout rootView, @NonNull Button infoButtonImp,
       @NonNull Button startbutton, @NonNull TextView textView) {
     this.rootView = rootView;
-    this.InfoButton = InfoButton;
+    this.infoButtonImp = infoButtonImp;
     this.startbutton = startbutton;
     this.textView = textView;
   }
@@ -63,9 +63,9 @@ public final class FragmentImpMenuBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.InfoButton;
-      Button InfoButton = rootView.findViewById(id);
-      if (InfoButton == null) {
+      id = R.id.infoButtonImp;
+      Button infoButtonImp = rootView.findViewById(id);
+      if (infoButtonImp == null) {
         break missingId;
       }
 
@@ -81,7 +81,8 @@ public final class FragmentImpMenuBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentImpMenuBinding((FrameLayout) rootView, InfoButton, startbutton, textView);
+      return new FragmentImpMenuBinding((FrameLayout) rootView, infoButtonImp, startbutton,
+          textView);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

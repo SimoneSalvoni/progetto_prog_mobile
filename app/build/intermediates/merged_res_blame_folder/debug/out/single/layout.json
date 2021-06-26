@@ -28,12 +28,24 @@
         "source": "C:\\Users\\ACER\\Desktop\\progetto P_mobile\\ItalianEnglishGames\\app\\src\\main\\res\\layouts\\main\\layout\\toolbar.xml"
     },
     {
+        "merged": "C:\\Users\\ACER\\Desktop\\progetto P_mobile\\ItalianEnglishGames\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_login.xml",
+        "source": "C:\\Users\\ACER\\Desktop\\progetto P_mobile\\ItalianEnglishGames\\app\\src\\main\\res\\layouts\\auth\\layout\\activity_login.xml"
+    },
+    {
+        "merged": "C:\\Users\\ACER\\Desktop\\progetto P_mobile\\ItalianEnglishGames\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_username_photo_selection.xml",
+        "source": "C:\\Users\\ACER\\Desktop\\progetto P_mobile\\ItalianEnglishGames\\app\\src\\main\\res\\layouts\\auth\\layout\\fragment_username_photo_selection.xml"
+    },
+    {
         "merged": "C:\\Users\\ACER\\Desktop\\progetto P_mobile\\ItalianEnglishGames\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\grid_element.xml",
         "source": "C:\\Users\\ACER\\Desktop\\progetto P_mobile\\ItalianEnglishGames\\app\\src\\main\\res\\layouts\\memory\\layout\\grid_element.xml"
     },
     {
         "merged": "C:\\Users\\ACER\\Desktop\\progetto P_mobile\\ItalianEnglishGames\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_main.xml",
         "source": "C:\\Users\\ACER\\Desktop\\progetto P_mobile\\ItalianEnglishGames\\app\\src\\main\\res\\layouts\\main\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\ACER\\Desktop\\progetto P_mobile\\ItalianEnglishGames\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_first_registration.xml",
+        "source": "C:\\Users\\ACER\\Desktop\\progetto P_mobile\\ItalianEnglishGames\\app\\src\\main\\res\\layouts\\auth\\layout\\fragment_first_registration.xml"
     },
     {
         "merged": "C:\\Users\\ACER\\Desktop\\progetto P_mobile\\ItalianEnglishGames\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_imp_menu.xml",
@@ -52,15 +64,15 @@
         "source": "C:\\Users\\ACER\\Desktop\\progetto P_mobile\\ItalianEnglishGames\\app\\src\\main\\res\\layouts\\impiccato\\layout\\fragment_imp_lose.xml"
     },
     {
-        "merged": "C:\\Users\\ACER\\Desktop\\progetto P_mobile\\ItalianEnglishGames\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_auth.xml",
-        "source": "C:\\Users\\ACER\\Desktop\\progetto P_mobile\\ItalianEnglishGames\\app\\src\\main\\res\\layouts\\auth\\layout\\activity_auth.xml"
-    },
-    {
         "merged": "C:\\Users\\ACER\\Desktop\\progetto P_mobile\\ItalianEnglishGames\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_mem_win.xml",
         "source": "C:\\Users\\ACER\\Desktop\\progetto P_mobile\\ItalianEnglishGames\\app\\src\\main\\res\\layouts\\memory\\layout\\fragment_mem_win.xml"
     },
     {
         "merged": "C:\\Users\\ACER\\Desktop\\progetto P_mobile\\ItalianEnglishGames\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\imp_input_prompt.xml",
         "source": "C:\\Users\\ACER\\Desktop\\progetto P_mobile\\ItalianEnglishGames\\app\\src\\main\\res\\layouts\\impiccato\\layout\\imp_input_prompt.xml"
+    },
+    {
+        "merged": "C:\\Users\\ACER\\Desktop\\progetto P_mobile\\ItalianEnglishGames\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_register.xml",
+        "source": "C:\\Users\\ACER\\Desktop\\progetto P_mobile\\ItalianEnglishGames\\app\\src\\main\\res\\layouts\\auth\\layout\\activity_register.xml"
     }
 ]

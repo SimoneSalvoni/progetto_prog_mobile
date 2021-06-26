@@ -38,7 +38,7 @@ class MemGameFragment : Fragment() {
         return binding.root
 
     }
-
+/**
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.memViewModel = viewModel
@@ -82,4 +82,5 @@ class MemGameFragment : Fragment() {
         front_anim.start()
         back_anim.start()
     }
+    */
 }

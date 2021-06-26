@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph_reg"
+    app:startDestination="@id/firstRegistrationFragment">
+
+    <fragment
+        android:id="@+id/firstRegistrationFragment"
+        android:name="com.example.italian_englishgames.auth.FirstRegistrationFragment"
+        android:label="FirstRegistrationFragment"
+        tools:layout="@layout/fragment_first_registration">
+        <action
+            android:id="@+id/action_firstRegistrationFragment_to_usernamePhotoSelectionFragment"
+            app:destination="@id/usernamePhotoSelectionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/usernamePhotoSelectionFragment"
+        android:name="com.example.italian_englishgames.auth.UsernamePhotoSelectionFragment"
+        android:label="UsernamePhotoSelectionFragment"
+        tools:layout="@layout/fragment_username_photo_selection"/>
+</navigation>

@@ -28,13 +28,7 @@ anim design_bottom_sheet_slide_in
 anim design_bottom_sheet_slide_out
 anim design_snackbar_in
 anim design_snackbar_out
-anim fragment_close_enter
-anim fragment_close_exit
-anim fragment_fade_enter
-anim fragment_fade_exit
 anim fragment_fast_out_extra_slow_in
-anim fragment_open_enter
-anim fragment_open_exit
 anim front_animator
 anim mtrl_bottom_sheet_slide_in
 anim mtrl_bottom_sheet_slide_out
@@ -46,6 +40,12 @@ anim nav_default_pop_exit_anim
 animator design_appbar_state_list_animator
 animator design_fab_hide_motion_spec
 animator design_fab_show_motion_spec
+animator fragment_close_enter
+animator fragment_close_exit
+animator fragment_fade_enter
+animator fragment_fade_exit
+animator fragment_open_enter
+animator fragment_open_exit
 animator linear_indeterminate_line1_head_interpolator
 animator linear_indeterminate_line1_tail_interpolator
 animator linear_indeterminate_line2_head_interpolator
@@ -1794,7 +1794,6 @@ id BOTTOM_START
 id CTRL
 id ConstraintLayout
 id FUNCTION
-id InfoButton
 id META
 id NO_DEBUG
 id SHIFT
@@ -1850,6 +1849,7 @@ id action_bar_title
 id action_container
 id action_context_bar
 id action_divider
+id action_firstRegistrationFragment_to_usernamePhotoSelectionFragment
 id action_image
 id action_impGameFragment_to_impLoseFragment
 id action_impGameFragment_to_impWinFragment
@@ -1897,7 +1897,9 @@ id browser_actions_menu_item_icon
 id browser_actions_menu_item_text
 id browser_actions_menu_items
 id browser_actions_menu_view
+id btn
 id buttonImp
+id buttonMem
 id buttonPanel
 id cache_measures
 id cancel_action
@@ -1971,11 +1973,16 @@ id easeInOut
 id easeOut
 id edit_query
 id elastic
+id email
 id end
 id endToStart
 id end_padder
 id enterAlways
 id enterAlwaysCollapsed
+id errorEmailLogin
+id errorEmailReg
+id errorPasswordLogin
+id errorPasswordReg
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
@@ -1985,6 +1992,7 @@ id fill
 id fill_horizontal
 id fill_vertical
 id filled
+id firstRegistrationFragment
 id fitToContents
 id fixed
 id flip
@@ -1993,6 +2001,8 @@ id forever
 id fragmentContainerView
 id fragment_container_view_tag
 id gameTable
+id generalErrorLogin
+id generalErrorReg
 id ghost_view
 id ghost_view_holder
 id goHomeButton
@@ -2016,6 +2026,8 @@ id ifRoom
 id ignore
 id ignoreRequest
 id image
+id img
+id imgbtn
 id impGameFragment
 id impImageView
 id impLoseFragment
@@ -2023,6 +2035,8 @@ id impMenuFragment
 id impWinFragment
 id impostazioniFragment
 id info
+id infoButtonImp
+id infoButtonMem
 id inputLetter
 id invisible
 id inward
@@ -2106,8 +2120,10 @@ id nav_controller_view_tag
 id nav_host_fragment_container
 id navigation_graph_imp
 id navigation_graph_mem
+id navigation_graph_reg
 id navigation_header_container
 id never
+id newaccount
 id noScroll
 id none
 id normal
@@ -2126,6 +2142,7 @@ id parent
 id parentPanel
 id parentRelative
 id parent_matrix
+id password
 id password_toggle
 id path
 id pathRelative
@@ -2140,6 +2157,7 @@ id progress_horizontal
 id radio
 id ratio
 id rectangles
+id register
 id retryButton
 id reverseSawtooth
 id right
@@ -2185,6 +2203,7 @@ id snap
 id snapMargins
 id solution
 id spacer
+id special_effects_controller_view_tag
 id spline
 id split_action_bar
 id spread
@@ -2228,8 +2247,9 @@ id textStart
 id textTop
 id textView
 id textView2
-id textView3
 id textView4
+id textView5
+id textView6
 id textWatcher
 id text_input_end_icon
 id text_input_error_icon
@@ -2263,6 +2283,10 @@ id uniform
 id unlabeled
 id up
 id useLogo
+id userImgMain
+id username
+id usernameMain
+id usernamePhotoSelectionFragment
 id view_offset_helper
 id view_tree_lifecycle_owner
 id view_tree_saved_state_registry_owner
@@ -2338,10 +2362,11 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
-layout activity_auth
 layout activity_imp
+layout activity_login
 layout activity_main
 layout activity_mem
+layout activity_register
 layout browser_actions_context_menu_page
 layout browser_actions_context_menu_row
 layout custom_dialog
@@ -2360,6 +2385,7 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
+layout fragment_first_registration
 layout fragment_imp_game
 layout fragment_imp_lose
 layout fragment_imp_menu
@@ -2367,6 +2393,7 @@ layout fragment_imp_win
 layout fragment_mem_game
 layout fragment_mem_menu
 layout fragment_mem_win
+layout fragment_username_photo_selection
 layout grid_element
 layout imp_input_prompt
 layout material_chip_input_combo
@@ -2427,7 +2454,6 @@ layout notification_template_media
 layout notification_template_media_custom
 layout notification_template_part_chronometer
 layout notification_template_part_time
-layout popup_info_impiccato
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
@@ -2453,6 +2479,7 @@ mipmap ic_launcher
 mipmap ic_launcher_round
 navigation navigation_graph_imp
 navigation navigation_graph_mem
+navigation navigation_graph_reg
 plurals mtrl_badge_content_description
 raw words
 raw words_3000
@@ -2535,6 +2562,7 @@ string impiccato
 string impostazioni
 string info_game
 string info_impiccato
+string info_memory
 string invalid_password
 string invalid_username
 string item_view_role_description
@@ -2600,13 +2628,17 @@ string path_password_eye
 string path_password_eye_mask_strike_through
 string path_password_eye_mask_visible
 string path_password_strike_through
+string plsregister
 string previous
 string profilo
 string project_id
 string prompt_email
+string prompt_extra
 string prompt_password
+string prompt_username
 string registra
 string riprova
+string scegli_immagine
 string sconfitta
 string search_menu_title
 string second_fragment_label

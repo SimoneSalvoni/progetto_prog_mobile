@@ -8,5 +8,10 @@
     "name": "navigation_graph_mem",
     "navigationXmlIds": [],
     "deepLinks": []
+  },
+  {
+    "name": "navigation_graph_reg",
+    "navigationXmlIds": [],
+    "deepLinks": []
   }
 ]
