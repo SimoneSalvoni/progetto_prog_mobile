@@ -1904,7 +1904,6 @@ int id cache_measures 0x7f080071
 int id cancel_action 0x7f080072
 int id cancel_button 0x7f080073
 int id cardView 0x7f080074
-int id card_back 0x7f080075
 int id card_front 0x7f080076
 int id center 0x7f080077
 int id center_horizontal 0x7f080078

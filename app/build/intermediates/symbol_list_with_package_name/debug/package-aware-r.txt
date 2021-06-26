@@ -1905,7 +1905,6 @@ id cache_measures
 id cancel_action
 id cancel_button
 id cardView
-id card_back
 id card_front
 id center
 id center_horizontal

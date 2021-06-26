@@ -4,7 +4,6 @@ package com.example.italian_englishgames.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -21,18 +20,14 @@ public final class GridElementBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
-  public final ImageView cardBack;
-
-  @NonNull
   public final TextView cardFront;
 
   @NonNull
   public final CardView cardView;
 
-  private GridElementBinding(@NonNull ConstraintLayout rootView, @NonNull ImageView cardBack,
-      @NonNull TextView cardFront, @NonNull CardView cardView) {
+  private GridElementBinding(@NonNull ConstraintLayout rootView, @NonNull TextView cardFront,
+      @NonNull CardView cardView) {
     this.rootView = rootView;
-    this.cardBack = cardBack;
     this.cardFront = cardFront;
     this.cardView = cardView;
   }
@@ -64,12 +59,6 @@ public final class GridElementBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.card_back;
-      ImageView cardBack = rootView.findViewById(id);
-      if (cardBack == null) {
-        break missingId;
-      }
-
       id = R.id.card_front;
       TextView cardFront = rootView.findViewById(id);
       if (cardFront == null) {
@@ -82,7 +71,7 @@ public final class GridElementBinding implements ViewBinding {
         break missingId;
       }
 
-      return new GridElementBinding((ConstraintLayout) rootView, cardBack, cardFront, cardView);
+      return new GridElementBinding((ConstraintLayout) rootView, cardFront, cardView);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

@@ -1,11 +1,13 @@
 package com.example.italian_englishgames.memory
 
 class MemCard {
-    var word:String ? = null
-    var isBack:Boolean = false
+    var word:String = ""
+    var isBack:Boolean = true
+    var id:Int  = 0
 
-    constructor(word: String){
+    constructor(word: String ="", id: Int=0){
         this.word= word
-        this.isBack = false
+        this.id = id
+        this.isBack = true
     }
 }
