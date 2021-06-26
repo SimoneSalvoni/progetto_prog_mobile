@@ -17,10 +17,12 @@ private const val NUM_OF_WORDS = 286
 
 class MemViewModel(application: Application):AndroidViewModel(application) {
 
-    private val wordsAndIndices= mutableListOf<Pair<Int,String>>()
-    private val _words = MutableLiveData(mutableListOf<String>())
+    private val _words= MutableLiveData(mutableListOf<MemCard>())
+    val words: LiveData<MutableList<MemCard>>
+    get() = _words
+    /* private val _words = MutableLiveData(mutableListOf<String>())
     val words: LiveData<MutableList<String>>
-    get()=_words
+    get()=_words */
     var found_words= BooleanArray(16){false}
     private val ctx= getApplication<Application>().applicationContext
 
@@ -37,27 +39,25 @@ class MemViewModel(application: Application):AndroidViewModel(application) {
                         val br = BufferedReader(isr)
                         for (j in 1..i)  dest=br.readLine()
                         destList = dest.split(';')
-                        wordsAndIndices.add(Pair(i,destList[0]))
-                        wordsAndIndices.add(Pair(i,destList[1]))
-                        _words.value?.add(destList[0])
-                        _words.value?.add(destList[1])
+                        wordsAndIndices.value?.add(MemCard(destList[0], i))
+                        wordsAndIndices.value?.add(MemCard(destList[1], i))
                     }
                 }
-                _words.value?.shuffle()
+                wordsAndIndices.value?.shuffle()
             }
     }
 
-    fun check(word1: String, word2: String): Boolean{
+    fun check(card1: MemCard, card2: MemCard): Boolean{
         var index1 = 0
         var index2 = 0
         for (elem in wordsAndIndices){
-            if (elem.second == word1) index1=elem.first
-            if (elem.second == word2) index2=elem.first
+            if (elem.word == card1.word) index1= elem.id!!
+            if (elem.word == card2.word) index2= elem.id!!
         }
         if (index1!=index2) return false
         else {
-            found_words[_words.value!!.indexOf(word1)]=true
-            found_words[_words.value!!.indexOf(word2)]=true
+            found_words[card1.id!!]=true
+            found_words[card2.id!!]=true //card 1 e card 2 però hanno lo stesso id che è i, come le 2 word prima, è inutile
             return true
         }
     }

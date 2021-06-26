@@ -10,21 +10,16 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.italian_englishgames.R
 
 
-public class GridAdapter(var context: Context, val dataSet: List<MemCard>) : RecyclerView.Adapter<GridAdapter.ViewHolder>() {
 
+public class GridAdapter(var context: Context, val dataSet: List<MemCard>, val listener
+    : OnItemClickListener) : RecyclerView.Adapter<GridAdapter.ViewHolder>() {
 
-
-
-    class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        var back = view.findViewById<ImageView>(R.id.card_back)
-        var front = view.findViewById<TextView>(R.id.card_front)
-    }
 
 
     override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): ViewHolder {
 
         val view = LayoutInflater.from(viewGroup.context)
-            .inflate(R.layout.text_row_item, viewGroup, false)
+            .inflate(R.layout.grid_element, viewGroup, false)
 
         return ViewHolder(view)
     }
@@ -39,6 +34,25 @@ public class GridAdapter(var context: Context, val dataSet: List<MemCard>) : Rec
 
     }
     override fun getItemCount() = dataSet.size
+
+    inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view),
+        View.OnClickListener{
+
+        var front = itemView.findViewById<TextView>(R.id.card_front)
+        override fun onClick(v: View?) {
+            val position = adapterPosition
+            if (position != RecyclerView.NO_POSITION) {
+                listener.onItemClick(position)
+            }
+        }
+        init {
+            view.setOnClickListener(this)
+        }
+    }
+
+    interface OnItemClickListener{
+        fun onItemClick(position: Int)
+    }
 
     fun getItem(position: Int): MemCard{
         return dataSet[position]
