@@ -40,10 +40,6 @@
         "source": "C:\\Users\\ACER\\Desktop\\progetto P_mobile\\ItalianEnglishGames\\app\\src\\main\\res\\drawable\\imp04.png"
     },
     {
-        "merged": "C:\\Users\\ACER\\Desktop\\progetto P_mobile\\ItalianEnglishGames\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_mem_game.xml.flat",
-        "source": "C:\\Users\\ACER\\Desktop\\progetto P_mobile\\ItalianEnglishGames\\app\\src\\main\\res\\layouts\\memory\\layout\\fragment_mem_game.xml"
-    },
-    {
         "merged": "C:\\Users\\ACER\\Desktop\\progetto P_mobile\\ItalianEnglishGames\\app\\build\\intermediates\\res\\merged\\debug\\navigation_navigation_graph_reg.xml.flat",
         "source": "C:\\Users\\ACER\\Desktop\\progetto P_mobile\\ItalianEnglishGames\\app\\src\\main\\res\\navigation\\navigation_graph_reg.xml"
     },
@@ -134,6 +130,10 @@
     {
         "merged": "C:\\Users\\ACER\\Desktop\\progetto P_mobile\\ItalianEnglishGames\\app\\build\\intermediates\\res\\merged\\debug\\anim_back_animator.xml.flat",
         "source": "C:\\Users\\ACER\\Desktop\\progetto P_mobile\\ItalianEnglishGames\\app\\src\\main\\res\\anim\\back_animator.xml"
+    },
+    {
+        "merged": "C:\\Users\\ACER\\Desktop\\progetto P_mobile\\ItalianEnglishGames\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_mem_single_game.xml.flat",
+        "source": "C:\\Users\\ACER\\Desktop\\progetto P_mobile\\ItalianEnglishGames\\app\\src\\main\\res\\layouts\\memory\\layout\\fragment_mem_single_game.xml"
     },
     {
         "merged": "C:\\Users\\ACER\\Desktop\\progetto P_mobile\\ItalianEnglishGames\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_mem.xml.flat",

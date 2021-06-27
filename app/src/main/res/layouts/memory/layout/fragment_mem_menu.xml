@@ -8,13 +8,25 @@
 
 
     <Button
-        android:id="@+id/startbutton"
+        android:id="@+id/startbuttonsingle"
         android:layout_width="185dp"
         android:layout_height="106dp"
         android:layout_marginStart="112dp"
-        android:layout_marginTop="496dp"
+        android:layout_marginTop="300dp"
         android:backgroundTint="@color/rosa"
-        android:text="@string/gioca"
+        android:text="@string/giocaSing"
+        android:textColor="@color/blu_scuro"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/startbuttonmulti"
+        android:layout_width="313dp"
+        android:layout_height="106dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="500dp"
+        android:backgroundTint="@color/rosa"
+        android:text="@string/giocaMulti"
         android:textColor="@color/blu_scuro"
         android:textSize="30sp"
         android:textStyle="bold" />

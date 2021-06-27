@@ -10,12 +10,12 @@ public class MemWinFragmentDirections {
   }
 
   @NonNull
-  public static NavDirections actionMemWinFragmentToMemGameFragment() {
-    return new ActionOnlyNavDirections(R.id.action_memWinFragment_to_memGameFragment);
+  public static NavDirections actionMemWinFragmentToMemMenuFragment() {
+    return new ActionOnlyNavDirections(R.id.action_memWinFragment_to_memMenuFragment);
   }
 
   @NonNull
-  public static NavDirections actionMemWinFragmentToMemMenuFragment() {
-    return new ActionOnlyNavDirections(R.id.action_memWinFragment_to_memMenuFragment);
+  public static NavDirections actionMemWinFragmentToMemSingleGameFragment() {
+    return new ActionOnlyNavDirections(R.id.action_memWinFragment_to_memSingleGameFragment);
   }
 }

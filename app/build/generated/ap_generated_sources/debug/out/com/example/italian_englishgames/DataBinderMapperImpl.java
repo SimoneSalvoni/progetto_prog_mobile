@@ -9,7 +9,7 @@ import androidx.databinding.ViewDataBinding;
 import com.example.italian_englishgames.databinding.ActivityLoginBindingImpl;
 import com.example.italian_englishgames.databinding.FragmentFirstRegistrationBindingImpl;
 import com.example.italian_englishgames.databinding.FragmentImpGameBindingImpl;
-import com.example.italian_englishgames.databinding.FragmentMemGameBindingImpl;
+import com.example.italian_englishgames.databinding.FragmentMemSingleGameBindingImpl;
 import com.example.italian_englishgames.databinding.FragmentUsernamePhotoSelectionBindingImpl;
 import java.lang.IllegalArgumentException;
 import java.lang.Integer;
@@ -28,7 +28,7 @@ public class DataBinderMapperImpl extends DataBinderMapper {
 
   private static final int LAYOUT_FRAGMENTIMPGAME = 3;
 
-  private static final int LAYOUT_FRAGMENTMEMGAME = 4;
+  private static final int LAYOUT_FRAGMENTMEMSINGLEGAME = 4;
 
   private static final int LAYOUT_FRAGMENTUSERNAMEPHOTOSELECTION = 5;
 
@@ -38,7 +38,7 @@ public class DataBinderMapperImpl extends DataBinderMapper {
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.example.italian_englishgames.R.layout.activity_login, LAYOUT_ACTIVITYLOGIN);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.example.italian_englishgames.R.layout.fragment_first_registration, LAYOUT_FRAGMENTFIRSTREGISTRATION);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.example.italian_englishgames.R.layout.fragment_imp_game, LAYOUT_FRAGMENTIMPGAME);
-    INTERNAL_LAYOUT_ID_LOOKUP.put(com.example.italian_englishgames.R.layout.fragment_mem_game, LAYOUT_FRAGMENTMEMGAME);
+    INTERNAL_LAYOUT_ID_LOOKUP.put(com.example.italian_englishgames.R.layout.fragment_mem_single_game, LAYOUT_FRAGMENTMEMSINGLEGAME);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.example.italian_englishgames.R.layout.fragment_username_photo_selection, LAYOUT_FRAGMENTUSERNAMEPHOTOSELECTION);
   }
 
@@ -69,11 +69,11 @@ public class DataBinderMapperImpl extends DataBinderMapper {
           }
           throw new IllegalArgumentException("The tag for fragment_imp_game is invalid. Received: " + tag);
         }
-        case  LAYOUT_FRAGMENTMEMGAME: {
-          if ("layout/fragment_mem_game_0".equals(tag)) {
-            return new FragmentMemGameBindingImpl(component, view);
+        case  LAYOUT_FRAGMENTMEMSINGLEGAME: {
+          if ("layout/fragment_mem_single_game_0".equals(tag)) {
+            return new FragmentMemSingleGameBindingImpl(component, view);
           }
-          throw new IllegalArgumentException("The tag for fragment_mem_game is invalid. Received: " + tag);
+          throw new IllegalArgumentException("The tag for fragment_mem_single_game is invalid. Received: " + tag);
         }
         case  LAYOUT_FRAGMENTUSERNAMEPHOTOSELECTION: {
           if ("layout/fragment_username_photo_selection_0".equals(tag)) {
@@ -142,7 +142,7 @@ public class DataBinderMapperImpl extends DataBinderMapper {
       sKeys.put("layout/activity_login_0", com.example.italian_englishgames.R.layout.activity_login);
       sKeys.put("layout/fragment_first_registration_0", com.example.italian_englishgames.R.layout.fragment_first_registration);
       sKeys.put("layout/fragment_imp_game_0", com.example.italian_englishgames.R.layout.fragment_imp_game);
-      sKeys.put("layout/fragment_mem_game_0", com.example.italian_englishgames.R.layout.fragment_mem_game);
+      sKeys.put("layout/fragment_mem_single_game_0", com.example.italian_englishgames.R.layout.fragment_mem_single_game);
       sKeys.put("layout/fragment_username_photo_selection_0", com.example.italian_englishgames.R.layout.fragment_username_photo_selection);
     }
   }

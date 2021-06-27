@@ -22,13 +22,17 @@ public final class FragmentMemMenuBinding implements ViewBinding {
   public final Button infoButtonMem;
 
   @NonNull
-  public final Button startbutton;
+  public final Button startbuttonmulti;
+
+  @NonNull
+  public final Button startbuttonsingle;
 
   private FragmentMemMenuBinding(@NonNull FrameLayout rootView, @NonNull Button infoButtonMem,
-      @NonNull Button startbutton) {
+      @NonNull Button startbuttonmulti, @NonNull Button startbuttonsingle) {
     this.rootView = rootView;
     this.infoButtonMem = infoButtonMem;
-    this.startbutton = startbutton;
+    this.startbuttonmulti = startbuttonmulti;
+    this.startbuttonsingle = startbuttonsingle;
   }
 
   @Override
@@ -64,13 +68,20 @@ public final class FragmentMemMenuBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.startbutton;
-      Button startbutton = rootView.findViewById(id);
-      if (startbutton == null) {
+      id = R.id.startbuttonmulti;
+      Button startbuttonmulti = rootView.findViewById(id);
+      if (startbuttonmulti == null) {
         break missingId;
       }
 
-      return new FragmentMemMenuBinding((FrameLayout) rootView, infoButtonMem, startbutton);
+      id = R.id.startbuttonsingle;
+      Button startbuttonsingle = rootView.findViewById(id);
+      if (startbuttonsingle == null) {
+        break missingId;
+      }
+
+      return new FragmentMemMenuBinding((FrameLayout) rootView, infoButtonMem, startbuttonmulti,
+          startbuttonsingle);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

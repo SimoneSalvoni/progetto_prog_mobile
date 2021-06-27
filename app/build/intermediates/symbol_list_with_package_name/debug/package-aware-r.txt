@@ -1858,10 +1858,10 @@ id action_impLoseFragment_to_impMenuFragment
 id action_impMenuFragment_to_impGameFragment
 id action_impWinFragment_to_impGameFragment
 id action_impWinFragment_to_impMenuFragment
-id action_memGameFragment_to_memWinFragment
-id action_memMenuFragment_to_memGameFragment
-id action_memWinFragment_to_memGameFragment
+id action_memMenuFragment_to_memSingleGameFragment
+id action_memSingleGameFragment_to_memWinFragment
 id action_memWinFragment_to_memMenuFragment
+id action_memWinFragment_to_memSingleGameFragment
 id action_menu_divider
 id action_menu_presenter
 id action_mode_bar
@@ -2077,8 +2077,8 @@ id material_timepicker_ok_button
 id material_timepicker_view
 id material_value_index
 id media_actions
-id memGameFragment
 id memMenuFragment
+id memSingleGameFragment
 id memWinFragment
 id message
 id middle
@@ -2217,6 +2217,8 @@ id startHorizontal
 id startToEnd
 id startVertical
 id startbutton
+id startbuttonmulti
+id startbuttonsingle
 id staticLayout
 id staticPostLayout
 id status_bar_latest_event_content
@@ -2389,8 +2391,8 @@ layout fragment_imp_game
 layout fragment_imp_lose
 layout fragment_imp_menu
 layout fragment_imp_win
-layout fragment_mem_game
 layout fragment_mem_menu
+layout fragment_mem_single_game
 layout fragment_mem_win
 layout fragment_username_photo_selection
 layout grid_element
@@ -2547,7 +2549,8 @@ string fab_transformation_sheet_behavior
 string faq
 string first_fragment_label
 string gcm_defaultSenderId
-string gioca
+string giocaMulti
+string giocaSing
 string google_api_key
 string google_app_id
 string google_crash_reporting_api_key

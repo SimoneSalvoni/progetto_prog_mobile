@@ -9,6 +9,8 @@ import android.widget.Button
 import androidx.appcompat.app.AlertDialog
 import androidx.navigation.findNavController
 import com.example.italian_englishgames.R
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 
 
 class MemMenuFragment : Fragment() {
@@ -16,11 +18,13 @@ class MemMenuFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
         val inflater = inflater.inflate(R.layout.fragment_mem_menu, container, false)
-        val button: Button = inflater.findViewById<Button>(R.id.startbutton)
+        val buttonsingle: Button = inflater.findViewById<Button>(R.id.startbuttonsingle)
+        val buttonmulti: Button = inflater.findViewById(R.id.startbuttonmulti)
         val infoButton = inflater.findViewById<Button>(R.id.infoButtonMem)
+        val db = Firebase.firestore
 
-        button.setOnClickListener{
-            button.findNavController().navigate(R.id.action_memMenuFragment_to_memGameFragment)
+        buttonsingle.setOnClickListener{
+            buttonsingle.findNavController().navigate(R.id.action_memMenuFragment_to_memSingleGameFragment)
         }
 
         infoButton.setOnClickListener {

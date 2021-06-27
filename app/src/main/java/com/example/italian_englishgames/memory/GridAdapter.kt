@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.italian_englishgames.R
 
@@ -22,23 +23,24 @@ class GridAdapter(var context: Context, val dataSet: MutableList<MemCard>, val l
 
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
 
-        var word = dataSet.get(position).word
+        var word = dataSet[position].word
         /* Potrebbe essere superfluo
         viewHolder.back.setImageResource(R.drawable.cardback) */
-        viewHolder.front.text = word
-
+        viewHolder.front.text  = word
+        viewHolder.front.setBackgroundResource(R.color.blu)
+        viewHolder.front.visibility = View.INVISIBLE
     }
     override fun getItemCount() = dataSet.size
 
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view),
         View.OnClickListener{
-
-        var front = itemView.findViewById<TextView>(R.id.card_front)
+        var front = view.findViewById<TextView>(R.id.card_front)
         override fun onClick(v: View?) {
             val position = adapterPosition
             if (position != RecyclerView.NO_POSITION) {
                 listener.onItemClick(position)
             }
+            if (this.front.visibility==View.INVISIBLE) this.front.visibility=View.VISIBLE
         }
         init {
             view.setOnClickListener(this)

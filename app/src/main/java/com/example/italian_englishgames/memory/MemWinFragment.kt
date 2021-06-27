@@ -21,7 +21,7 @@ class MemWinFragment : Fragment() {
         val inflater = inflater.inflate(R.layout.fragment_mem_win, container, false)
         val retry = inflater.findViewById<Button>(R.id.retryButton)
         retry.setOnClickListener{
-            retry.findNavController().navigate(R.id.action_memWinFragment_to_memGameFragment)
+            retry.findNavController().navigate(R.id.action_memWinFragment_to_memSingleGameFragment)
         }
         val home = inflater.findViewById<Button>(R.id.goHomeButton)
         home.setOnClickListener{
