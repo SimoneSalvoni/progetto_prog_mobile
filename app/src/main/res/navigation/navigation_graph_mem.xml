@@ -11,8 +11,8 @@
         android:label="fragment_mem_menu"
         tools:layout="@layout/fragment_mem_menu" >
         <action
-            android:id="@+id/action_memMenuFragment_to_memSingleGameFragment"
-            app:destination="@id/memSingleGameFragment" />
+            android:id="@+id/action_memMenuFragment_to_memGameFragment"
+            app:destination="@id/memGameFragment" />
     </fragment>
     <fragment
         android:id="@+id/memWinFragment"
@@ -23,15 +23,15 @@
             android:id="@+id/action_memWinFragment_to_memMenuFragment"
             app:destination="@id/memMenuFragment" />
         <action
-            android:id="@+id/action_memWinFragment_to_memSingleGameFragment"
-            app:destination="@id/memSingleGameFragment" />
+            android:id="@+id/action_memWinFragment_to_memGameFragment"
+            app:destination="@id/memGameFragment" />
     </fragment>
     <fragment
-        android:id="@+id/memSingleGameFragment"
-        android:name="com.example.italian_englishgames.memory.MemSingleGameFragment"
-        android:label="MemSingleGameFragment" >
+        android:id="@+id/memGameFragment"
+        android:name="com.example.italian_englishgames.memory.MemGameFragment"
+        android:label="MemGameFragment" >
         <action
-            android:id="@+id/action_memSingleGameFragment_to_memWinFragment"
+            android:id="@+id/action_memGameFragment_to_memWinFragment"
             app:destination="@id/memWinFragment" />
     </fragment>
 </navigation>

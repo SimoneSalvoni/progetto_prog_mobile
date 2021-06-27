@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph_boggle"
+    app:startDestination="@id/boggleMenuFragment">
+
+    <fragment
+        android:id="@+id/boggleMenuFragment"
+        android:name="com.example.italian_englishgames.boggle.BoggleMenuFragment"
+        android:label="fragment_boggle_menu"
+        tools:layout="@layout/fragment_boggle_menu" >
+        <action
+            android:id="@+id/action_boggleMenuFragment_to_boggleGameFragment"
+            app:destination="@id/boggleGameFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/boggleGameFragment"
+        android:name="com.example.italian_englishgames.boggle.BoggleGameFragment"
+        android:label="fragment_boggle_game"
+        tools:layout="@layout/fragment_boggle_game" >
+        <action
+            android:id="@+id/action_boggleGameFragment_to_boggleWinFragment"
+            app:destination="@id/boggleWinFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/boggleWinFragment"
+        android:name="com.example.italian_englishgames.boggle.BoggleWinFragment"
+        android:label="fragment_boggle_win"
+        tools:layout="@layout/fragment_boggle_win" >
+        <action
+            android:id="@+id/action_boggleWinFragment_to_boggleGameFragment"
+            app:destination="@id/boggleGameFragment" />
+        <action
+            android:id="@+id/action_boggleWinFragment_to_boggleMenuFragment"
+            app:destination="@id/boggleMenuFragment" />
+    </fragment>
+</navigation>

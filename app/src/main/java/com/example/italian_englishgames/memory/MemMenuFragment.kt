@@ -19,12 +19,10 @@ class MemMenuFragment : Fragment() {
         // Inflate the layout for this fragment
         val inflater = inflater.inflate(R.layout.fragment_mem_menu, container, false)
         val buttonsingle: Button = inflater.findViewById<Button>(R.id.startbuttonsingle)
-        val buttonmulti: Button = inflater.findViewById(R.id.startbuttonmulti)
         val infoButton = inflater.findViewById<Button>(R.id.infoButtonMem)
-        val db = Firebase.firestore
 
         buttonsingle.setOnClickListener{
-            buttonsingle.findNavController().navigate(R.id.action_memMenuFragment_to_memSingleGameFragment)
+            buttonsingle.findNavController().navigate(R.id.action_memMenuFragment_to_memGameFragment)
         }
 
         infoButton.setOnClickListener {

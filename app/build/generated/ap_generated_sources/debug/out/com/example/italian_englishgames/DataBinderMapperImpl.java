@@ -38,7 +38,7 @@ public class DataBinderMapperImpl extends DataBinderMapper {
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.example.italian_englishgames.R.layout.activity_login, LAYOUT_ACTIVITYLOGIN);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.example.italian_englishgames.R.layout.fragment_first_registration, LAYOUT_FRAGMENTFIRSTREGISTRATION);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.example.italian_englishgames.R.layout.fragment_imp_game, LAYOUT_FRAGMENTIMPGAME);
-    INTERNAL_LAYOUT_ID_LOOKUP.put(com.example.italian_englishgames.R.layout.fragment_mem_single_game, LAYOUT_FRAGMENTMEMSINGLEGAME);
+    INTERNAL_LAYOUT_ID_LOOKUP.put(com.example.italian_englishgames.R.layout.fragment_mem_game, LAYOUT_FRAGMENTMEMSINGLEGAME);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.example.italian_englishgames.R.layout.fragment_username_photo_selection, LAYOUT_FRAGMENTUSERNAMEPHOTOSELECTION);
   }
 
@@ -142,7 +142,7 @@ public class DataBinderMapperImpl extends DataBinderMapper {
       sKeys.put("layout/activity_login_0", com.example.italian_englishgames.R.layout.activity_login);
       sKeys.put("layout/fragment_first_registration_0", com.example.italian_englishgames.R.layout.fragment_first_registration);
       sKeys.put("layout/fragment_imp_game_0", com.example.italian_englishgames.R.layout.fragment_imp_game);
-      sKeys.put("layout/fragment_mem_single_game_0", com.example.italian_englishgames.R.layout.fragment_mem_single_game);
+      sKeys.put("layout/fragment_mem_single_game_0", com.example.italian_englishgames.R.layout.fragment_mem_game);
       sKeys.put("layout/fragment_username_photo_selection_0", com.example.italian_englishgames.R.layout.fragment_username_photo_selection);
     }
   }
