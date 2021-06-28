@@ -22,7 +22,10 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" >
+<<<<<<< HEAD
         <activity android:name="com.example.italian_englishgames.auth.CompleteRegisterActivity" />
+=======
+>>>>>>> 8920ec3d3c6883c0060daf93ee9b330d56ee636d
         <activity android:name="com.example.italian_englishgames.boggle.BoggleActivity" />
         <activity
             android:name="com.example.italian_englishgames.auth.LoginActivity"

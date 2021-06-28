@@ -2371,7 +2371,10 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_boggle
+<<<<<<< HEAD
 layout activity_complete_register
+=======
+>>>>>>> 8920ec3d3c6883c0060daf93ee9b330d56ee636d
 layout activity_imp
 layout activity_login
 layout activity_main
