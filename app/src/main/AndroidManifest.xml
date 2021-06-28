@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
-        <activity android:name=".boggle.BoggleActivity"></activity>
+        <activity android:name=".auth.CompleteRegisterActivity"></activity>
+        <activity android:name=".boggle.BoggleActivity" />
         <activity
             android:name=".auth.LoginActivity"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />

@@ -38,11 +38,6 @@ class UsernamePhotoSelectionFragment : Fragment() {
     }
 
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
-
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val inflate=inflater.inflate(R.layout.fragment_username_photo_selection, container, false)
         auth = Firebase.auth

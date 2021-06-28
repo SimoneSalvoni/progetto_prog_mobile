@@ -9,8 +9,6 @@ import android.widget.Button
 import androidx.appcompat.app.AlertDialog
 import androidx.navigation.findNavController
 import com.example.italian_englishgames.R
-import com.google.firebase.firestore.ktx.firestore
-import com.google.firebase.ktx.Firebase
 
 
 class MemMenuFragment : Fragment() {

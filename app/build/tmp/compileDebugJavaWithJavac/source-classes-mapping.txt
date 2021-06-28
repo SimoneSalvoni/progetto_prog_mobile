@@ -1,3 +1,5 @@
+com/example/italian_englishgames/boggle/BoggleMenuFragmentDirections.java
+ com.example.italian_englishgames.boggle.BoggleMenuFragmentDirections
 com/example/italian_englishgames/impiccato/ImpMenuFragmentDirections.java
  com.example.italian_englishgames.impiccato.ImpMenuFragmentDirections
 com/example/italian_englishgames/impiccato/ImpLoseFragmentDirections.java
@@ -12,6 +14,8 @@ com/example/italian_englishgames/impiccato/ImpLoseFragmentArgs.java
  com.example.italian_englishgames.impiccato.ImpLoseFragmentArgs
  com.example.italian_englishgames.impiccato.ImpLoseFragmentArgs$1
  com.example.italian_englishgames.impiccato.ImpLoseFragmentArgs$Builder
+com/example/italian_englishgames/databinding/FragmentBoggleGameBinding.java
+ com.example.italian_englishgames.databinding.FragmentBoggleGameBinding
 com/example/italian_englishgames/databinding/FragmentUsernamePhotoSelectionBinding.java
  com.example.italian_englishgames.databinding.FragmentUsernamePhotoSelectionBinding
 com/example/italian_englishgames/DataBindingTriggerClass.java
@@ -28,10 +32,10 @@ com/example/italian_englishgames/BuildConfig.java
  com.example.italian_englishgames.BuildConfig
 com/example/italian_englishgames/databinding/FragmentImpMenuBinding.java
  com.example.italian_englishgames.databinding.FragmentImpMenuBinding
-com/example/italian_englishgames/memory/MemSingleGameFragmentDirections.java
- com.example.italian_englishgames.memory.MemSingleGameFragmentDirections
 com/example/italian_englishgames/databinding/NavHeaderBinding.java
  com.example.italian_englishgames.databinding.NavHeaderBinding
+com/example/italian_englishgames/boggle/BoggleWinFragmentDirections.java
+ com.example.italian_englishgames.boggle.BoggleWinFragmentDirections
 com/example/italian_englishgames/databinding/ActivityLoginBinding.java
  com.example.italian_englishgames.databinding.ActivityLoginBinding
 com/example/italian_englishgames/impiccato/ImpGameFragmentDirections.java
@@ -39,14 +43,22 @@ com/example/italian_englishgames/impiccato/ImpGameFragmentDirections.java
  com.example.italian_englishgames.impiccato.ImpGameFragmentDirections$1
  com.example.italian_englishgames.impiccato.ImpGameFragmentDirections$ActionImpGameFragmentToImpLoseFragment
  com.example.italian_englishgames.impiccato.ImpGameFragmentDirections$ActionImpGameFragmentToImpWinFragment
-com/example/italian_englishgames/databinding/FragmentMemSingleGameBinding.java
- com.example.italian_englishgames.databinding.FragmentMemSingleGameBinding
+com/example/italian_englishgames/databinding/ActivityBoggleBinding.java
+ com.example.italian_englishgames.databinding.ActivityBoggleBinding
+com/example/italian_englishgames/boggle/BoggleGameFragmentDirections.java
+ com.example.italian_englishgames.boggle.BoggleGameFragmentDirections
+com/example/italian_englishgames/databinding/FragmentBoggleMenuBinding.java
+ com.example.italian_englishgames.databinding.FragmentBoggleMenuBinding
 com/example/italian_englishgames/databinding/ActivityImpBinding.java
  com.example.italian_englishgames.databinding.ActivityImpBinding
 com/example/italian_englishgames/databinding/FragmentImpGameBinding.java
  com.example.italian_englishgames.databinding.FragmentImpGameBinding
 com/example/italian_englishgames/databinding/ActivityRegisterBinding.java
  com.example.italian_englishgames.databinding.ActivityRegisterBinding
+com/example/italian_englishgames/databinding/FragmentMemGameBinding.java
+ com.example.italian_englishgames.databinding.FragmentMemGameBinding
+com/example/italian_englishgames/databinding/FragmentBoggleWinBinding.java
+ com.example.italian_englishgames.databinding.FragmentBoggleWinBinding
 com/example/italian_englishgames/memory/MemMenuFragmentDirections.java
  com.example.italian_englishgames.memory.MemMenuFragmentDirections
 com/example/italian_englishgames/databinding/FragmentMemMenuBinding.java
@@ -61,7 +73,11 @@ com/example/italian_englishgames/databinding/FragmentImpLoseBinding.java
  com.example.italian_englishgames.databinding.FragmentImpLoseBinding
 com/example/italian_englishgames/auth/FirstRegistrationFragmentDirections.java
  com.example.italian_englishgames.auth.FirstRegistrationFragmentDirections
+com/example/italian_englishgames/databinding/ActivityCompleteRegisterBinding.java
+ com.example.italian_englishgames.databinding.ActivityCompleteRegisterBinding
 com/example/italian_englishgames/databinding/ActivityMainBinding.java
  com.example.italian_englishgames.databinding.ActivityMainBinding
+com/example/italian_englishgames/memory/MemGameFragmentDirections.java
+ com.example.italian_englishgames.memory.MemGameFragmentDirections
 com/example/italian_englishgames/databinding/GridElementBinding.java
  com.example.italian_englishgames.databinding.GridElementBinding

@@ -1,8 +1,11 @@
 package com.example.italian_englishgames
 
 
+import android.content.Context
 import android.content.Intent
-import android.media.Image
+import android.net.ConnectivityManager
+import android.net.Network
+import android.net.NetworkInfo
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
@@ -20,6 +23,7 @@ import com.google.firebase.ktx.Firebase
 class MainActivity : AppCompatActivity() {
 
     private lateinit var auth: FirebaseAuth
+    private lateinit var cm: ConnectivityManager
     private val loginRequest = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
         if (it.resultCode == RESULT_OK) {
             val currentUser= auth.currentUser
@@ -30,7 +34,7 @@ class MainActivity : AppCompatActivity() {
         }
         else{
             Toast.makeText(applicationContext, "C'è stato un errore nell'autenticazione, ritenta", Toast.LENGTH_LONG).show()
-            val intent = Intent(this, LoginActivity::class.java)
+           // val intent = Intent(this, LoginActivity::class.java)
             //loginRequest.launch(intent) problema di ricorsione, boh
         }
     }
@@ -40,6 +44,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         auth= Firebase.auth
+      //  cm = applicationContext.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        //val activeNetworks: NetworkInfo? = cm.activeNetworkInfo
+       // val activeNetworks: NetworkInfo? = cm.activeNetworkInfo
+      //  val isConnected: Boolean = activeNetworks?.isConnectedOrConnecting == true
 
         //setSupportActionBar(findViewById<Toolbar>(R.id.toolbar))
        // NavigationUI.setupActionBarWithNavController(this, view.find)
@@ -69,6 +77,7 @@ class MainActivity : AppCompatActivity() {
             val image = findViewById<ImageView>(R.id.userImgMain)
             username.text=currentUser.displayName
             image.setImageURI(currentUser.photoUrl)
+            print("prova")
         }
     }
 /*

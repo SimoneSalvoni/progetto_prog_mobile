@@ -1846,6 +1846,10 @@ id action_bar_root
 id action_bar_spinner
 id action_bar_subtitle
 id action_bar_title
+id action_boggleGameFragment_to_boggleWinFragment
+id action_boggleMenuFragment_to_boggleGameFragment
+id action_boggleWinFragment_to_boggleGameFragment
+id action_boggleWinFragment_to_boggleMenuFragment
 id action_container
 id action_context_bar
 id action_divider
@@ -1858,10 +1862,10 @@ id action_impLoseFragment_to_impMenuFragment
 id action_impMenuFragment_to_impGameFragment
 id action_impWinFragment_to_impGameFragment
 id action_impWinFragment_to_impMenuFragment
-id action_memMenuFragment_to_memSingleGameFragment
-id action_memSingleGameFragment_to_memWinFragment
+id action_memGameFragment_to_memWinFragment
+id action_memMenuFragment_to_memGameFragment
+id action_memWinFragment_to_memGameFragment
 id action_memWinFragment_to_memMenuFragment
-id action_memWinFragment_to_memSingleGameFragment
 id action_menu_divider
 id action_menu_presenter
 id action_mode_bar
@@ -1890,6 +1894,9 @@ id baseline
 id beginOnFirstDraw
 id beginning
 id blocking
+id boggleGameFragment
+id boggleMenuFragment
+id boggleWinFragment
 id bottom
 id bounce
 id browser_actions_header_text
@@ -2077,8 +2084,8 @@ id material_timepicker_ok_button
 id material_timepicker_view
 id material_value_index
 id media_actions
+id memGameFragment
 id memMenuFragment
-id memSingleGameFragment
 id memWinFragment
 id message
 id middle
@@ -2117,6 +2124,7 @@ id multiply
 id navHeader
 id nav_controller_view_tag
 id nav_host_fragment_container
+id navigation_graph_boggle
 id navigation_graph_imp
 id navigation_graph_mem
 id navigation_graph_reg
@@ -2217,7 +2225,6 @@ id startHorizontal
 id startToEnd
 id startVertical
 id startbutton
-id startbuttonmulti
 id startbuttonsingle
 id staticLayout
 id staticPostLayout
@@ -2363,6 +2370,8 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_boggle
+layout activity_complete_register
 layout activity_imp
 layout activity_login
 layout activity_main
@@ -2386,13 +2395,16 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
+layout fragment_boggle_game
+layout fragment_boggle_menu
+layout fragment_boggle_win
 layout fragment_first_registration
 layout fragment_imp_game
 layout fragment_imp_lose
 layout fragment_imp_menu
 layout fragment_imp_win
+layout fragment_mem_game
 layout fragment_mem_menu
-layout fragment_mem_single_game
 layout fragment_mem_win
 layout fragment_username_photo_selection
 layout grid_element
@@ -2478,6 +2490,7 @@ menu navdrawer_menu
 menu option_menu
 mipmap ic_launcher
 mipmap ic_launcher_round
+navigation navigation_graph_boggle
 navigation navigation_graph_imp
 navigation navigation_graph_mem
 navigation navigation_graph_reg
@@ -2549,8 +2562,7 @@ string fab_transformation_sheet_behavior
 string faq
 string first_fragment_label
 string gcm_defaultSenderId
-string giocaMulti
-string giocaSing
+string gioca
 string google_api_key
 string google_app_id
 string google_crash_reporting_api_key

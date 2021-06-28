@@ -1,5 +1,10 @@
 [
   {
+    "name": "navigation_graph_boggle",
+    "navigationXmlIds": [],
+    "deepLinks": []
+  },
+  {
     "name": "navigation_graph_imp",
     "navigationXmlIds": [],
     "deepLinks": []
