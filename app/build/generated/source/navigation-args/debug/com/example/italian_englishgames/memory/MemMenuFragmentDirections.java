@@ -10,7 +10,7 @@ public class MemMenuFragmentDirections {
   }
 
   @NonNull
-  public static NavDirections actionMemMenuFragmentToMemSingleGameFragment() {
-    return new ActionOnlyNavDirections(R.id.action_memMenuFragment_to_memSingleGameFragment);
+  public static NavDirections actionMemMenuFragmentToMemGameFragment() {
+    return new ActionOnlyNavDirections(R.id.action_memMenuFragment_to_memGameFragment);
   }
 }

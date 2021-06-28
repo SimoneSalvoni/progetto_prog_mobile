@@ -40,7 +40,6 @@ class GridAdapter(var context: Context, val dataSet: MutableList<MemCard>, val l
             if (position != RecyclerView.NO_POSITION) {
                 listener.onItemClick(position)
             }
-            if (this.front.visibility==View.INVISIBLE) this.front.visibility=View.VISIBLE
         }
         init {
             view.setOnClickListener(this)

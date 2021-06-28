@@ -24,7 +24,7 @@ class MemGameFragment : Fragment(), GridAdapter.OnItemClickListener {
 
     private var card1=MemCard()
     private lateinit var cardList: MutableList<MemCard>
-    private var pos1=0
+    private var pos1=999
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -70,6 +70,7 @@ class MemGameFragment : Fragment(), GridAdapter.OnItemClickListener {
                 cardview1.findViewById<TextView>(R.id.card_front).visibility = View.VISIBLE
                 //show ma bisogna mettere mano all'xml
             } else {
+                clickedItem.isBack = false
                 if (viewModel.check(card1, clickedItem)) {
                     viewModel.checkGameState()
                     //feedback positivo per aver preso la parola
@@ -83,6 +84,8 @@ class MemGameFragment : Fragment(), GridAdapter.OnItemClickListener {
                     //feedback negativo
                 }
                 card1.word = ""
+                card1.id = 999
+                pos1=999
             }
         } else {
             Snackbar.make(
