@@ -22,6 +22,8 @@ class CompleteRegisterActivity : AppCompatActivity() {
     private lateinit var imgUri: Uri
     private lateinit var btn: Button
     private lateinit var imgbtn: Button
+
+
     private val imgRequest = registerForActivityResult(ActivityResultContracts.OpenDocument()){
         if (it != null) {
             img.setImageURI(it)
@@ -33,10 +35,10 @@ class CompleteRegisterActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_complete_register)
         auth = Firebase.auth
-        username=findViewById(R.id.username)
-        img=findViewById(R.id.img)
-        btn=findViewById(R.id.btn)
-        imgbtn=findViewById(R.id.imgbtn)
+        username = findViewById(R.id.username)
+        img = findViewById(R.id.img)
+        btn = findViewById(R.id.btn)
+        imgbtn = findViewById(R.id.imgbtn)
 
 
         imgbtn.setOnClickListener {
@@ -44,14 +46,15 @@ class CompleteRegisterActivity : AppCompatActivity() {
         }
 
         btn.setOnClickListener {
-            val user = auth.currentUser
-            val profileUpdates = userProfileChangeRequest {
+            val currentUser = auth.currentUser
+            val userInfo = userProfileChangeRequest {
                 displayName = username.text.toString()
                 photoUri = imgUri
             }
-            user!!.updateProfile(profileUpdates)
-                .addOnCompleteListener { task ->
-                    if (task.isSuccessful) {
+
+            currentUser!!.updateProfile(userInfo)
+                .addOnCompleteListener{task->
+                    if(task.isSuccessful){
                         var intent = Intent(this, RegisterActivity::class.java)
                         setResult(RESULT_OK, intent)
                         finish()
@@ -59,7 +62,6 @@ class CompleteRegisterActivity : AppCompatActivity() {
                 }
         }
     }
-
 
     private fun checkEnableButton(hasFocus:Boolean){
         if(!hasFocus){

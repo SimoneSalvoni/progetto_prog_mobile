@@ -21,9 +21,10 @@ class BoggleViewModel(application: Application): AndroidViewModel(application) {
     private val options = arrayOf<Array<String>>()
     private val words = mapOf<Char,MutableList<String>>()
     val letters= arrayOf(String())
-    private val _foundWords = MutableLiveData<MutableList<String>>()
-    val foundWords: LiveData<MutableList<String>>
-    get()=_foundWords
+    private val foundWords = mutableListOf<String>()
+    private val _foundWordsText = MutableLiveData<String>("Parole trovate: ")
+    val foundWordsText: LiveData<String>
+    get()=_foundWordsText
     private val _points = MutableLiveData<Int>(0)
     val points: LiveData<Int>
     get()=_points
@@ -88,12 +89,16 @@ class BoggleViewModel(application: Application): AndroidViewModel(application) {
         }
     }
 
-    fun isPresent(word:String){
+    suspend fun isPresent(word:String): Boolean{
         val firstChar = word.subSequence(0,0)
-        val present = (words[firstChar]!!.contains(word))
+        var present = false
+        withContext(Dispatchers.Default){ present = (words[firstChar]!!.contains(word))}
         if (present){
             _points.value = _points.value?.plus(calcPoints(word))
-            _foundWords.value?.add(word)
+            foundWords.add(word)
+            if (_foundWordsText.value == "Parole trovate: ") _foundWordsText.value.plus(word)
+            else _foundWordsText.value.plus(", $word")
         }
+        return present
     }
 }

@@ -64,6 +64,12 @@ class RegisterActivity : AppCompatActivity() {
                         checkLoginError(errorCode)
                     }
                 }
+/*
+            val intent = Intent(this, CompleteRegisterActivity::class.java)
+            finishRegistrationRequest.launch(intent)
+
+ */
+
         }
     }
 

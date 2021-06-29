@@ -4,7 +4,6 @@ package com.example.italian_englishgames
 import android.content.Context
 import android.content.Intent
 import android.net.ConnectivityManager
-import android.net.Network
 import android.net.NetworkInfo
 import android.os.Bundle
 import android.widget.Button
@@ -13,12 +12,14 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+import com.bumptech.glide.Glide
 import com.example.italian_englishgames.auth.LoginActivity
 import com.example.italian_englishgames.impiccato.ImpActivity
 import com.example.italian_englishgames.memory.MemActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -29,8 +30,12 @@ class MainActivity : AppCompatActivity() {
             val currentUser= auth.currentUser
             val username = findViewById<TextView>(R.id.usernameMain)
             val image = findViewById<ImageView>(R.id.userImgMain)
-            username.text=currentUser!!.displayName
-            image.setImageURI(currentUser.photoUrl)
+
+            username.text = currentUser!!.displayName
+            Glide.with(this)
+                .load(currentUser.photoUrl)
+                .centerCrop()
+                .into(image)
         }
         else{
             Toast.makeText(applicationContext, "C'è stato un errore nell'autenticazione, ritenta", Toast.LENGTH_LONG).show()
@@ -44,10 +49,13 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         auth= Firebase.auth
-      //  cm = applicationContext.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
-        //val activeNetworks: NetworkInfo? = cm.activeNetworkInfo
-       // val activeNetworks: NetworkInfo? = cm.activeNetworkInfo
-      //  val isConnected: Boolean = activeNetworks?.isConnectedOrConnecting == true
+
+        cm = applicationContext.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        val activeNetworks: NetworkInfo? = cm.activeNetworkInfo
+        if(!activeNetworks?.isConnectedOrConnecting!!){
+            val intent = Intent(this, NoConnectionActivity::class.java)
+//RITORNACI
+        }
 
         //setSupportActionBar(findViewById<Toolbar>(R.id.toolbar))
        // NavigationUI.setupActionBarWithNavController(this, view.find)
@@ -75,9 +83,13 @@ class MainActivity : AppCompatActivity() {
             //PLACEHOLDER
             val username = findViewById<TextView>(R.id.usernameMain)
             val image = findViewById<ImageView>(R.id.userImgMain)
+
             username.text=currentUser.displayName
-            image.setImageURI(currentUser.photoUrl)
-            print("prova")
+            Glide.with(this)
+                .load(currentUser.photoUrl)
+                .centerCrop()
+                .into(image)
+
         }
     }
 /*

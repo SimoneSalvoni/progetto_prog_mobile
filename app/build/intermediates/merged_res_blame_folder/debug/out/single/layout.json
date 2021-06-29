@@ -1,130 +1,98 @@
 [
     {
-        "merged": "C:\\Users\\Fera\\Documents\\GitHub\\progetto_prog_mobile\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_first_registration.xml",
-        "source": "C:\\Users\\Fera\\Documents\\GitHub\\progetto_prog_mobile\\app\\src\\main\\res\\layouts\\auth\\layout\\fragment_first_registration.xml"
+        "merged": "C:\\Users\\ACER\\Desktop\\progetto P_mobile\\ItalianEnglishGames\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_mem_game.xml",
+        "source": "C:\\Users\\ACER\\Desktop\\progetto P_mobile\\ItalianEnglishGames\\app\\src\\main\\res\\layouts\\memory\\layout\\fragment_mem_game.xml"
     },
     {
-        "merged": "C:\\Users\\Fera\\Documents\\GitHub\\progetto_prog_mobile\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_login.xml",
-        "source": "C:\\Users\\Fera\\Documents\\GitHub\\progetto_prog_mobile\\app\\src\\main\\res\\layouts\\auth\\layout\\activity_login.xml"
-    },
-    {
-<<<<<<< HEAD
         "merged": "C:\\Users\\ACER\\Desktop\\progetto P_mobile\\ItalianEnglishGames\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_mem.xml",
         "source": "C:\\Users\\ACER\\Desktop\\progetto P_mobile\\ItalianEnglishGames\\app\\src\\main\\res\\layouts\\memory\\layout\\activity_mem.xml"
     },
     {
         "merged": "C:\\Users\\ACER\\Desktop\\progetto P_mobile\\ItalianEnglishGames\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_boggle_win.xml",
         "source": "C:\\Users\\ACER\\Desktop\\progetto P_mobile\\ItalianEnglishGames\\app\\src\\main\\res\\layouts\\boggle\\layout\\fragment_boggle_win.xml"
-=======
-        "merged": "C:\\Users\\Fera\\Documents\\GitHub\\progetto_prog_mobile\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_imp_lose.xml",
-        "source": "C:\\Users\\Fera\\Documents\\GitHub\\progetto_prog_mobile\\app\\src\\main\\res\\layouts\\impiccato\\layout\\fragment_imp_lose.xml"
     },
     {
-        "merged": "C:\\Users\\Fera\\Documents\\GitHub\\progetto_prog_mobile\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_main.xml",
-        "source": "C:\\Users\\Fera\\Documents\\GitHub\\progetto_prog_mobile\\app\\src\\main\\res\\layouts\\main\\layout\\activity_main.xml"
+        "merged": "C:\\Users\\ACER\\Desktop\\progetto P_mobile\\ItalianEnglishGames\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_imp_game.xml",
+        "source": "C:\\Users\\ACER\\Desktop\\progetto P_mobile\\ItalianEnglishGames\\app\\src\\main\\res\\layouts\\impiccato\\layout\\fragment_imp_game.xml"
     },
     {
-        "merged": "C:\\Users\\Fera\\Documents\\GitHub\\progetto_prog_mobile\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_imp_menu.xml",
-        "source": "C:\\Users\\Fera\\Documents\\GitHub\\progetto_prog_mobile\\app\\src\\main\\res\\layouts\\impiccato\\layout\\fragment_imp_menu.xml"
->>>>>>> 8920ec3d3c6883c0060daf93ee9b330d56ee636d
+        "merged": "C:\\Users\\ACER\\Desktop\\progetto P_mobile\\ItalianEnglishGames\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\toolbar.xml",
+        "source": "C:\\Users\\ACER\\Desktop\\progetto P_mobile\\ItalianEnglishGames\\app\\src\\main\\res\\layouts\\main\\layout\\toolbar.xml"
     },
     {
-        "merged": "C:\\Users\\Fera\\Documents\\GitHub\\progetto_prog_mobile\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_username_photo_selection.xml",
-        "source": "C:\\Users\\Fera\\Documents\\GitHub\\progetto_prog_mobile\\app\\src\\main\\res\\layouts\\auth\\layout\\fragment_username_photo_selection.xml"
+        "merged": "C:\\Users\\ACER\\Desktop\\progetto P_mobile\\ItalianEnglishGames\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_login.xml",
+        "source": "C:\\Users\\ACER\\Desktop\\progetto P_mobile\\ItalianEnglishGames\\app\\src\\main\\res\\layouts\\auth\\layout\\activity_login.xml"
     },
     {
-        "merged": "C:\\Users\\Fera\\Documents\\GitHub\\progetto_prog_mobile\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\toolbar.xml",
-        "source": "C:\\Users\\Fera\\Documents\\GitHub\\progetto_prog_mobile\\app\\src\\main\\res\\layouts\\main\\layout\\toolbar.xml"
-    },
-    {
-        "merged": "C:\\Users\\Fera\\Documents\\GitHub\\progetto_prog_mobile\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_imp.xml",
-        "source": "C:\\Users\\Fera\\Documents\\GitHub\\progetto_prog_mobile\\app\\src\\main\\res\\layouts\\impiccato\\layout\\activity_imp.xml"
-    },
-    {
-        "merged": "C:\\Users\\Fera\\Documents\\GitHub\\progetto_prog_mobile\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_boggle.xml",
-        "source": "C:\\Users\\Fera\\Documents\\GitHub\\progetto_prog_mobile\\app\\src\\main\\res\\layouts\\boggle\\layout\\activity_boggle.xml"
-    },
-    {
-        "merged": "C:\\Users\\Fera\\Documents\\GitHub\\progetto_prog_mobile\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_boggle_game.xml",
-        "source": "C:\\Users\\Fera\\Documents\\GitHub\\progetto_prog_mobile\\app\\src\\main\\res\\layouts\\boggle\\layout\\fragment_boggle_game.xml"
-    },
-    {
-<<<<<<< HEAD
         "merged": "C:\\Users\\ACER\\Desktop\\progetto P_mobile\\ItalianEnglishGames\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_boggle.xml",
         "source": "C:\\Users\\ACER\\Desktop\\progetto P_mobile\\ItalianEnglishGames\\app\\src\\main\\res\\layouts\\boggle\\layout\\activity_boggle.xml"
+    },
+    {
+        "merged": "C:\\Users\\ACER\\Desktop\\progetto P_mobile\\ItalianEnglishGames\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\grid_element.xml",
+        "source": "C:\\Users\\ACER\\Desktop\\progetto P_mobile\\ItalianEnglishGames\\app\\src\\main\\res\\layouts\\memory\\layout\\grid_element.xml"
+    },
+    {
+        "merged": "C:\\Users\\ACER\\Desktop\\progetto P_mobile\\ItalianEnglishGames\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_boggle_menu.xml",
+        "source": "C:\\Users\\ACER\\Desktop\\progetto P_mobile\\ItalianEnglishGames\\app\\src\\main\\res\\layouts\\boggle\\layout\\fragment_boggle_menu.xml"
+    },
+    {
+        "merged": "C:\\Users\\ACER\\Desktop\\progetto P_mobile\\ItalianEnglishGames\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_boggle_game.xml",
+        "source": "C:\\Users\\ACER\\Desktop\\progetto P_mobile\\ItalianEnglishGames\\app\\src\\main\\res\\layouts\\boggle\\layout\\fragment_boggle_game.xml"
+    },
+    {
+        "merged": "C:\\Users\\ACER\\Desktop\\progetto P_mobile\\ItalianEnglishGames\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_mem_win.xml",
+        "source": "C:\\Users\\ACER\\Desktop\\progetto P_mobile\\ItalianEnglishGames\\app\\src\\main\\res\\layouts\\memory\\layout\\fragment_mem_win.xml"
+    },
+    {
+        "merged": "C:\\Users\\ACER\\Desktop\\progetto P_mobile\\ItalianEnglishGames\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\imp_input_prompt.xml",
+        "source": "C:\\Users\\ACER\\Desktop\\progetto P_mobile\\ItalianEnglishGames\\app\\src\\main\\res\\layouts\\impiccato\\layout\\imp_input_prompt.xml"
+    },
+    {
+        "merged": "C:\\Users\\ACER\\Desktop\\progetto P_mobile\\ItalianEnglishGames\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_register.xml",
+        "source": "C:\\Users\\ACER\\Desktop\\progetto P_mobile\\ItalianEnglishGames\\app\\src\\main\\res\\layouts\\auth\\layout\\activity_register.xml"
+    },
+    {
+        "merged": "C:\\Users\\ACER\\Desktop\\progetto P_mobile\\ItalianEnglishGames\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_mem_menu.xml",
+        "source": "C:\\Users\\ACER\\Desktop\\progetto P_mobile\\ItalianEnglishGames\\app\\src\\main\\res\\layouts\\memory\\layout\\fragment_mem_menu.xml"
+    },
+    {
+        "merged": "C:\\Users\\ACER\\Desktop\\progetto P_mobile\\ItalianEnglishGames\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_imp.xml",
+        "source": "C:\\Users\\ACER\\Desktop\\progetto P_mobile\\ItalianEnglishGames\\app\\src\\main\\res\\layouts\\impiccato\\layout\\activity_imp.xml"
+    },
+    {
+        "merged": "C:\\Users\\ACER\\Desktop\\progetto P_mobile\\ItalianEnglishGames\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_username_photo_selection.xml",
+        "source": "C:\\Users\\ACER\\Desktop\\progetto P_mobile\\ItalianEnglishGames\\app\\src\\main\\res\\layouts\\auth\\layout\\fragment_username_photo_selection.xml"
     },
     {
         "merged": "C:\\Users\\ACER\\Desktop\\progetto P_mobile\\ItalianEnglishGames\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_complete_register.xml",
         "source": "C:\\Users\\ACER\\Desktop\\progetto P_mobile\\ItalianEnglishGames\\app\\src\\main\\res\\layouts\\auth\\layout\\activity_complete_register.xml"
     },
     {
-        "merged": "C:\\Users\\ACER\\Desktop\\progetto P_mobile\\ItalianEnglishGames\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\grid_element.xml",
-        "source": "C:\\Users\\ACER\\Desktop\\progetto P_mobile\\ItalianEnglishGames\\app\\src\\main\\res\\layouts\\memory\\layout\\grid_element.xml"
-=======
-        "merged": "C:\\Users\\Fera\\Documents\\GitHub\\progetto_prog_mobile\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\grid_element.xml",
-        "source": "C:\\Users\\Fera\\Documents\\GitHub\\progetto_prog_mobile\\app\\src\\main\\res\\layouts\\memory\\layout\\grid_element.xml"
->>>>>>> 8920ec3d3c6883c0060daf93ee9b330d56ee636d
-    },
-    {
-        "merged": "C:\\Users\\Fera\\Documents\\GitHub\\progetto_prog_mobile\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_mem_game.xml",
-        "source": "C:\\Users\\Fera\\Documents\\GitHub\\progetto_prog_mobile\\app\\src\\main\\res\\layouts\\memory\\layout\\fragment_mem_game.xml"
-    },
-    {
-<<<<<<< HEAD
-        "merged": "C:\\Users\\ACER\\Desktop\\progetto P_mobile\\ItalianEnglishGames\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_boggle_menu.xml",
-        "source": "C:\\Users\\ACER\\Desktop\\progetto P_mobile\\ItalianEnglishGames\\app\\src\\main\\res\\layouts\\boggle\\layout\\fragment_boggle_menu.xml"
+        "merged": "C:\\Users\\ACER\\Desktop\\progetto P_mobile\\ItalianEnglishGames\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_main.xml",
+        "source": "C:\\Users\\ACER\\Desktop\\progetto P_mobile\\ItalianEnglishGames\\app\\src\\main\\res\\layouts\\main\\layout\\activity_main.xml"
     },
     {
         "merged": "C:\\Users\\ACER\\Desktop\\progetto P_mobile\\ItalianEnglishGames\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_first_registration.xml",
         "source": "C:\\Users\\ACER\\Desktop\\progetto P_mobile\\ItalianEnglishGames\\app\\src\\main\\res\\layouts\\auth\\layout\\fragment_first_registration.xml"
-=======
-        "merged": "C:\\Users\\Fera\\Documents\\GitHub\\progetto_prog_mobile\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_register.xml",
-        "source": "C:\\Users\\Fera\\Documents\\GitHub\\progetto_prog_mobile\\app\\src\\main\\res\\layouts\\auth\\layout\\activity_register.xml"
->>>>>>> 8920ec3d3c6883c0060daf93ee9b330d56ee636d
     },
     {
-        "merged": "C:\\Users\\Fera\\Documents\\GitHub\\progetto_prog_mobile\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_boggle_menu.xml",
-        "source": "C:\\Users\\Fera\\Documents\\GitHub\\progetto_prog_mobile\\app\\src\\main\\res\\layouts\\boggle\\layout\\fragment_boggle_menu.xml"
-    },
-    {
-<<<<<<< HEAD
-        "merged": "C:\\Users\\ACER\\Desktop\\progetto P_mobile\\ItalianEnglishGames\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_boggle_game.xml",
-        "source": "C:\\Users\\ACER\\Desktop\\progetto P_mobile\\ItalianEnglishGames\\app\\src\\main\\res\\layouts\\boggle\\layout\\fragment_boggle_game.xml"
+        "merged": "C:\\Users\\ACER\\Desktop\\progetto P_mobile\\ItalianEnglishGames\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_imp_menu.xml",
+        "source": "C:\\Users\\ACER\\Desktop\\progetto P_mobile\\ItalianEnglishGames\\app\\src\\main\\res\\layouts\\impiccato\\layout\\fragment_imp_menu.xml"
     },
     {
         "merged": "C:\\Users\\ACER\\Desktop\\progetto P_mobile\\ItalianEnglishGames\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_imp_win.xml",
         "source": "C:\\Users\\ACER\\Desktop\\progetto P_mobile\\ItalianEnglishGames\\app\\src\\main\\res\\layouts\\impiccato\\layout\\fragment_imp_win.xml"
-=======
-        "merged": "C:\\Users\\Fera\\Documents\\GitHub\\progetto_prog_mobile\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_imp_game.xml",
-        "source": "C:\\Users\\Fera\\Documents\\GitHub\\progetto_prog_mobile\\app\\src\\main\\res\\layouts\\impiccato\\layout\\fragment_imp_game.xml"
->>>>>>> 8920ec3d3c6883c0060daf93ee9b330d56ee636d
     },
     {
-        "merged": "C:\\Users\\Fera\\Documents\\GitHub\\progetto_prog_mobile\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_mem_menu.xml",
-        "source": "C:\\Users\\Fera\\Documents\\GitHub\\progetto_prog_mobile\\app\\src\\main\\res\\layouts\\memory\\layout\\fragment_mem_menu.xml"
+        "merged": "C:\\Users\\ACER\\Desktop\\progetto P_mobile\\ItalianEnglishGames\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_no_connection.xml",
+        "source": "C:\\Users\\ACER\\Desktop\\progetto P_mobile\\ItalianEnglishGames\\app\\src\\main\\res\\layout\\activity_no_connection.xml"
     },
     {
-        "merged": "C:\\Users\\Fera\\Documents\\GitHub\\progetto_prog_mobile\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_mem.xml",
-        "source": "C:\\Users\\Fera\\Documents\\GitHub\\progetto_prog_mobile\\app\\src\\main\\res\\layouts\\memory\\layout\\activity_mem.xml"
+        "merged": "C:\\Users\\ACER\\Desktop\\progetto P_mobile\\ItalianEnglishGames\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\nav_header.xml",
+        "source": "C:\\Users\\ACER\\Desktop\\progetto P_mobile\\ItalianEnglishGames\\app\\src\\main\\res\\layouts\\main\\layout\\nav_header.xml"
     },
     {
-        "merged": "C:\\Users\\Fera\\Documents\\GitHub\\progetto_prog_mobile\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\nav_header.xml",
-        "source": "C:\\Users\\Fera\\Documents\\GitHub\\progetto_prog_mobile\\app\\src\\main\\res\\layouts\\main\\layout\\nav_header.xml"
-    },
-    {
-        "merged": "C:\\Users\\Fera\\Documents\\GitHub\\progetto_prog_mobile\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_mem_win.xml",
-        "source": "C:\\Users\\Fera\\Documents\\GitHub\\progetto_prog_mobile\\app\\src\\main\\res\\layouts\\memory\\layout\\fragment_mem_win.xml"
-    },
-    {
-        "merged": "C:\\Users\\Fera\\Documents\\GitHub\\progetto_prog_mobile\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\imp_input_prompt.xml",
-        "source": "C:\\Users\\Fera\\Documents\\GitHub\\progetto_prog_mobile\\app\\src\\main\\res\\layouts\\impiccato\\layout\\imp_input_prompt.xml"
-    },
-    {
-        "merged": "C:\\Users\\Fera\\Documents\\GitHub\\progetto_prog_mobile\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_boggle_win.xml",
-        "source": "C:\\Users\\Fera\\Documents\\GitHub\\progetto_prog_mobile\\app\\src\\main\\res\\layouts\\boggle\\layout\\fragment_boggle_win.xml"
-    },
-    {
-        "merged": "C:\\Users\\Fera\\Documents\\GitHub\\progetto_prog_mobile\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_imp_win.xml",
-        "source": "C:\\Users\\Fera\\Documents\\GitHub\\progetto_prog_mobile\\app\\src\\main\\res\\layouts\\impiccato\\layout\\fragment_imp_win.xml"
+        "merged": "C:\\Users\\ACER\\Desktop\\progetto P_mobile\\ItalianEnglishGames\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_imp_lose.xml",
+        "source": "C:\\Users\\ACER\\Desktop\\progetto P_mobile\\ItalianEnglishGames\\app\\src\\main\\res\\layouts\\impiccato\\layout\\fragment_imp_lose.xml"
     }
 ]

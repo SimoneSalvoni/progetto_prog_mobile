@@ -2011,6 +2011,7 @@ id generalErrorLogin
 id generalErrorReg
 id ghost_view
 id ghost_view_holder
+id glide_custom_view_target_tag
 id goHomeButton
 id gone
 id graph
@@ -2371,14 +2372,12 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_boggle
-<<<<<<< HEAD
 layout activity_complete_register
-=======
->>>>>>> 8920ec3d3c6883c0060daf93ee9b330d56ee636d
 layout activity_imp
 layout activity_login
 layout activity_main
 layout activity_mem
+layout activity_no_connection
 layout activity_register
 layout browser_actions_context_menu_page
 layout browser_actions_context_menu_row
