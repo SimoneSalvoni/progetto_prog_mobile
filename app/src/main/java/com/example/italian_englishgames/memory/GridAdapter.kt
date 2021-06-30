@@ -1,6 +1,7 @@
 package com.example.italian_englishgames.memory
 
 import android.content.Context
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -24,10 +25,8 @@ class GridAdapter(var context: Context, val dataSet: MutableList<MemCard>, val l
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
 
         var word = dataSet[position].word
-        /* Potrebbe essere superfluo
-        viewHolder.back.setImageResource(R.drawable.cardback) */
+        viewHolder.card.setBackgroundColor(Color.parseColor("#0189F4"))
         viewHolder.front.text  = word
-        viewHolder.front.setBackgroundResource(R.color.blu)
         viewHolder.front.visibility = View.INVISIBLE
     }
     override fun getItemCount() = dataSet.size
@@ -35,6 +34,7 @@ class GridAdapter(var context: Context, val dataSet: MutableList<MemCard>, val l
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view),
         View.OnClickListener{
         var front = view.findViewById<TextView>(R.id.card_front)
+        var card = view.findViewById<CardView>(R.id.cardView)
         override fun onClick(v: View?) {
             val position = adapterPosition
             if (position != RecyclerView.NO_POSITION) {

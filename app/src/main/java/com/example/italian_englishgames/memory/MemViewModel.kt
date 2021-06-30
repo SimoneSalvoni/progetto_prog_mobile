@@ -48,21 +48,14 @@ class MemViewModel(application: Application):AndroidViewModel(application) {
     }
 
     fun check(card1: MemCard, card2: MemCard): Boolean{
-        var index1 = 0
-        var index2 = 0
-        for (elem in _words.value!!){
-            if (elem.word == card1.word) index1= elem.id!!
-            if (elem.word == card2.word) index2= elem.id!!
-        }
-        if (index1!=index2) return false
+        if (card1.id != card2.id) return false
         else {
-            found_words[card1.id!!]=true
-            found_words[card2.id!!]=true //card 1 e card 2 però hanno lo stesso id che è i, come le 2 word prima, è inutile
+            found_words[words.value!!.indexOf(card1)]=true
+            found_words[words.value!!.indexOf(card2)]=true
             return true
         }
     }
 
-    //ret true se vittoria
     fun checkGameState(): Boolean{
         return (false !in found_words)
     }
