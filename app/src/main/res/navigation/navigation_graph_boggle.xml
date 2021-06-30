@@ -34,5 +34,11 @@
         <action
             android:id="@+id/action_boggleWinFragment_to_boggleMenuFragment"
             app:destination="@id/boggleMenuFragment" />
+        <argument
+            android:name="finalPoints"
+            app:argType="integer" />
+        <argument
+            android:name="finalFoundWordsList"
+            app:argType="string" />
     </fragment>
 </navigation>

@@ -5,56 +5,37 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.TextView
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.navArgs
 import com.example.italian_englishgames.R
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [BoggleWinFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class BoggleWinFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+
+    val args: BoggleWinFragmentArgs by navArgs()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_boggle_win, container, false)
+        val inflater = inflater.inflate(R.layout.fragment_boggle_win, container, false)
+        inflater.findViewById<TextView>(R.id.pointsBoggleWin).text=args.finalPoints.toString()
+        inflater.findViewById<TextView>(R.id.foundWordsBoggleWin).text=args.finalFoundWordsList
+        val retry = inflater.findViewById<Button>(R.id.retryButton)
+        retry.setOnClickListener {
+            retry.findNavController().navigate(R.id.action_boggleWinFragment_to_boggleGameFragment)
+        }
+        val home = inflater.findViewById<Button>(R.id.goHomeButton)
+        home.setOnClickListener{
+            home.findNavController().navigate(R.id.action_boggleWinFragment_to_boggleMenuFragment)
+        }
+        return inflater
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment BoggleWinFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            BoggleWinFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
-    }
 }

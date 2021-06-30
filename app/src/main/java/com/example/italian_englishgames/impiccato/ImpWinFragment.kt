@@ -16,10 +16,6 @@ class ImpWinFragment : Fragment() {
 
     val arg: ImpWinFragmentArgs by navArgs()
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
-
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
         val inflater = inflater.inflate(R.layout.fragment_imp_win, container, false)

@@ -14,6 +14,7 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
 import com.example.italian_englishgames.auth.LoginActivity
+import com.example.italian_englishgames.boggle.BoggleActivity
 import com.example.italian_englishgames.impiccato.ImpActivity
 import com.example.italian_englishgames.memory.MemActivity
 import com.google.firebase.auth.FirebaseAuth
@@ -49,13 +50,15 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         auth= Firebase.auth
-
+/*
+//RITORNACI SE ABBIAMO TEMPO
         cm = applicationContext.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
         val activeNetworks: NetworkInfo? = cm.activeNetworkInfo
         if(!activeNetworks?.isConnectedOrConnecting!!){
             val intent = Intent(this, NoConnectionActivity::class.java)
-//RITORNACI
         }
+
+ */
 
         //setSupportActionBar(findViewById<Toolbar>(R.id.toolbar))
        // NavigationUI.setupActionBarWithNavController(this, view.find)
@@ -67,6 +70,11 @@ class MainActivity : AppCompatActivity() {
         val buttonMem = findViewById<Button>(R.id.buttonMem)
         buttonMem.setOnClickListener {
             val intent = Intent (this, MemActivity::class.java)
+            startActivity(intent)
+        }
+        val buttonBoggle = findViewById<Button>(R.id.boggleBtn)
+        buttonBoggle.setOnClickListener {
+            val intent = Intent(this, BoggleActivity::class.java)
             startActivity(intent)
         }
     }
@@ -85,10 +93,13 @@ class MainActivity : AppCompatActivity() {
             val image = findViewById<ImageView>(R.id.userImgMain)
 
             username.text=currentUser.displayName
+            /*
             Glide.with(this)
                 .load(currentUser.photoUrl)
                 .centerCrop()
                 .into(image)
+
+             */
 
         }
     }
