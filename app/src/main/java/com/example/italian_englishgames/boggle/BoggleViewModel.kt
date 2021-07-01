@@ -22,13 +22,16 @@ class BoggleViewModel(application: Application): AndroidViewModel(application) {
     private var options: Array<Array<String>> = emptyArray()
     private var words: Map<String, MutableList<String>> = emptyMap()
     lateinit var letters: Array<String>
-    val foundWords = mutableListOf<String>()
+    private val foundWords = mutableListOf<String>()
+    private val _ready = MutableLiveData<Boolean>(false)
+    val ready: LiveData<Boolean>
+    get()=_ready
     private val _foundWordsText = MutableLiveData<String>("Parole trovate: ")
     val foundWordsText: LiveData<String>
-    get()=_foundWordsText
+        get() = _foundWordsText
     private val _points = MutableLiveData<Int>(0)
     val points: LiveData<Int>
-    get()=_points
+        get() = _points
 
     private fun initOptionsAndWords() {
         options = arrayOf(
@@ -79,47 +82,41 @@ class BoggleViewModel(application: Application): AndroidViewModel(application) {
         )
     }
 
-    private fun chooseLetters(){
-        letters = Array<String>(16) {
+    private fun chooseLetters() {
+        letters = Array(16) {
             options[it][Random.nextInt(0, 5)]
         }
     }
 
-    private suspend fun copyWordsFromFile(){
-        val isr = InputStreamReader (ctx.resources.openRawResource(R.raw.words))
+    private suspend fun copyWordsFromFile() {
+        val isr = InputStreamReader(ctx.resources.openRawResource(R.raw.words))
         val br = BufferedReader(isr)
-        var currLetter: Char = 'a'
-        var currWord=""
+        var currLetter = 'a'
+        var currWord = ""
         withContext(Dispatchers.IO) {
             for (i in 1..NUM_OF_WORDS) {
-                try {
-                    currWord = br.readLine()
-                    if (i==94059) {
-                        print("prova")
-                    }
-                    if (!currWord.startsWith(currLetter, ignoreCase = true))  currLetter++
-                    words[currLetter.toString()]!!.add(currWord)
-                }
-                catch(e:Exception){
-                    print(e.toString())
-                }
+                currWord = br.readLine()
+                if (!currWord.startsWith(currLetter, ignoreCase = true)) currLetter++
+                words[currLetter.toString()]!!.add(currWord.toLowerCase())
             }
+            _ready.postValue(true)
         }
     }
 
-    fun startGame(){
+
+    fun startGame() {
         initOptionsAndWords()
         chooseLetters()
-        viewModelScope.launch{
+        viewModelScope.launch {
             copyWordsFromFile()
         }
     }
 
-    private fun calcPoints(word:String): Int{
+    private fun calcPoints(word: String): Int {
         val wordLength = word.length
-        return if (wordLength<=4) 1
+        return if (wordLength <= 4) 1
         else {
-            when(wordLength){
+            when (wordLength) {
                 5 -> 2
                 6 -> 3
                 7 -> 5
@@ -128,16 +125,16 @@ class BoggleViewModel(application: Application): AndroidViewModel(application) {
         }
     }
 
-    suspend fun isPresent(word:String): Boolean{
-        val firstChar = word.subSequence(0,1).toString()
-        var present = false
-        withContext(Dispatchers.Default) { present = words[firstChar]!!.contains(word)}
-        if (present){
-            _points.value = _points.value?.plus(calcPoints(word))
+    fun isPresent(word: String): Boolean {
+        val firstChar = word.subSequence(0, 1).toString()
+        val present = words[firstChar]!!.contains(word)
+        if (present) {
+            _points.postValue(_points.value?.plus(calcPoints(word)))
             foundWords.add(word)
-            if (_foundWordsText.value == "Parole trovate: ") _foundWordsText.value=_foundWordsText.value.plus(word)
-            else _foundWordsText.value=_foundWordsText.value.plus(", $word")
+            if (_foundWordsText.value == "Parole trovate: ") _foundWordsText.postValue(_foundWordsText.value.plus(word))
+            else _foundWordsText.postValue(_foundWordsText.value.plus(", $word"))
         }
         return present
     }
+
 }

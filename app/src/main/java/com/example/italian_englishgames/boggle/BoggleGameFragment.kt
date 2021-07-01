@@ -1,5 +1,6 @@
 package com.example.italian_englishgames.boggle
 
+import android.opengl.Visibility
 import android.os.Bundle
 import android.os.CountDownTimer
 import androidx.fragment.app.Fragment
@@ -9,6 +10,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
+import androidx.core.view.isVisible
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.viewModels
 import androidx.gridlayout.widget.GridLayout
@@ -20,8 +22,10 @@ import androidx.navigation.fragment.findNavController
 import com.example.italian_englishgames.R
 import com.example.italian_englishgames.databinding.FragmentBoggleGameBinding
 import com.example.italian_englishgames.databinding.FragmentMemGameBinding
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import java.util.ArrayList
+import kotlinx.coroutines.withContext
+import java.util.*
 
 
 class BoggleGameFragment : Fragment() {
@@ -67,11 +71,9 @@ class BoggleGameFragment : Fragment() {
             }
         }
 
-        points.text = viewModel.points.value.toString()
-        foundWordsList.text = viewModel.foundWordsText.value
-
         checkBtn.setOnClickListener {
-            checkWord(word)
+            lifecycleScope.launch{checkWord(word)}
+            word=""
             for (i in 0..15) isChosen[i]=false
         }
         cancBtn.setOnClickListener {
@@ -80,20 +82,36 @@ class BoggleGameFragment : Fragment() {
             for (i in 0..15) isChosen[i]=false
         }
 
-        object : CountDownTimer(600000, 1000) {
+        viewModel.ready.observe(viewLifecycleOwner, androidx.lifecycle.Observer {
+            if (it) {
+                enableAll()
+                checkBtn.isEnabled = true
+                cancBtn.isEnabled = true
+                timeLeft.isVisible = true
+                points.isVisible = true
+                foundWordsList.isVisible = true
+                binding.textView3.isVisible = true
+                binding.tempo.isVisible = true
+                binding.loadingBoggle.isVisible = false
+                object : CountDownTimer(60000, 1000) {
 
-            override fun onTick(millisUntilFinished: Long) {
-                timeLeft.text= (millisUntilFinished/1000).toString()
+                    override fun onTick(millisUntilFinished: Long) {
+                        timeLeft.text = (millisUntilFinished / 1000).toString()
+                    }
+
+                    override fun onFinish() {
+                        val finalPoints = (binding.pointsBoggleGame.text as String).toInt()
+                        val finalFoundWordList = binding.foundWordsBoggle.text.toString()
+                        val action =
+                            BoggleGameFragmentDirections.actionBoggleGameFragmentToBoggleWinFragment(
+                                finalPoints,
+                                finalFoundWordList
+                            )
+                        requireView().findNavController().navigate(action)
+                    }
+                }.start()
             }
-
-            override fun onFinish() {
-                val finalPoints=(binding.pointsBoggleGame.text as String).toInt()
-                val finalFoundWordList = binding.foundWordsBoggle.text.toString()
-                val action = BoggleGameFragmentDirections.actionBoggleGameFragmentToBoggleWinFragment(finalPoints, finalFoundWordList)
-                requireView().findNavController().navigate(action)
-            }
-        }.start()
-
+        })
     }
 
     private fun setLetters(letters: Array<String>){
@@ -133,17 +151,16 @@ class BoggleGameFragment : Fragment() {
         }
     }
 
-    private fun checkWord(wordToCheck:String){
-        lifecycleScope.launch{
-            if (viewModel.isPresent(wordToCheck.toLowerCase())){
-                word=""
-                enableAll()
-            }
-            else {
-                Toast.makeText(requireContext(), "Parola non esistente", Toast.LENGTH_SHORT).show()
-                enableAll()
+   private suspend fun checkWord(wordToCheck:String){
+        withContext(Dispatchers.Default){
+            if (!viewModel.isPresent(wordToCheck.toLowerCase())){
+                requireActivity().runOnUiThread {
+                    Toast.makeText(requireContext(), "Parola non esistente", Toast.LENGTH_SHORT)
+                        .show()
+                }
             }
         }
+       enableAll()
     }
 
 }
