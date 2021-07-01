@@ -36,25 +36,27 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/imp00" />
 
-    <TextView
-        android:id="@+id/wrongChoice"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="176dp"
-        android:layout_marginTop="464dp"
-        android:text="@{impViewModel.wrongLettersString.toString()}"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/wrongChoice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="464dp"
+            android:text="@{impViewModel.wrongLettersString.toString()}"
+            android:textSize="22sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-        android:id="@+id/displayedText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="176dp"
-        android:layout_marginTop="516dp"
-        android:text="@{impViewModel.shownWord.toString()}"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+            android:id="@+id/displayedText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="204dp"
+            android:layout_marginTop="516dp"
+            android:text="@{impViewModel.shownWord.toString()}"
+            android:textSize="22sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <Button
             android:id="@+id/guessText"

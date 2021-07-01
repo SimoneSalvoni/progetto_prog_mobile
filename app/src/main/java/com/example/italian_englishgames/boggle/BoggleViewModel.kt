@@ -14,13 +14,13 @@ import java.io.InputStreamReader
 import java.lang.Exception
 import kotlin.random.Random
 
-private const val NUM_OF_WORDS = 466414
+private const val NUM_OF_WORDS = 466405
 
 class BoggleViewModel(application: Application): AndroidViewModel(application) {
 
     private val ctx = getApplication<Application>().applicationContext
     private var options: Array<Array<String>> = emptyArray()
-    private var words: Map<Char, MutableList<String>> = emptyMap()
+    private var words: Map<String, MutableList<String>> = emptyMap()
     lateinit var letters: Array<String>
     val foundWords = mutableListOf<String>()
     private val _foundWordsText = MutableLiveData<String>("Parole trovate: ")
@@ -50,32 +50,32 @@ class BoggleViewModel(application: Application): AndroidViewModel(application) {
             arrayOf("P", "A", "C", "E", "M", "D")
         )
         words = mapOf(
-            'a' to mutableListOf(),
-            'b' to mutableListOf(),
-            'c' to mutableListOf(),
-            'd' to mutableListOf(),
-            'e' to mutableListOf(),
-            'f' to mutableListOf(),
-            'g' to mutableListOf(),
-            'h' to mutableListOf(),
-            'i' to mutableListOf(),
-            'j' to mutableListOf(),
-            'k' to mutableListOf(),
-            'l' to mutableListOf(),
-            'm' to mutableListOf(),
-            'n' to mutableListOf(),
-            'p' to mutableListOf(),
-            'o' to mutableListOf(),
-            'q' to mutableListOf(),
-            'r' to mutableListOf(),
-            's' to mutableListOf(),
-            't' to mutableListOf(),
-            'u' to mutableListOf(),
-            'v' to mutableListOf(),
-            'w' to mutableListOf(),
-            'x' to mutableListOf(),
-            'y' to mutableListOf(),
-            'z' to mutableListOf(),
+            "a" to mutableListOf(),
+            "b" to mutableListOf(),
+            "c" to mutableListOf(),
+            "d" to mutableListOf(),
+            "e" to mutableListOf(),
+            "f" to mutableListOf(),
+            "g" to mutableListOf(),
+            "h" to mutableListOf(),
+            "i" to mutableListOf(),
+            "j" to mutableListOf(),
+            "k" to mutableListOf(),
+            "l" to mutableListOf(),
+            "m" to mutableListOf(),
+            "n" to mutableListOf(),
+            "o" to mutableListOf(),
+            "p" to mutableListOf(),
+            "q" to mutableListOf(),
+            "r" to mutableListOf(),
+            "s" to mutableListOf(),
+            "t" to mutableListOf(),
+            "u" to mutableListOf(),
+            "v" to mutableListOf(),
+            "w" to mutableListOf(),
+            "x" to mutableListOf(),
+            "y" to mutableListOf(),
+            "z" to mutableListOf(),
         )
     }
 
@@ -98,7 +98,7 @@ class BoggleViewModel(application: Application): AndroidViewModel(application) {
                         print("prova")
                     }
                     if (!currWord.startsWith(currLetter, ignoreCase = true))  currLetter++
-                    words[currLetter]!!.add(currWord)
+                    words[currLetter.toString()]!!.add(currWord)
                 }
                 catch(e:Exception){
                     print(e.toString())
@@ -129,7 +129,7 @@ class BoggleViewModel(application: Application): AndroidViewModel(application) {
     }
 
     suspend fun isPresent(word:String): Boolean{
-        val firstChar = word.subSequence(0,1)
+        val firstChar = word.subSequence(0,1).toString()
         var present = false
         withContext(Dispatchers.Default) { present = words[firstChar]!!.contains(word)}
         if (present){

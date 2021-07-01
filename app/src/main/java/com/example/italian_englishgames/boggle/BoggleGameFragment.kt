@@ -80,7 +80,7 @@ class BoggleGameFragment : Fragment() {
             for (i in 0..15) isChosen[i]=false
         }
 
-        object : CountDownTimer(60000, 1000) {
+        object : CountDownTimer(600000, 1000) {
 
             override fun onTick(millisUntilFinished: Long) {
                 timeLeft.text= (millisUntilFinished/1000).toString()
@@ -133,10 +133,11 @@ class BoggleGameFragment : Fragment() {
         }
     }
 
-    private fun checkWord(word:String){
+    private fun checkWord(wordToCheck:String){
         lifecycleScope.launch{
-            if (viewModel.isPresent(word.toLowerCase())){
-                //per ora niente, poi si vedrà
+            if (viewModel.isPresent(wordToCheck.toLowerCase())){
+                word=""
+                enableAll()
             }
             else {
                 Toast.makeText(requireContext(), "Parola non esistente", Toast.LENGTH_SHORT).show()
