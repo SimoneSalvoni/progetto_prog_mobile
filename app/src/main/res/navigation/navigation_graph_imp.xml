@@ -12,7 +12,8 @@
         tools:layout="@layout/fragment_imp_menu">
         <action
             android:id="@+id/action_impMenuFragment_to_impGameFragment"
-            app:destination="@id/impGameFragment" />
+            app:destination="@id/impGameFragment"
+            app:popUpTo="@id/impMenuFragment" />
     </fragment>
     <fragment
         android:id="@+id/impGameFragment"
@@ -21,10 +22,12 @@
         tools:layout="@layout/fragment_imp_game" >
         <action
             android:id="@+id/action_impGameFragment_to_impWinFragment"
-            app:destination="@id/impWinFragment" />
+            app:destination="@id/impWinFragment"
+            app:popUpTo="@id/impMenuFragment" />
         <action
             android:id="@+id/action_impGameFragment_to_impLoseFragment"
-            app:destination="@id/impLoseFragment" />
+            app:destination="@id/impLoseFragment"
+            app:popUpTo="@id/impMenuFragment" />
     </fragment>
     <fragment
         android:id="@+id/impLoseFragment"
@@ -33,10 +36,12 @@
         tools:layout="@layout/fragment_imp_lose" >
         <action
             android:id="@+id/action_impLoseFragment_to_impGameFragment"
-            app:destination="@id/impGameFragment" />
+            app:destination="@id/impGameFragment"
+            app:popUpTo="@id/impMenuFragment" />
         <action
             android:id="@+id/action_impLoseFragment_to_impMenuFragment"
-            app:destination="@id/impMenuFragment" />
+            app:destination="@id/impMenuFragment"
+            app:popUpTo="@id/impMenuFragment" />
         <argument
             android:name="word"
             app:argType="string" />
@@ -48,10 +53,12 @@
         tools:layout="@layout/fragment_imp_win" >
         <action
             android:id="@+id/action_impWinFragment_to_impGameFragment"
-            app:destination="@id/impGameFragment" />
+            app:destination="@id/impGameFragment"
+            app:popUpTo="@id/impMenuFragment" />
         <action
             android:id="@+id/action_impWinFragment_to_impMenuFragment"
-            app:destination="@id/impMenuFragment" />
+            app:destination="@id/impMenuFragment"
+            app:popUpTo="@id/impMenuFragment" />
         <argument
             android:name="word"
             app:argType="string" />

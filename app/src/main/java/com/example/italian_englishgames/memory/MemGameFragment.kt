@@ -57,6 +57,7 @@ class MemGameFragment : Fragment(), GridAdapter.OnItemClickListener {
         binding.gameTable.adapter = adapter
         binding.gameTable.layoutManager = GridLayoutManager(requireContext(), 4)
         binding.gameTable.setHasFixedSize(true)
+        binding.viewTimer.start()
         /* animazioni, serve prendere il context
         front_anim = AnimatorInflater.loadAnimator(applicationContext,R.animator.front_animator)
                 as AnimatorSet
@@ -103,8 +104,7 @@ class MemGameFragment : Fragment(), GridAdapter.OnItemClickListener {
             .setBackgroundColor(Color.GREEN)
         cardview2.findViewById<CardView>(R.id.cardView)
             .setBackgroundColor(Color.GREEN)
-
-        Handler(Looper.getMainLooper()).postDelayed({ checkWin() },500)
+        checkWin()
     }
 
     private fun wrongChoice(cardview1:View, cardview2:View){
@@ -120,10 +120,14 @@ class MemGameFragment : Fragment(), GridAdapter.OnItemClickListener {
 
     private fun checkWin() {
         if (viewModel.checkGameState()) {
-            val action = MemGameFragmentDirections.actionMemGameFragmentToMemWinFragment()
+            val time = binding.viewTimer.text.toString()
+            val action = MemGameFragmentDirections.actionMemGameFragmentToMemWinFragment(time)
             requireView().findNavController().navigate(action)
         }
     }
+
+
+
 }
 
 /*fun backToFront(){

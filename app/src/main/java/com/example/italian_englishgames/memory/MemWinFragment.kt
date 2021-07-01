@@ -8,10 +8,14 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.navArgs
 import com.example.italian_englishgames.R
+import com.example.italian_englishgames.impiccato.ImpWinFragmentArgs
 
 
 class MemWinFragment : Fragment() {
+
+    private val arg: MemWinFragmentArgs by navArgs()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,6 +23,7 @@ class MemWinFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val inflater = inflater.inflate(R.layout.fragment_mem_win, container, false)
+        inflater.findViewById<TextView>(R.id.timer).text=arg.time
         val retry = inflater.findViewById<Button>(R.id.retryButton)
         retry.setOnClickListener{
             retry.findNavController().navigate(R.id.action_memWinFragment_to_memGameFragment)

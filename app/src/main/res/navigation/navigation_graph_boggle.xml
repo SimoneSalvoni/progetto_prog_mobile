@@ -12,7 +12,8 @@
         tools:layout="@layout/fragment_boggle_menu" >
         <action
             android:id="@+id/action_boggleMenuFragment_to_boggleGameFragment"
-            app:destination="@id/boggleGameFragment" />
+            app:destination="@id/boggleGameFragment"
+            app:popUpTo="@id/boggleMenuFragment" />
     </fragment>
     <fragment
         android:id="@+id/boggleGameFragment"
@@ -21,7 +22,8 @@
         tools:layout="@layout/fragment_boggle_game" >
         <action
             android:id="@+id/action_boggleGameFragment_to_boggleWinFragment"
-            app:destination="@id/boggleWinFragment" />
+            app:destination="@id/boggleWinFragment"
+            app:popUpTo="@id/boggleMenuFragment" />
     </fragment>
     <fragment
         android:id="@+id/boggleWinFragment"
@@ -30,10 +32,12 @@
         tools:layout="@layout/fragment_boggle_win" >
         <action
             android:id="@+id/action_boggleWinFragment_to_boggleGameFragment"
-            app:destination="@id/boggleGameFragment" />
+            app:destination="@id/boggleGameFragment"
+            app:popUpTo="@id/boggleMenuFragment" />
         <action
             android:id="@+id/action_boggleWinFragment_to_boggleMenuFragment"
-            app:destination="@id/boggleMenuFragment" />
+            app:destination="@id/boggleMenuFragment"
+            app:popUpTo="@id/boggleMenuFragment" />
         <argument
             android:name="finalPoints"
             app:argType="integer" />

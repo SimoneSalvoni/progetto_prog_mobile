@@ -14,7 +14,7 @@ import com.example.italian_englishgames.R
 
 class ImpWinFragment : Fragment() {
 
-    val arg: ImpWinFragmentArgs by navArgs()
+    private val arg: ImpWinFragmentArgs by navArgs()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment

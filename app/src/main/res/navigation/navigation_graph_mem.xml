@@ -12,7 +12,15 @@
         tools:layout="@layout/fragment_mem_menu" >
         <action
             android:id="@+id/action_memMenuFragment_to_memGameFragment"
-            app:destination="@id/memGameFragment" />
+            app:destination="@id/memGameFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@id/memMenuFragment" />
+        <argument
+            android:name="time"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/memWinFragment"
@@ -21,10 +29,23 @@
         tools:layout="@layout/fragment_mem_win" >
         <action
             android:id="@+id/action_memWinFragment_to_memMenuFragment"
-            app:destination="@id/memMenuFragment" />
+            app:destination="@id/memMenuFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@id/memMenuFragment" />
         <action
             android:id="@+id/action_memWinFragment_to_memGameFragment"
-            app:destination="@id/memGameFragment" />
+            app:destination="@id/memGameFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@id/memMenuFragment" />
+        <argument
+            android:name="time"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/memGameFragment"
@@ -32,6 +53,11 @@
         android:label="MemGameFragment" >
         <action
             android:id="@+id/action_memGameFragment_to_memWinFragment"
-            app:destination="@id/memWinFragment" />
+            app:destination="@id/memWinFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@id/memMenuFragment" />
     </fragment>
 </navigation>
