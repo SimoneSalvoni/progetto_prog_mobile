@@ -15,7 +15,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:cardBackgroundColor="#0189F4">
+        tools:cardBackgroundColor="#fdd835">
 
         <TextView
             android:id="@+id/card_front"

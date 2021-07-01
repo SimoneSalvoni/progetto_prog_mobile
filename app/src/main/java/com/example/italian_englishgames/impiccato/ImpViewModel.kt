@@ -58,7 +58,7 @@ class ImpViewModel(application: Application): AndroidViewModel(application) {
         for (element in pos)  arr[element] = letter
         _shownWord.value = String(arr)
         chosenLetters.add(letter)
-        if (_shownWord==_chosenWord) _gameState.value=State.WIN
+        if (_shownWord.value==_chosenWord.value) _gameState.value=State.WIN
     }
 
     private fun letterIsNotPresent(letter:Char) {

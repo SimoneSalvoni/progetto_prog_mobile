@@ -25,14 +25,15 @@ class GridAdapter(var context: Context, val dataSet: MutableList<MemCard>, val l
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
 
         var word = dataSet[position].word
-        viewHolder.card.setBackgroundColor(Color.parseColor("#0189F4"))
-        viewHolder.front.text  = word
+        viewHolder.card.setBackgroundColor(Color.parseColor("#fdd835"))
+        viewHolder.front.text = word
         viewHolder.front.visibility = View.INVISIBLE
     }
+
     override fun getItemCount() = dataSet.size
 
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view),
-        View.OnClickListener{
+        View.OnClickListener {
         var front = view.findViewById<TextView>(R.id.card_front)
         var card = view.findViewById<CardView>(R.id.cardView)
         override fun onClick(v: View?) {
@@ -41,17 +42,14 @@ class GridAdapter(var context: Context, val dataSet: MutableList<MemCard>, val l
                 listener.onItemClick(position)
             }
         }
+
         init {
             view.setOnClickListener(this)
         }
     }
 
-    interface OnItemClickListener{
+    interface OnItemClickListener {
         fun onItemClick(position: Int)
-    }
-
-    fun getItem(position: Int): MemCard{
-        return dataSet[position]
     }
 }
 

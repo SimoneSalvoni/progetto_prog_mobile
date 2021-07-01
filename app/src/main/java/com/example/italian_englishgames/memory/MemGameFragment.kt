@@ -111,8 +111,8 @@ class MemGameFragment : Fragment(), GridAdapter.OnItemClickListener {
         cardview1.findViewById<CardView>(R.id.cardView).setBackgroundColor(Color.RED)
         cardview2.findViewById<CardView>(R.id.cardView).setBackgroundColor(Color.RED)
         Handler(Looper.getMainLooper()).postDelayed({
-            cardview1.findViewById<CardView>(R.id.cardView).setBackgroundColor(Color.parseColor("#0189F4"))
-            cardview2.findViewById<CardView>(R.id.cardView).setBackgroundColor(Color.parseColor("#0189F4"))
+            cardview1.findViewById<CardView>(R.id.cardView).setBackgroundColor(Color.parseColor("#fdd835"))
+            cardview2.findViewById<CardView>(R.id.cardView).setBackgroundColor(Color.parseColor("#fdd835"))
             cardview1.findViewById<TextView>(R.id.card_front).visibility = View.INVISIBLE
             cardview2.findViewById<TextView>(R.id.card_front).visibility = View.INVISIBLE },500)
 
