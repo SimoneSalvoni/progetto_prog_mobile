@@ -20,12 +20,15 @@ import com.example.italian_englishgames.memory.MemActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.ktx.storage
 
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var auth: FirebaseAuth
-    private lateinit var cm: ConnectivityManager
+    //private lateinit var cm: ConnectivityManager
+    private lateinit var storage: FirebaseStorage
     private val loginRequest = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
         if (it.resultCode == RESULT_OK) {
             val currentUser= auth.currentUser
@@ -33,10 +36,17 @@ class MainActivity : AppCompatActivity() {
             val image = findViewById<ImageView>(R.id.userImgMain)
 
             username.text = currentUser!!.displayName
-            Glide.with(this)
-                .load(currentUser.photoUrl)
-                .centerCrop()
-                .into(image)
+            val storageRef = storage.reference
+            val imageRef = storageRef.child(currentUser.uid)
+            val maxSize: Long = 1024*1024*20
+            imageRef.getBytes(maxSize).addOnSuccessListener {
+                Glide.with(this)
+                    .asBitmap()
+                    .load(it)
+                    .centerCrop()
+                    .into(image)
+                   // .placeholder(R.drawable.)
+            }
         }
         else{
             Toast.makeText(applicationContext, "C'è stato un errore nell'autenticazione, ritenta", Toast.LENGTH_LONG).show()
@@ -50,6 +60,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         auth= Firebase.auth
+        storage=Firebase.storage
 /*
 //RITORNACI SE ABBIAMO TEMPO
         cm = applicationContext.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
@@ -91,15 +102,19 @@ class MainActivity : AppCompatActivity() {
             //PLACEHOLDER
             val username = findViewById<TextView>(R.id.usernameMain)
             val image = findViewById<ImageView>(R.id.userImgMain)
+            val storageRef = storage.reference
+            val imageRef = storageRef.child(currentUser.uid)
+            val maxSize: Long = 1024*1024*20
 
             username.text=currentUser.displayName
-            /*
-            Glide.with(this)
-                .load(currentUser.photoUrl)
-                .centerCrop()
-                .into(image)
-
-             */
+            imageRef.getBytes(maxSize).addOnSuccessListener {
+                Glide.with(this)
+                    .asBitmap()
+                    .load(it)
+                    .centerCrop()
+                    .into(image)
+                // .placeholder(R.drawable.)
+            }
 
         }
     }
