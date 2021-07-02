@@ -16,11 +16,11 @@ class MemMenuFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
         val inflater = inflater.inflate(R.layout.fragment_mem_menu, container, false)
-        val buttonsingle: Button = inflater.findViewById<Button>(R.id.startbuttonsingle)
+        val button: Button = inflater.findViewById<Button>(R.id.startbutton)
         val infoButton = inflater.findViewById<Button>(R.id.infoButtonMem)
 
-        buttonsingle.setOnClickListener{
-            buttonsingle.findNavController().navigate(R.id.action_memMenuFragment_to_memGameFragment)
+        button.setOnClickListener{
+            button.findNavController().navigate(R.id.action_memMenuFragment_to_memGameFragment)
         }
 
         infoButton.setOnClickListener {

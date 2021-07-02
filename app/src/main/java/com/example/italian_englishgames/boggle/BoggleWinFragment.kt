@@ -10,15 +10,20 @@ import android.widget.TextView
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.italian_englishgames.R
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
+import org.w3c.dom.Text
 
 
 class BoggleWinFragment : Fragment() {
 
-    val args: BoggleWinFragmentArgs by navArgs()
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
+    private val args: BoggleWinFragmentArgs by navArgs()
+    private lateinit var db: FirebaseFirestore
+    private lateinit var auth: FirebaseAuth
+    private lateinit var newRecordText: TextView
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -35,7 +40,27 @@ class BoggleWinFragment : Fragment() {
         home.setOnClickListener{
             home.findNavController().navigate(R.id.action_boggleWinFragment_to_boggleMenuFragment)
         }
+
+        db= Firebase.firestore
+        auth=Firebase.auth
+        newRecordText = inflater.findViewById(R.id.newRecordBoggle)
         return inflater
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val currentUser = auth.currentUser
+        db.collection("userRecords").document(currentUser!!.uid)
+            .get().addOnCompleteListener{
+                if(it.isSuccessful) {
+                    val document = it.result
+                    val record: Int? = document!!.get("boggleMaxPoints", Int::class.java)
+                    if(args.finalPoints > record!!) {
+                        newRecordText.text="NUOVO RECORD!"
+                        db.collection("userRecords")
+                            .document(currentUser.uid).update("boggleMaxPoints", args.finalPoints)
+                    }
+                }
+            }
+    }
 }

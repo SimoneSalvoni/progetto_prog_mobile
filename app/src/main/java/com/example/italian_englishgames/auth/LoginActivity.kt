@@ -2,10 +2,11 @@ package com.example.italian_englishgames.auth
 
 import android.content.Intent
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
-import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import com.example.italian_englishgames.MainActivity
@@ -27,7 +28,7 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var passwordErr:TextView
     private lateinit var otherErr:TextView
 
-    val registerRequest = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
+    private val registerRequest = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
         if (it.resultCode == RESULT_OK) {
             val intent = Intent(this, MainActivity::class.java)
             setResult(RESULT_OK, intent)
@@ -38,6 +39,12 @@ class LoginActivity : AppCompatActivity() {
             setResult(RESULT_CANCELED, intent)
             finish()
         }
+    }
+
+    private val textWatcher = object : TextWatcher {
+        override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
+        override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {checkEnableButton()}
+        override fun afterTextChanged(s: Editable) {}
     }
 
         override fun onCreate(savedInstanceState: Bundle?) {
@@ -53,8 +60,8 @@ class LoginActivity : AppCompatActivity() {
             passwordErr = findViewById(R.id.errorEmailLogin)
             otherErr = findViewById(R.id.generalErrorLogin)
 
-            email.setOnFocusChangeListener { _, hasFocus -> checkEnableButton(hasFocus) }
-            password.setOnFocusChangeListener { _, hasFocus -> checkEnableButton(hasFocus) }
+            email.addTextChangedListener(textWatcher)
+            password.addTextChangedListener(textWatcher)
             newAccountBtn.setOnClickListener {
                 intent = Intent(this, RegisterActivity::class.java)
                 registerRequest.launch(intent)
@@ -75,9 +82,7 @@ class LoginActivity : AppCompatActivity() {
             }
         }
 
-    private fun checkEnableButton(hasFocus:Boolean){
-            if( (password.text.toString()!="")&&(email.text.toString()!="") ) loginBtn.isEnabled = true
-    }
+    private fun checkEnableButton(){ loginBtn.isEnabled = (password.text.toString()!="")&&(email.text.toString()!="") }
 
     private fun checkLoginError(errorCode: String){
         emailErr.text=""

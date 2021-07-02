@@ -104,7 +104,7 @@ class ImpGameFragment : Fragment() {
         }
     }
 
-    fun checkGameState(){
+    private fun checkGameState(){
         when(viewModel.gameState.value){
             ImpViewModel.State.WIN -> {
                 val word = viewModel.chosenWord.value

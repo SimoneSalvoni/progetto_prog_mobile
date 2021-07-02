@@ -2,6 +2,8 @@ package com.example.italian_englishgames.auth
 
 import android.content.Intent
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
@@ -38,6 +40,12 @@ class RegisterActivity : AppCompatActivity() {
         }
     }
 
+    private val textWatcher = object : TextWatcher {
+        override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
+        override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {checkEnableButton()}
+        override fun afterTextChanged(s: Editable) {}
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
@@ -51,6 +59,8 @@ class RegisterActivity : AppCompatActivity() {
 
         email.setOnFocusChangeListener {_,_ -> checkEnableButton()}
         password.setOnFocusChangeListener {_,_ -> checkEnableButton()}
+        email.addTextChangedListener (textWatcher)
+        password.addTextChangedListener(textWatcher)
         regBtn.setOnClickListener {
             auth.createUserWithEmailAndPassword(email.text.toString(), password.text.toString())
                 .addOnCompleteListener(this){ task->
@@ -73,9 +83,7 @@ class RegisterActivity : AppCompatActivity() {
         }
     }
 
-    private fun checkEnableButton(){
-        if( (password.text.toString()!="")&&(email.text.toString()!="") ) regBtn.isEnabled = true
-    }
+    private fun checkEnableButton() { regBtn.isEnabled = (password.text.toString()!="")&&(email.text.toString()!="") }
 
     private fun checkLoginError(errorCode: String){
         emailErr.text=""

@@ -17,85 +17,158 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/azzurro"
+        android:background="#344955"
         android:fitsSystemWindows="true">
 
-
-        <com.google.android.material.appbar.AppBarLayout
-            android:id="@+id/appBarLayout"
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/topAppBar"
+            style="@style/Widget.MaterialComponents.ActionBar.Primary"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layout_constraintStart_toEndOf="parent"
+            android:layout_height="?attr/actionBarSize"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:fitsSystemWindows="true">
+            app:navigationIcon="@drawable/ic_hamburger"
+            app:title="@string/app_name" />
 
-            <androidx.appcompat.widget.Toolbar
-                android:id="@+id/topAppBar"
-                style="@style/Widget.MaterialComponents.ActionBar.Primary"
-                android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                app:navigationIcon="@drawable/ic_hamburger"
-                app:title="@string/app_name" />
+        <Button
+            android:id="@+id/buttonImp"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="80dp"
+            android:backgroundTint="#F9AA33"
+            android:text="@string/impiccato"
+            android:textSize="22sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
-            <Button
-                android:id="@+id/buttonImp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="136dp"
-                android:layout_marginTop="297dp"
-                android:backgroundTint="@color/rosa"
-                android:text="@string/impiccato" />
+        <Button
+            android:id="@+id/buttonMem"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:backgroundTint="#F9AA33"
+            android:text="@string/memory"
+            android:textSize="22sp"
+            app:layout_constraintBottom_toTopOf="@+id/boggleBtn"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/buttonImp" />
 
-            <Button
-                android:id="@+id/buttonMem"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="136dp"
-                android:layout_marginTop="20dp"
-                android:backgroundTint="@color/rosa"
-                android:text="Memory"/>
-            <Button
-                android:id="@+id/boggleBtn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="136dp"
-                android:layout_marginTop="27dp"
-                android:text="Boggle"/>
+        <Button
+            android:id="@+id/boggleBtn"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginBottom="80dp"
+            android:backgroundTint="#F9AA33"
+            android:text="@string/boggle"
+            android:textSize="22sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
-            <TextView
-                android:id="@+id/usernameMain"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="183dp"
-                android:layout_marginTop="191dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="76dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/topAppBar"
+            app:srcCompat="@drawable/italia" />
 
-            <ImageView
-                android:id="@+id/userImgMain"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="136dp"
-                android:layout_marginBottom="100dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:srcCompat="@drawable/ic_launcher_foreground" />
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="76dp"
+            android:layout_marginEnd="40dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/topAppBar"
+            app:srcCompat="@drawable/bandiera_inglese_png_6" />
 
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:rotation="-50"
+            android:text="Casa"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/imageView2"
+            app:layout_constraintEnd_toStartOf="@+id/imageView2" />
 
-        </com.google.android.material.appbar.AppBarLayout>
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:rotation="50"
+            android:text="House"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/imageView3"
+            app:layout_constraintEnd_toEndOf="parent" />
 
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="87dp"
+            android:layout_marginEnd="10dp"
+            android:text="Indovina le parole!"
+            android:textSize="22sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="87dp"
+            android:text="Trovane più che puoi!"
+            android:textSize="22sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:text="Trova le coppie!"
+            android:textSize="22sp"
+            app:layout_constraintBottom_toTopOf="@+id/textView12"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView11" />
+
+        <TextView
+            android:id="@+id/textView14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="132dp"
+            android:rotation="-150"
+            android:text="Ciao"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@+id/imageView2"
+            app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="132dp"
+            android:rotation="150"
+            android:text="Hello"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="@+id/imageView3"
+            app:layout_constraintTop_toBottomOf="@+id/imageView3" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/nav_view"
-        android:layout_gravity="start"
         android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
         app:headerLayout="@layout/drawer_header"
-        app:menu="@menu/navdrawer_menu"
-        android:layout_height="match_parent">
-    </com.google.android.material.navigation.NavigationView>
+        app:menu="@menu/navdrawer_menu" />
 
 </androidx.drawerlayout.widget.DrawerLayout>

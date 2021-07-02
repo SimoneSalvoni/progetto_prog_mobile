@@ -31,6 +31,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var storage: FirebaseStorage
     private val loginRequest = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
         if (it.resultCode == RESULT_OK) {
+            /*
             val currentUser= auth.currentUser
             val username = findViewById<TextView>(R.id.usernameMain)
             val image = findViewById<ImageView>(R.id.userImgMain)
@@ -46,13 +47,19 @@ class MainActivity : AppCompatActivity() {
                     .centerCrop()
                     .into(image)
                    // .placeholder(R.drawable.)
+
+
             }
+
+             */
         }
         else{
             Toast.makeText(applicationContext, "C'è stato un errore nell'autenticazione, ritenta", Toast.LENGTH_LONG).show()
            // val intent = Intent(this, LoginActivity::class.java)
             //loginRequest.launch(intent) problema di ricorsione, boh
         }
+
+
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -99,6 +106,7 @@ class MainActivity : AppCompatActivity() {
             loginRequest.launch(intent)
         }
         else{
+            /*
             //PLACEHOLDER
             val username = findViewById<TextView>(R.id.usernameMain)
             val image = findViewById<ImageView>(R.id.userImgMain)
@@ -116,6 +124,8 @@ class MainActivity : AppCompatActivity() {
                 // .placeholder(R.drawable.)
             }
 
+
+             */
         }
     }
 /*
