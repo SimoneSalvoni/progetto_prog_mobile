@@ -12,4 +12,6 @@
     <color name="blu">#27538C</color>
     <color name="rosa">#F27052</color>
     <color name="rosa_scuro">#D93D3D</color>
+    <color name="main_blue">#344955</color>
+    <color name="main_yellow">#F9AA33</color>
 </resources>

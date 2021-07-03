@@ -2,33 +2,30 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.italian_englishgames">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
+        android:enabled="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:enabled="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
-        <activity android:name=".NoConnectionActivity"></activity>
+        android:theme="@style/ourStyle">
+        <activity android:name=".ContattiActivity"></activity>
+        <activity android:name=".ProfileActivity" />
+        <activity android:name=".NoConnectionActivity" />
         <activity android:name=".auth.CompleteRegisterActivity" />
         <activity android:name=".boggle.BoggleActivity" />
-        <activity
-            android:name=".auth.LoginActivity"
-            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
-        <activity
-            android:name=".auth.RegisterActivity"
-            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
-        <activity
-            android:name=".memory.MemActivity"
-            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
-        <activity
-            android:name=".impiccato.ImpActivity"
-            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
+        <activity android:name=".auth.LoginActivity"/>
+        <activity android:name=".auth.RegisterActivity" />
+        <activity android:name=".memory.MemActivity"/>
+        <activity android:name=".impiccato.ImpActivity"/>
         <activity
             android:name=".MainActivity"
-            android:label="@string/title_activity_imp_main"
-            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
+            android:theme="@style/ourStyle">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -37,7 +34,4 @@
         </activity>
     </application>
 
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 </manifest>

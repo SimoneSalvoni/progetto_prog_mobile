@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".boggle.BoggleMenuFragment"
-    android:background="#344955">
+    tools:context=".boggle.BoggleMenuFragment">
 
 
     <Button
@@ -16,7 +15,6 @@
         android:layout_marginBottom="100dp"
         android:backgroundTint="#F9AA33"
         android:text="@string/gioca"
-        android:textColor="@color/blu_scuro"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -27,11 +25,11 @@
         android:layout_width="109dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="68dp"
+        android:layout_marginTop="24dp"
         android:backgroundTint="@color/blu"
         android:text="@string/info_game"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/menuToolbar" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -66,5 +64,17 @@
         android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/imageView"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/menuToolbar"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:background="@color/main_blue"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="?homeAsUpIndicator"
+        app:title="@string/boggle_min" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

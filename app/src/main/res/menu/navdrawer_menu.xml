@@ -1,20 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android">
-
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/profileFragment"
+        android:id="@+id/profileOption"
         android:title="@string/profilo" />
+    <!--
     <item
         android:id="@+id/contattiFragment"
         android:title="@string/contatti" />
+        -->
     <item
-        android:id="@+id/faqFragment"
-        android:title="@string/faq" />
+        android:id="@+id/contattiOption"
+        android:title="@string/contatti" />
     <item
-        android:id="@+id/impostazioniFragment"
-        android:title="@string/impostazioni" />
-    <item
-        android:id="@+id/logoutFragment"
+        android:id="@+id/logoutOption"
         android:title="@string/logout" />
 </menu>

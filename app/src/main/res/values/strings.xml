@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">Italian-English Games</string>
-    <string name="title_activity_imp_main">ImpMain</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
@@ -13,11 +12,13 @@
     <string name="profilo">Profilo</string>
     <string name="contatti">Contatti</string>
     <string name="impostazioni">Impostazioni</string>
-    <string name="faq">FAQ</string>
     <string name="logout">Logout</string>
     <string name="impiccato">IMPICCATO</string>
+    <string name="impiccato_min">Impiccato</string>
     <string name="memory">MEMORY</string>
+    <string name="memory_min">Memory</string>
     <string name="boggle">BOGGLE</string>
+    <string name="boggle_min">Boggle</string>
     <string name="about">about</string>
     <string name="info_imp_short">Indovina la parola inglese che verrà selezionata casualmente ad ogni partita! Quanto è ampio il
     tuo vocabolario?</string>
