@@ -41,8 +41,8 @@ class BoggleWinFragment : Fragment() {
             home.findNavController().navigate(R.id.action_boggleWinFragment_to_boggleMenuFragment)
         }
 
-        db= Firebase.firestore
-        auth=Firebase.auth
+        db = Firebase.firestore
+        auth = Firebase.auth
         newRecordText = inflater.findViewById(R.id.newRecordBoggle)
         return inflater
     }

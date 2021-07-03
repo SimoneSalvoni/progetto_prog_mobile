@@ -12,7 +12,7 @@ army;esercito
 around;attorno
 arrange;organizzare
 arrangement;accordo
-arrest;arrest
+arrest;arrestare
 awareness;consapevolezza
 awful;terribile
 baby;bebè
@@ -56,7 +56,7 @@ chicken;gallina
 chief;capo
 child;bambino
 childhood;infanzia
-Chinese;cinese
+chinese;cinese
 chocolate;ciccolata
 choice;scelta
 cold;freddo
@@ -75,7 +75,7 @@ control;controllo
 cover;coprire
 coverage;copertura
 cow;mucca
-crack;apertura
+crack;spaccatura
 crash;scontro
 crazy;pazzo
 customer;cliente
@@ -171,14 +171,14 @@ letter;lettera
 level;livello
 liberal;liberale
 library;libreria
-license;licensa
+license;licenza
 lie;mentire
 life;vita
 lifestyle;stile di vita
 mainly;principalmente
 maintain;mantenere
-maintenance;mantenimento
-majority;maggioranza;
+maintenance;manutenzione
+majority;maggioranza
 make;fare
 maker;produttore
 makeup;trucco
@@ -211,7 +211,7 @@ root;radice
 rope;corda
 rose;rosa
 same;stesso
-sample;esempio
+sample;campione
 sanction;sanzione
 sand;sabbia
 satellite;satellite
@@ -236,7 +236,7 @@ smell;annusare
 smile;sorriso
 special;speciale
 stay;restare
-steady;saldo
+steady;stabile
 steal;rubare
 steel;acciaio
 step;passo

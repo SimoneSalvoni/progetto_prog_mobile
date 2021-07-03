@@ -101,15 +101,15 @@ class MemGameFragment : Fragment(), GridAdapter.OnItemClickListener {
 
     private fun rightChoice(cardview1:View, cardview2:View){
         cardview1.findViewById<CardView>(R.id.cardView)
-            .setBackgroundColor(Color.GREEN)
+            .setBackgroundColor(Color.parseColor("#00c853"))
         cardview2.findViewById<CardView>(R.id.cardView)
-            .setBackgroundColor(Color.GREEN)
+            .setBackgroundColor(Color.parseColor("#00c853"))
         checkWin()
     }
 
     private fun wrongChoice(cardview1:View, cardview2:View){
-        cardview1.findViewById<CardView>(R.id.cardView).setBackgroundColor(Color.RED)
-        cardview2.findViewById<CardView>(R.id.cardView).setBackgroundColor(Color.RED)
+        cardview1.findViewById<CardView>(R.id.cardView).setBackgroundColor(Color.parseColor("#ef1c19"))
+        cardview2.findViewById<CardView>(R.id.cardView).setBackgroundColor(Color.parseColor("#ef1c19"))
         Handler(Looper.getMainLooper()).postDelayed({
             cardview1.findViewById<CardView>(R.id.cardView).setBackgroundColor(Color.parseColor("#fdd835"))
             cardview2.findViewById<CardView>(R.id.cardView).setBackgroundColor(Color.parseColor("#fdd835"))
