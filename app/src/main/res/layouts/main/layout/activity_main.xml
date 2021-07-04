@@ -35,37 +35,43 @@
             android:id="@+id/buttonImp"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="80dp"
             android:backgroundTint="#F9AA33"
             android:text="@string/impiccato"
             android:textSize="22sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.582" />
 
         <Button
             android:id="@+id/buttonMem"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:backgroundTint="#F9AA33"
             android:text="@string/memory"
             android:textSize="22sp"
             app:layout_constraintBottom_toTopOf="@+id/boggleBtn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/buttonImp" />
+            app:layout_constraintTop_toBottomOf="@+id/buttonImp"
+            app:layout_constraintVertical_bias="0.496" />
 
         <Button
             android:id="@+id/boggleBtn"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginBottom="80dp"
             android:backgroundTint="#F9AA33"
             android:text="@string/boggle"
             android:textSize="22sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/buttonImp"
+            app:layout_constraintVertical_bias="0.835" />
 
         <ImageView
             android:id="@+id/imageView2"
@@ -111,34 +117,40 @@
             android:id="@+id/textView11"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="87dp"
-            android:layout_marginEnd="10dp"
             android:text="Indovina le parole!"
             android:textSize="22sp"
+            app:layout_constraintBottom_toBottomOf="@+id/buttonImp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+            app:layout_constraintHorizontal_bias="0.126"
+            app:layout_constraintStart_toEndOf="@+id/buttonImp"
+            app:layout_constraintTop_toTopOf="@+id/buttonImp"
+            app:layout_constraintVertical_bias="0.55" />
 
         <TextView
             android:id="@+id/textView12"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="10dp"
-            android:layout_marginBottom="87dp"
             android:text="Trovane più che puoi!"
             android:textSize="22sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintBottom_toBottomOf="@+id/boggleBtn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.242"
+            app:layout_constraintStart_toEndOf="@+id/boggleBtn"
+            app:layout_constraintTop_toTopOf="@+id/boggleBtn"
+            app:layout_constraintVertical_bias="0.6" />
 
         <TextView
             android:id="@+id/textView13"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="10dp"
             android:text="Trova le coppie!"
             android:textSize="22sp"
-            app:layout_constraintBottom_toTopOf="@+id/textView12"
+            app:layout_constraintBottom_toBottomOf="@+id/buttonMem"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView11" />
+            app:layout_constraintHorizontal_bias="0.091"
+            app:layout_constraintStart_toEndOf="@+id/buttonMem"
+            app:layout_constraintTop_toTopOf="@+id/buttonMem"
+            app:layout_constraintVertical_bias="0.55" />
 
         <TextView
             android:id="@+id/textView14"

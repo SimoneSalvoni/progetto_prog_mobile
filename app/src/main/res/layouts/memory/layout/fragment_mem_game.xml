@@ -50,4 +50,3 @@
             app:navigationIcon="@drawable/abc_vector_test" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
-
