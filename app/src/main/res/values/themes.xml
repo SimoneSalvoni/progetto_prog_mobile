@@ -23,7 +23,7 @@
 
 
     <style name="ourStyle" parent="Theme.AppCompat.DayNight.NoActionBar">
-        <item name="backgroundColor">@color/white</item>
+        <item name="background">@color/white</item>
         <item name="android:textColor">@color/black</item>
         <item name="colorPrimary">@color/main_blue</item>
         <item name="colorSecondary">@color/main_yellow</item>

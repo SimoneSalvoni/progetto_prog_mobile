@@ -1,18 +1,20 @@
 package com.example.italian_englishgames
 
+import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.appcompat.widget.Toolbar
+import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.auth.ktx.userProfileChangeRequest
@@ -45,23 +47,27 @@ class ModifyProfileFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val Layout = inflater.inflate(R.layout.fragment_modify_profile, container, false)
+        val toolbar: Toolbar = Layout.findViewById(R.id.mainToolbar)
+        toolbar.setNavigationOnClickListener {
+            startActivity(Intent(requireActivity(), MainActivity::class.java))
+        }
         return  Layout
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val currentUser= auth.currentUser
-        val username = findViewById<TextView>(R.id.userName)
-        image = findViewById<ImageView>(R.id.imageView)
-        val password = findViewById<EditText>(R.id.editPassword)
-        val email = findViewById<EditText>(R.id.editEmail)
-        val confPass = findViewById<EditText>(R.id.confirmPassword)
-        val fab = findViewById<FloatingActionButton>(R.id.saveEdit)
-        val button = findViewById<FloatingActionButton>(R.id.editImage)
+        val username = view.findViewById<TextView>(R.id.userName)
+        image = view.findViewById(R.id.imageView)
+        val password = view.findViewById<EditText>(R.id.editPassword)
+        val email = view.findViewById<EditText>(R.id.editEmail)
+        val confPass = view.findViewById<EditText>(R.id.confirmPassword)
+        val fab = view.findViewById<FloatingActionButton>(R.id.saveEdit)
+        val button = view.findViewById<FloatingActionButton>(R.id.editImage)
 
 
         username.text = currentUser!!.displayName
-        email.text = currentUser.email
+        email.setText(currentUser.email)
         val storageRef = storage.reference
         val imageRef = storageRef.child(currentUser.uid)
         val maxSize: Long = 1024*1024*20
@@ -77,22 +83,26 @@ class ModifyProfileFragment : Fragment() {
         }
 
         fab.setOnClickListener{
-            currentUser.updateEmail(email.text)
+            currentUser.updateEmail(email.text.toString())
             val profileUpdates = userProfileChangeRequest {
                 displayName = username.text.toString()
                 if(imgUri != null)photoUri = imgUri
             }
             currentUser.updateProfile(profileUpdates)
 
-            if(password.text != "" || password.text==confPass.text){
-                currentUser.updatePassword(password.text)
+            if(password.text.toString() != "" || password.text==confPass.text){
+                currentUser.updatePassword(password.text.toString())
             }
             else{
+                /*
                 Snackbar.make(
                     Layout,
                     "Password non corrispondente!",
                     Snackbar.LENGTH_SHORT
                 )
+                    .show()
+                 */
+                Toast.makeText(requireContext(), "Password non corrispondete!", Toast.LENGTH_SHORT)
                     .show()
             }
         }

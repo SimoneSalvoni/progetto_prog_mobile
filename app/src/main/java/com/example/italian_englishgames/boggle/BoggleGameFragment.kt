@@ -93,7 +93,7 @@ class BoggleGameFragment : Fragment() {
                 binding.textView3.isVisible = true
                 binding.tempo.isVisible = true
                 binding.loadingBoggle.isVisible = false
-                object : CountDownTimer(10000, 1000) {
+                object : CountDownTimer(60000, 1000) {
 
                     override fun onTick(millisUntilFinished: Long) {
                         timeLeft.text = (millisUntilFinished / 1000).toString()
