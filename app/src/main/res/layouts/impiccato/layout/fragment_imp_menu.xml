@@ -15,7 +15,6 @@
         android:layout_marginBottom="100dp"
         android:backgroundTint="@color/main_yellow"
         android:text="@string/gioca"
-        android:textColor="@color/blu_scuro"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"

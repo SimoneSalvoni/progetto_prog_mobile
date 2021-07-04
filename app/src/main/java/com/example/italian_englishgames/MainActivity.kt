@@ -57,8 +57,6 @@ class MainActivity : AppCompatActivity() {
         }
         else{
             Toast.makeText(applicationContext, "C'è stato un errore nell'autenticazione, ritenta", Toast.LENGTH_LONG).show()
-           // val intent = Intent(this, LoginActivity::class.java)
-            //loginRequest.launch(intent) problema di ricorsione, boh
         }
 
 

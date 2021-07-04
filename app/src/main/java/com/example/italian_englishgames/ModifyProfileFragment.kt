@@ -13,6 +13,7 @@ import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
 import com.bumptech.glide.Glide
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.auth.FirebaseAuth
@@ -90,8 +91,11 @@ class ModifyProfileFragment : Fragment() {
             }
             currentUser.updateProfile(profileUpdates)
 
-            if(password.text.toString() != "" || password.text==confPass.text){
+            if(password.text.toString() == "" && confPass.text.toString()=="")
+                fab.findNavController().navigate(R.id.action_modifyProfileFragment_to_profileFragment)
+            else if(password.text==confPass.text){
                 currentUser.updatePassword(password.text.toString())
+                fab.findNavController().navigate(R.id.action_modifyProfileFragment_to_profileFragment)
             }
             else{
                 /*
