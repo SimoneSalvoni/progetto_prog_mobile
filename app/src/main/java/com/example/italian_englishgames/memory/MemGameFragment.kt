@@ -1,5 +1,6 @@
 package com.example.italian_englishgames.memory
 
+import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.os.Handler
@@ -8,12 +9,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.appcompat.widget.Toolbar
 import androidx.cardview.widget.CardView
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
+import com.example.italian_englishgames.MainActivity
 import com.example.italian_englishgames.R
 import com.example.italian_englishgames.databinding.FragmentMemGameBinding
 import com.google.android.material.snackbar.Snackbar
@@ -41,7 +44,11 @@ class MemGameFragment : Fragment(), GridAdapter.OnItemClickListener {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_mem_game, container, false)
         if (savedInstanceState != null){
             binding.viewTimer.base = savedInstanceState.getLong("time")
-            horizontal = !horizontal
+            horizontal = !savedInstanceState.getBoolean("horizontal")
+        }
+        val toolbar: Toolbar = binding.mainToolbar
+        toolbar.setNavigationOnClickListener {
+            toolbar.findNavController().navigate(R.id.action_memGameFragment_to_memMenuFragment)
         }
         return binding.root
 
@@ -69,6 +76,7 @@ class MemGameFragment : Fragment(), GridAdapter.OnItemClickListener {
     override fun onSaveInstanceState(outState: Bundle) {
         binding.viewTimer.stop()
         outState.putLong("time", binding.viewTimer.base)
+        outState.putBoolean("horizontal", horizontal)
         super.onSaveInstanceState(outState)
     }
 

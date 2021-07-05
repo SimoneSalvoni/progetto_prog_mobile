@@ -1,14 +1,15 @@
 package com.example.italian_englishgames.impiccato
 
 import android.os.Bundle
-import androidx.fragment.app.viewModels
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
 import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.widget.Toolbar
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.navigation.findNavController
 import com.example.italian_englishgames.R
 import com.example.italian_englishgames.databinding.FragmentImpGameBinding
@@ -24,6 +25,10 @@ class ImpGameFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding= DataBindingUtil.inflate(inflater,R.layout.fragment_imp_game,container,false)
+        val toolbar: Toolbar = binding.mainToolbar
+        toolbar.setNavigationOnClickListener {
+            toolbar.findNavController().navigate(R.id.action_impGameFragment_to_impMenuFragment)
+        }
         return binding.root
     }
 

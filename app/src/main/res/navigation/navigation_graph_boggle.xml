@@ -24,6 +24,9 @@
             android:id="@+id/action_boggleGameFragment_to_boggleWinFragment"
             app:destination="@id/boggleWinFragment"
             app:popUpTo="@id/boggleMenuFragment" />
+        <action
+            android:id="@+id/action_boggleGameFragment_to_boggleMenuFragment"
+            app:destination="@id/boggleMenuFragment" />
     </fragment>
     <fragment
         android:id="@+id/boggleWinFragment"

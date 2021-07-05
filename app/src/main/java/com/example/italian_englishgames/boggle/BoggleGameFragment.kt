@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.widget.Toolbar
 import androidx.core.view.isVisible
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
@@ -51,6 +52,10 @@ class BoggleGameFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_boggle_game, container, false)
+        val toolbar: Toolbar = binding.mainToolbar
+        toolbar.setNavigationOnClickListener {
+            toolbar.findNavController().navigate(R.id.action_boggleGameFragment_to_boggleMenuFragment)
+        }
         return binding.root
     }
 

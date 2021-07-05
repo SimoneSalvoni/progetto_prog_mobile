@@ -28,6 +28,10 @@
             android:id="@+id/action_impGameFragment_to_impLoseFragment"
             app:destination="@id/impLoseFragment"
             app:popUpTo="@id/impMenuFragment" />
+        <action
+            android:id="@+id/action_impGameFragment_to_impMenuFragment"
+            app:destination="@id/impMenuFragment"
+            app:popUpTo="com.android.tools.property.panel.api.EnumValue$Companion$LOADING$1@29a7628c" />
     </fragment>
     <fragment
         android:id="@+id/impLoseFragment"

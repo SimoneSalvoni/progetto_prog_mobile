@@ -26,9 +26,9 @@
             android:textAlignment="center"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/toolbar"
+            app:layout_constraintTop_toBottomOf="@+id/mainToolbar"
             tools:targetApi="24" />
 
         <androidx.recyclerview.widget.RecyclerView
@@ -39,19 +39,20 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.499"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/toolbar"
+            app:layout_constraintTop_toBottomOf="@+id/mainToolbar"
             app:layout_constraintVertical_bias="0.692"
             tools:itemCount="16" />
 
         <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
+            android:id="@+id/mainToolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/azzurro"
+            android:background="@color/main_blue"
             android:minHeight="?attr/actionBarSize"
             android:theme="?attr/actionBarTheme"
+            app:title="@string/memory_min"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:navigationIcon="@drawable/abc_vector_test" />
+            app:navigationIcon="?homeAsUpIndicator"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
