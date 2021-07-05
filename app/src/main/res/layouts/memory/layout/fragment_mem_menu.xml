@@ -12,32 +12,39 @@
         android:layout_width="185dp"
         android:layout_height="106dp"
         android:layout_marginStart="112dp"
+        android:layout_marginEnd="29dp"
         android:layout_marginBottom="92dp"
         android:backgroundTint="#F9AA33"
         android:text="@string/gioca"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/infoButtonMem"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/infoButtonMem"
-        android:layout_width="109dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
-        android:backgroundTint="@color/blu"
-        android:text="@string/info_game"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/menuToolbar" />
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="74dp"
+        android:layout_marginEnd="31dp"
+        android:layout_marginBottom="121dp"
+        android:background="@android:drawable/ic_dialog_info"
+        android:backgroundTint="@color/main_blue"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView8"
+        app:layout_constraintVertical_bias="1.0" />
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="187dp"
         android:layout_height="175dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginStart="112dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="112dp"
         android:src="@drawable/memory_game_icon"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
@@ -46,28 +53,36 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="120dp"
-        android:layout_marginTop="68dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="121dp"
+        android:layout_marginBottom="32dp"
         android:text="@string/memory"
         android:textSize="40sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/infoButtonMem" />
+        app:layout_constraintTop_toBottomOf="@+id/menuToolbar" />
 
     <TextView
         android:id="@+id/textView8"
-        android:layout_width="187dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="40dp"
+        android:layout_width="293dp"
+        android:layout_height="124dp"
+        android:layout_marginStart="59dp"
+        android:layout_marginTop="23dp"
+        android:layout_marginEnd="59dp"
+        android:layout_marginBottom="52dp"
         android:text="@string/info_mem_short"
         android:textAlignment="center"
         android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintBottom_toTopOf="@+id/startbutton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/menuToolbar"
-        android:layout_width="409dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/main_blue"
         android:minHeight="?attr/actionBarSize"

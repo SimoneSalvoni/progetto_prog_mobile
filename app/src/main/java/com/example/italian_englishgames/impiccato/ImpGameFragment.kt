@@ -1,12 +1,16 @@
 package com.example.italian_englishgames.impiccato
 
+import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
+import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.widget.Toolbar
+import androidx.core.view.forEach
+import androidx.core.view.iterator
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -24,7 +28,7 @@ class ImpGameFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding= DataBindingUtil.inflate(inflater,R.layout.fragment_imp_game,container,false)
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_imp_game, container, false)
         val toolbar: Toolbar = binding.mainToolbar
         toolbar.setNavigationOnClickListener {
             toolbar.findNavController().navigate(R.id.action_impGameFragment_to_impMenuFragment)
@@ -36,70 +40,55 @@ class ImpGameFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.impViewModel = viewModel
         binding.lifecycleOwner = viewLifecycleOwner
-        if (savedInstanceState != null) checkErrors()
-        else {
+        if (savedInstanceState != null) {
+            checkErrors()
+            binding.viewTimer.base = savedInstanceState.getLong("time")
+        } else {
             viewModel.chooseWord()
             binding.impImageView.setImageResource(R.drawable.imp00)
+            inputText()
+            binding.viewTimer.start()
         }
-        inputText()
+
+
     }
 
+    private fun inputText() {
+        val row1 = binding.keyRow1
+        val row2 = binding.keyRow2
+        val row3 = binding.keyRow3
+        row1.setOnClick()
+        row2.setOnClick()
+        row3.setOnClick()
+    }
 
-    private fun inputText(){
-        binding.guessText.setOnClickListener {
-           // val builder = activity.let { it1 -> AlertDialog.Builder(it1!!.applicationContext) }
-            val builder = AlertDialog.Builder(this.requireContext())
-            val inflater = requireActivity().layoutInflater
-            val dialogLayout = inflater.inflate(R.layout.imp_input_prompt,null)
-            val inputText = dialogLayout.findViewById<EditText>(R.id.inputLetter)
-
-            with(builder) {
-
-                this.setTitle("Inserisci una lettera")
-                    setPositiveButton("OK") { _, _ ->
-                        var text: String? = inputText.text.toString()
-                        if (text.isNullOrBlank()) {
-                            Snackbar.make(
-                                binding.guessText,
-                                "Inserisci una lettera",
-                                Snackbar.LENGTH_SHORT
-                            )
-                                .show()
-                        } else {
-                            val car = inputText.text.toString().single()
-                            if (car !in 'A'..'Z' && car !in 'a'..'z')
-                                Snackbar.make(
-                                    binding.guessText,
-                                    "Inserisci una lettera",
-                                    Snackbar.LENGTH_SHORT
-                                )
-                                    .show()
-                            else if (!viewModel.ChosenLetterUsable(car))
-                                Snackbar.make(
-                                    binding.guessText,
-                                    "Lettera già utilizzata",
-                                    Snackbar.LENGTH_SHORT
-                                )
-                                    .show()
-                            else {
-                                viewModel.checkLetter(car)
-                                checkErrors()
-                                checkGameState()
-                            }
-                        }
+    private fun ViewGroup.setOnClick() {
+        this.forEach { key ->
+            if (key is TextView) {
+                key.setOnClickListener {
+                    if (viewModel.checkLetter(key.text.single().toLowerCase())) {
+                        key.setTextColor(Color.parseColor("#00c853"))
+                    } else {
+                        key.setTextColor(Color.parseColor("#ef1c19"))
                     }
-                setNegativeButton("Annulla"){ _, _ ->
-                    dialogLayout.findViewById<EditText>(R.id.inputLetter).setText("")
+                    checkErrors()
+                    checkGameState()
+                    key.setOnClickListener {
+                        Snackbar.make(
+                            binding.keyRow1,
+                            "Letterà già premuta",
+                            Snackbar.LENGTH_SHORT
+                        )
+                            .show()
+                    }
                 }
-                setView(dialogLayout)
-                show()
             }
         }
     }
 
-    private fun checkErrors(){
+    private fun checkErrors() {
         val impiccato = binding.impImageView
-        when(viewModel.errors.value){
+        when (viewModel.errors.value) {
             1 -> impiccato.setImageResource(R.drawable.imp01)
             2 -> impiccato.setImageResource(R.drawable.imp02)
             3 -> impiccato.setImageResource(R.drawable.imp03)
@@ -109,19 +98,25 @@ class ImpGameFragment : Fragment() {
         }
     }
 
-    private fun checkGameState(){
-        when(viewModel.gameState.value){
+    private fun checkGameState() {
+        when (viewModel.gameState.value) {
             ImpViewModel.State.WIN -> {
                 val word = viewModel.chosenWord.value
-                val action = ImpGameFragmentDirections.actionImpGameFragmentToImpWinFragment(word!!)
+                val points = viewModel.pointsCalc(word!!.count(), binding.viewTimer.text.toString())
+                val action = ImpGameFragmentDirections.actionImpGameFragmentToImpWinFragment(
+                    word,
+                    points
+                )
                 requireView().findNavController().navigate(action)
             }
             ImpViewModel.State.LOSE -> {
                 val word = viewModel.chosenWord.value
-                val action = ImpGameFragmentDirections.actionImpGameFragmentToImpLoseFragment(word!!)
+                val action =
+                    ImpGameFragmentDirections.actionImpGameFragmentToImpLoseFragment(word!!)
                 requireView().findNavController().navigate(action)
             }
-            else -> {}
+            else -> {
+            }
         }
     }
 

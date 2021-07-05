@@ -12,22 +12,27 @@
         android:layout_width="185dp"
         android:layout_height="106dp"
         android:layout_marginStart="112dp"
+        android:layout_marginEnd="114dp"
         android:layout_marginBottom="100dp"
         android:backgroundTint="@color/main_yellow"
         android:text="@string/gioca"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/infoButtonImp"
-        android:layout_width="109dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="12dp"
-        android:backgroundTint="@color/blu"
-        android:text="@string/info_game"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="300dp"
+        android:layout_marginTop="492dp"
+        android:layout_marginEnd="2dp"
+        android:background="@android:drawable/ic_dialog_info"
+        android:backgroundTint="@color/main_blue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.388"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/menuToolbar" />
 
@@ -35,9 +40,9 @@
         android:id="@+id/imageView"
         android:layout_width="187dp"
         android:layout_height="175dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="12dp"
         android:src="@drawable/gioco_impiccato"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
@@ -45,36 +50,43 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="98dp"
-        android:layout_marginTop="128dp"
+        android:layout_marginTop="72dp"
+        android:layout_marginBottom="13dp"
         android:text="@string/impiccato"
         android:textSize="40sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/menuToolbar" />
 
     <TextView
         android:id="@+id/textView8"
-        android:layout_width="187dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="44dp"
+        android:layout_width="281dp"
+        android:layout_height="113dp"
+        android:layout_marginStart="65dp"
+        android:layout_marginTop="17dp"
+        android:layout_marginEnd="65dp"
+        android:layout_marginBottom="26dp"
         android:text="@string/info_imp_short"
         android:textAlignment="center"
         android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintBottom_toTopOf="@+id/startbutton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/menuToolbar"
-        android:layout_width="409dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/main_blue"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
-        app:title="@string/impiccato_min"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:navigationIcon="?homeAsUpIndicator"/>
+        app:navigationIcon="?homeAsUpIndicator"
+        app:title="@string/impiccato_min" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

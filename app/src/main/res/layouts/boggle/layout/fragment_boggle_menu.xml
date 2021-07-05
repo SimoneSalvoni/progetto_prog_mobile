@@ -12,32 +12,38 @@
         android:layout_width="185dp"
         android:layout_height="106dp"
         android:layout_marginStart="112dp"
+        android:layout_marginEnd="24dp"
         android:layout_marginBottom="100dp"
         android:backgroundTint="#F9AA33"
         android:text="@string/gioca"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/infoButtonBoggle"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/infoButtonBoggle"
-        android:layout_width="109dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
-        android:backgroundTint="@color/blu"
-        android:text="@string/info_game"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/menuToolbar" />
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="53dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginBottom="121dp"
+        android:background="@android:drawable/ic_dialog_info"
+        android:backgroundTint="@color/main_blue"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="186dp"
         android:layout_height="179dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginStart="112dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="113dp"
         android:src="@drawable/boggle_boggle"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
@@ -45,29 +51,35 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="120dp"
-        android:layout_marginTop="68dp"
+        android:layout_marginStart="128dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="131dp"
         android:text="@string/boggle"
         android:textSize="40sp"
         android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/infoButtonBoggle" />
+        app:layout_constraintTop_toBottomOf="@+id/menuToolbar" />
 
     <TextView
         android:id="@+id/textView8"
-        android:layout_width="187dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="32dp"
+        android:layout_width="280dp"
+        android:layout_height="128dp"
+        android:layout_marginStart="66dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="66dp"
+        android:layout_marginBottom="23dp"
         android:text="@string/info_boggle_short"
         android:textAlignment="center"
         android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintBottom_toTopOf="@+id/startbutton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/menuToolbar"
-        android:layout_width="409dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/main_blue"
         android:minHeight="?attr/actionBarSize"

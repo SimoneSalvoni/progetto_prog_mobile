@@ -1,7 +1,6 @@
 package com.example.italian_englishgames.impiccato
 
 import android.app.Application
-import android.content.Context
 import androidx.lifecycle.*
 import com.example.italian_englishgames.R
 import kotlinx.coroutines.Dispatchers
@@ -68,20 +67,24 @@ class ImpViewModel(application: Application): AndroidViewModel(application) {
         if (errors.value==6) _gameState.value=State.LOSE
     }
 
-    fun checkLetter(c: Char) {
+    fun checkLetter(c: Char):Boolean {
         val ind = mutableListOf<Int>()
         for (i in _chosenWord.value!!.indices)
             if (c== _chosenWord.value!![i]) ind.add(i)
-        if (ind.size==0) letterIsNotPresent(c)
-        else letterIsPresent(c, ind.toIntArray() )
+        return if (ind.size==0) {
+            letterIsNotPresent(c)
+            false
+        } else{
+            letterIsPresent(c, ind.toIntArray())
+            true
+        }
     }
 
-    //per vedere se una lettere inserita è già stata usata
-    fun ChosenLetterUsable(c: Char): Boolean {
-        return !(c in chosenLetters)
+    fun pointsCalc(letCount: Int, time: String): String {
+        val numTime = time.replace(":", "").toInt()
+        return (1000 * letCount / numTime).toString()
     }
 
-    //non sono sicuro se è questo esattamente che dobbiamo fare nel reset
     fun resetGame(){
         _gameState.value=State.PLAYING
         _errors.value=0
