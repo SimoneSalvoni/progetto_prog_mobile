@@ -1,5 +1,6 @@
 package com.example.italian_englishgames.memory
 
+import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.os.Handler
@@ -8,12 +9,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.appcompat.widget.Toolbar
 import androidx.cardview.widget.CardView
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
+import com.example.italian_englishgames.MainActivity
 import com.example.italian_englishgames.R
 import com.example.italian_englishgames.databinding.FragmentMemGameBinding
 import com.google.android.material.snackbar.Snackbar
@@ -30,12 +33,8 @@ class MemGameFragment : Fragment(), GridAdapter.OnItemClickListener {
     private var card1 = MemCard()
     private lateinit var cardList: MutableList<MemCard>
     private var pos1 = 999
+    private var horizontal = false
 
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -43,6 +42,14 @@ class MemGameFragment : Fragment(), GridAdapter.OnItemClickListener {
     ): View {
 
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_mem_game, container, false)
+        if (savedInstanceState != null){
+            binding.viewTimer.base = savedInstanceState.getLong("time")
+            horizontal = !savedInstanceState.getBoolean("horizontal")
+        }
+        val toolbar: Toolbar = binding.mainToolbar
+        toolbar.setNavigationOnClickListener {
+            toolbar.findNavController().navigate(R.id.action_memGameFragment_to_memMenuFragment)
+        }
         return binding.root
 
     }
@@ -51,11 +58,12 @@ class MemGameFragment : Fragment(), GridAdapter.OnItemClickListener {
         super.onViewCreated(view, savedInstanceState)
         binding.memViewModel = viewModel
         binding.lifecycleOwner = viewLifecycleOwner
-        viewModel.createGame()
+        if (savedInstanceState==null) viewModel.createGame()
         cardList = viewModel.words.value!!
         val adapter = GridAdapter(requireContext(), cardList, this)
         binding.gameTable.adapter = adapter
-        binding.gameTable.layoutManager = GridLayoutManager(requireContext(), 4)
+        if (horizontal) binding.gameTable.layoutManager = GridLayoutManager(requireContext(), 8)
+        else binding.gameTable.layoutManager = GridLayoutManager(requireContext(), 4)
         binding.gameTable.setHasFixedSize(true)
         binding.viewTimer.start()
         /* animazioni, serve prendere il context
@@ -65,19 +73,26 @@ class MemGameFragment : Fragment(), GridAdapter.OnItemClickListener {
                 as AnimatorSet */
     }
 
+    override fun onSaveInstanceState(outState: Bundle) {
+        binding.viewTimer.stop()
+        outState.putLong("time", binding.viewTimer.base)
+        outState.putBoolean("horizontal", horizontal)
+        super.onSaveInstanceState(outState)
+    }
+
     override fun onItemClick(position: Int) {
-        var clickedItem: MemCard = cardList[position]
+        val clickedItem: MemCard = cardList[position]
         if (clickedItem.isBack) {
             if (card1.word == "") {
                 clickedItem.isBack = false
                 card1 = clickedItem
                 pos1 = position
-                var cardview1 = binding.gameTable.getChildAt(position)
+                val cardview1 = binding.gameTable.getChildAt(position)
                 cardview1.findViewById<TextView>(R.id.card_front).visibility = View.VISIBLE
             } else {
                 clickedItem.isBack = false
-                var cardview1 = binding.gameTable.getChildAt(pos1)
-                var cardview2 = binding.gameTable.getChildAt(position)
+                val cardview1 = binding.gameTable.getChildAt(pos1)
+                val cardview2 = binding.gameTable.getChildAt(position)
                 cardview2.findViewById<TextView>(R.id.card_front).visibility = View.VISIBLE
                 if (viewModel.check(card1, clickedItem)) {
                     rightChoice(cardview1, cardview2)

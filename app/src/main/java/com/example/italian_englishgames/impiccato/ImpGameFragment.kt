@@ -1,14 +1,15 @@
 package com.example.italian_englishgames.impiccato
 
 import android.os.Bundle
-import androidx.fragment.app.viewModels
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
 import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.widget.Toolbar
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.navigation.findNavController
 import com.example.italian_englishgames.R
 import com.example.italian_englishgames.databinding.FragmentImpGameBinding
@@ -16,10 +17,7 @@ import com.google.android.material.snackbar.Snackbar
 
 class ImpGameFragment : Fragment() {
     lateinit var binding: FragmentImpGameBinding
-    val viewModel: ImpViewModel by viewModels()
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
+    private val viewModel: ImpViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -27,6 +25,10 @@ class ImpGameFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding= DataBindingUtil.inflate(inflater,R.layout.fragment_imp_game,container,false)
+        val toolbar: Toolbar = binding.mainToolbar
+        toolbar.setNavigationOnClickListener {
+            toolbar.findNavController().navigate(R.id.action_impGameFragment_to_impMenuFragment)
+        }
         return binding.root
     }
 
@@ -34,18 +36,21 @@ class ImpGameFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.impViewModel = viewModel
         binding.lifecycleOwner = viewLifecycleOwner
-        viewModel.chooseWord()
-        binding.impImageView.setImageResource(R.drawable.imp00)
+        if (savedInstanceState != null) checkErrors()
+        else {
+            viewModel.chooseWord()
+            binding.impImageView.setImageResource(R.drawable.imp00)
+        }
         inputText()
     }
 
-    fun inputText(){
+
+    private fun inputText(){
         binding.guessText.setOnClickListener {
            // val builder = activity.let { it1 -> AlertDialog.Builder(it1!!.applicationContext) }
             val builder = AlertDialog.Builder(this.requireContext())
             val inflater = requireActivity().layoutInflater
             val dialogLayout = inflater.inflate(R.layout.imp_input_prompt,null)
-            //val dialogLayout: View = View.inflate(this.activity?.application, R.layout.imp_input_prompt, null)
             val inputText = dialogLayout.findViewById<EditText>(R.id.inputLetter)
 
             with(builder) {
@@ -92,7 +97,7 @@ class ImpGameFragment : Fragment() {
         }
     }
 
-    fun checkErrors(){
+    private fun checkErrors(){
         val impiccato = binding.impImageView
         when(viewModel.errors.value){
             1 -> impiccato.setImageResource(R.drawable.imp01)

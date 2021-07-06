@@ -10,6 +10,7 @@ import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.widget.Toolbar
+import androidx.navigation.findNavController
 import com.bumptech.glide.Glide
 import com.example.italian_englishgames.auth.LoginActivity
 import com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -90,7 +91,7 @@ class ProfileFragment : Fragment() {
             }
 
         fab.setOnClickListener{
-            //navigation to mod
+            fab.findNavController().navigate(R.id.action_profileFragment_to_modifyProfileFragment)
         }
 
 

@@ -19,34 +19,39 @@
             android:id="@+id/view_timer"
             android:layout_width="64dp"
             android:layout_height="30dp"
-            android:layout_marginStart="164dp"
-            android:layout_marginTop="36dp"
             android:gravity="center"
             android:textAlignment="center"
             android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/toolbar"
+            app:layout_constraintTop_toBottomOf="@+id/mainToolbar"
+            app:layout_constraintVertical_bias="0.026"
             tools:targetApi="24" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/gameTable"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="28dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/view_timer"
+            app:layout_constraintVertical_bias="0.164"
             tools:itemCount="16" />
 
         <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
+            android:id="@+id/mainToolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/azzurro"
+            android:background="@color/main_blue"
             android:minHeight="?attr/actionBarSize"
             android:theme="?attr/actionBarTheme"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:navigationIcon="@drawable/abc_vector_test" />
+            app:navigationIcon="?homeAsUpIndicator"
+            app:title="@string/memory_min" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

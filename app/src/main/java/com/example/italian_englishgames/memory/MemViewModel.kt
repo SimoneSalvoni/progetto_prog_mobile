@@ -22,7 +22,7 @@ class MemViewModel(application: Application):AndroidViewModel(application) {
     private val _words= MutableLiveData(mutableListOf<MemCard>())
     val words: LiveData<MutableList<MemCard>>
     get() = _words
-    var found_words= BooleanArray(16){false}
+    private var found_words= BooleanArray(16){false}
     private val ctx= getApplication<Application>().applicationContext
 
 
@@ -48,11 +48,11 @@ class MemViewModel(application: Application):AndroidViewModel(application) {
     }
 
     fun check(card1: MemCard, card2: MemCard): Boolean{
-        if (card1.id != card2.id) return false
+        return if (card1.id != card2.id) false
         else {
             found_words[words.value!!.indexOf(card1)]=true
             found_words[words.value!!.indexOf(card2)]=true
-            return true
+            true
         }
     }
 
