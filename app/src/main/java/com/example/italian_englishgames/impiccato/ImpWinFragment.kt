@@ -24,9 +24,9 @@ class ImpWinFragment : Fragment() {
     private val arg: ImpWinFragmentArgs by navArgs()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        // Inflate the layout for this fragment
         val inflater = inflater.inflate(R.layout.fragment_imp_win, container, false)
         inflater.findViewById<TextView>(R.id.solution).text=arg.word
+        inflater.findViewById<TextView>(R.id.points).text=arg.points
         val retry = inflater.findViewById<Button>(R.id.retryButton)
 
         val toolbar: Toolbar = inflater.findViewById(R.id.menuToolbar)

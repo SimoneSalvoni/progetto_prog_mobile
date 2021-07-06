@@ -14,9 +14,12 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="#344955"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
         app:navigationIcon="?homeAsUpIndicator"
         app:title="Contatti" />
 
@@ -38,29 +41,29 @@
 
     <TextView
         android:id="@+id/textView16"
-        android:layout_width="387dp"
-        android:layout_height="188dp"
+        android:layout_width="326dp"
+        android:layout_height="232dp"
         android:text="@string/contattiIntro"
         android:textAlignment="center"
-        android:textSize="30sp"
+        android:textSize="28sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.609"
+        app:layout_constraintHorizontal_bias="0.611"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/mainToolbar"
-        app:layout_constraintVertical_bias="0.163" />
+        app:layout_constraintVertical_bias="0.191" />
 
-    <ImageView
+    <ImageButton
         android:id="@+id/imageSite"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:src="@drawable/web_logo"
+        android:layout_width="73dp"
+        android:layout_height="68dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.299"
+        app:layout_constraintEnd_toStartOf="@+id/site"
+        app:layout_constraintHorizontal_bias="0.711"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/mainToolbar"
-        app:layout_constraintVertical_bias="0.653" />
+        app:layout_constraintTop_toBottomOf="@+id/textView16"
+        app:layout_constraintVertical_bias="0.662"
+        app:srcCompat="?android:attr/actionModeWebSearchDrawable" />
 
     <TextView
         android:id="@+id/site"
@@ -68,49 +71,24 @@
         android:layout_height="wrap_content"
         android:text="univpm.it"
         android:textSize="22sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/imageSite"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.575"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mainToolbar"
-        app:layout_constraintVertical_bias="0.613" />
+        app:layout_constraintTop_toTopOf="@+id/imageSite"
+        app:layout_constraintVertical_bias="0.552" />
 
-    <ImageView
+    <ImageButton
         android:id="@+id/imageEmail"
         android:layout_width="70dp"
         android:layout_height="70dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.299"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/mainToolbar"
-        app:layout_constraintVertical_bias="0.499"
-        app:srcCompat="@drawable/mail_logo" />
-
-    <ImageView
-        android:id="@+id/imageTelephone"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.299"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.806"
-        app:srcCompat="@drawable/phone_logo" />
-
-    <TextView
-        android:id="@+id/telephone"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="800 123 456"
-        android:textSize="22sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.641"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mainToolbar"
-        app:layout_constraintVertical_bias="0.768" />
+        app:layout_constraintBottom_toTopOf="@+id/imageSite"
+        app:layout_constraintEnd_toStartOf="@+id/email"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/imageSite"
+        app:layout_constraintTop_toBottomOf="@+id/textView16"
+        app:layout_constraintVertical_bias="0.385"
+        app:srcCompat="@android:drawable/sym_action_email" />
 
     <TextView
         android:id="@+id/email"
@@ -118,12 +96,12 @@
         android:layout_height="wrap_content"
         android:text="email@email.com"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/imageEmail"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.734"
+        app:layout_constraintHorizontal_bias="0.738"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mainToolbar"
-        app:layout_constraintVertical_bias="0.456" />
+        app:layout_constraintTop_toTopOf="@+id/imageEmail"
+        app:layout_constraintVertical_bias="0.511" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

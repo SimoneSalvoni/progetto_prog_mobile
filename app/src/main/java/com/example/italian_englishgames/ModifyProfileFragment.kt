@@ -47,12 +47,12 @@ class ModifyProfileFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val Layout = inflater.inflate(R.layout.fragment_modify_profile, container, false)
-        val toolbar: Toolbar = Layout.findViewById(R.id.mainToolbar)
+        val layout = inflater.inflate(R.layout.fragment_modify_profile, container, false)
+        val toolbar: Toolbar = layout.findViewById(R.id.mainToolbar)
         toolbar.setNavigationOnClickListener {
             startActivity(Intent(requireActivity(), MainActivity::class.java))
         }
-        return  Layout
+        return  layout
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -98,15 +98,7 @@ class ModifyProfileFragment : Fragment() {
                 fab.findNavController().navigate(R.id.action_modifyProfileFragment_to_profileFragment)
             }
             else{
-                /*
-                Snackbar.make(
-                    Layout,
-                    "Password non corrispondente!",
-                    Snackbar.LENGTH_SHORT
-                )
-                    .show()
-                 */
-                Toast.makeText(requireContext(), "Password non corrispondete!", Toast.LENGTH_SHORT)
+                Toast.makeText(requireContext(), "Password non corrispondente!", Toast.LENGTH_SHORT)
                     .show()
             }
         }

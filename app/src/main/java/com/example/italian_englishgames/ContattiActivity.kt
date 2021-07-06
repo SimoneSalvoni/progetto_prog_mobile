@@ -18,15 +18,21 @@ class ContattiActivity : AppCompatActivity() {
 
     private lateinit var email: ImageButton
     private lateinit var site: ImageButton
-    private lateinit var telephone: ImageButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_contatti)
 
+
+        val toolbar: Toolbar = findViewById(R.id.mainToolbar)
+        toolbar.setNavigationOnClickListener {
+            startActivity(Intent(this, MainActivity::class.java))
+        }
+
+
+
         email = findViewById<ImageButton>(R.id.imageEmail)
         site = findViewById<ImageButton>(R.id.imageSite)
-        telephone = findViewById<ImageButton>(R.id.imageTelephone)
 
         email.setOnClickListener {
             val intent = Intent(Intent.ACTION_SENDTO).apply {
@@ -38,29 +44,16 @@ class ContattiActivity : AppCompatActivity() {
                 startActivity(intent)
             }
 
+        }
+
 
         site.setOnClickListener {
-           val webpage = Uri.parse("https://univpm.it/")
-           val intent = Intent(Intent.ACTION_VIEW, webpage)
-           if (intent.resolveActivity(packageManager) != null) {
-                startActivity(intent)
-           }
-        }
-
-        telephone.setOnClickListener {
-            val callIntent = Intent(Intent.ACTION_CALL)
-            callIntent.data = Uri.parse("tel:" + 800123456)
+            val webpage = Uri.parse("https://univpm.it/")
+            val intent = Intent(Intent.ACTION_VIEW, webpage)
             if (intent.resolveActivity(packageManager) != null) {
-                startActivity(callIntent)
+                startActivity(intent)
             }
         }
-
-            val toolbar: Toolbar = findViewById(R.id.mainToolbar)
-            toolbar.setNavigationOnClickListener {
-                startActivity(Intent(this, MainActivity::class.java))
-            }
-        }
-
 
     }
 }

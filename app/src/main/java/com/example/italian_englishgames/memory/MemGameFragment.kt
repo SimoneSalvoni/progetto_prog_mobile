@@ -28,7 +28,7 @@ class MemGameFragment : Fragment(), GridAdapter.OnItemClickListener {
 
     //lateinit var front_anim: AnimatorSet
     //lateinit var back_anim: AnimatorSet
-    val viewModel: MemViewModel by viewModels()
+    private val viewModel: MemViewModel by viewModels()
 
     private var card1 = MemCard()
     private lateinit var cardList: MutableList<MemCard>
