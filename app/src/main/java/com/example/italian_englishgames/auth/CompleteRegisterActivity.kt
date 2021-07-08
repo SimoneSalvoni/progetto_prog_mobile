@@ -32,6 +32,9 @@ class CompleteRegisterActivity : AppCompatActivity() {
     private lateinit var imgbtn: Button
 
 
+    /**
+     * Variabile che contiene l'intent da lanciare per ottenere l'immagine e cosa farne una volta recuperata dalla galleria
+     */
     private val imgRequest = registerForActivityResult(ActivityResultContracts.OpenDocument()){
         if (it != null) {
             val imgPath=it.path
@@ -68,19 +71,14 @@ class CompleteRegisterActivity : AppCompatActivity() {
                 displayName = username.text.toString()
             }
 
+            //l'immagine di profilo finisce su firebase storage, i punti su firestore
             currentUser!!.updateProfile(userInfo)
                 .addOnCompleteListener{task->
                     if(task.isSuccessful){
 
                         if(imgUri!=null) {
                             val imageRef = storageRef.child(currentUser.uid)
-                            //val uploadTask = imageRef.putFile(imgUri)
                             imageRef.putFile(imgUri)
-                            /*
-                            uploadTask.addOnSuccessListener {}
-                            uploadTask.addOnFailureListener {}
-                            NON DOVREBBERO SERVIRE...
-                             */
                         }
 
                         val userRecordsInit = hashMapOf(

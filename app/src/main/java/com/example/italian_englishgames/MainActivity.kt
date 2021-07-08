@@ -29,31 +29,12 @@ import com.google.firebase.storage.ktx.storage
 class MainActivity : AppCompatActivity() {
 
     private lateinit var auth: FirebaseAuth
-    //private lateinit var cm: ConnectivityManager
     private lateinit var storage: FirebaseStorage
     private lateinit var navView: NavigationView
     private lateinit var header: View
     private lateinit var drawerLayout: DrawerLayout
     private val loginRequest = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
         if (it.resultCode == RESULT_OK) {
-            /*
-            val currentUser= auth.currentUser
-            val username = findViewById<TextView>(R.id.usernameDrawer)
-            val profilePic = findViewById<ImageView>(R.id.propic)
-            username.text = currentUser!!.displayName
-            val storageRef = storage.reference
-            val imageRef = storageRef.child(currentUser.uid)
-            val maxSize: Long = 1024*1024*20
-            imageRef.getBytes(maxSize).addOnSuccessListener {
-                Glide.with(this)
-                    .asBitmap()
-                    .load(it)
-                    .centerCrop()
-                    .into(profilePic)
-                   // .placeholder(R.drawable.)
-            }
-
-             */
         }
         else{
             Toast.makeText(applicationContext, "C'è stato un errore nell'autenticazione, ritenta", Toast.LENGTH_LONG).show()
@@ -105,6 +86,7 @@ class MainActivity : AppCompatActivity() {
             R.string.app_name, R.string.app_name)
         drawerLayout.addDrawerListener(drawerToggle)
 
+        //gestione del nav drawer
         navView.setNavigationItemSelectedListener {
             when (it.itemId) {
                 R.id.profileOption -> startActivity(Intent(this, ProfileActivity::class.java))
@@ -141,16 +123,9 @@ class MainActivity : AppCompatActivity() {
                     .asBitmap()
                     .load(it)
                     .centerCrop()
+                    .placeholder(R.drawable.default_profile)
                     .into(profilePic)
-                // .placeholder(R.drawable.)
             }
         }
     }
-
-/*
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.option_menu,menu)
-        return true
-    }
-    */
 }

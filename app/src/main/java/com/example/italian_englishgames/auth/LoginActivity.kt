@@ -41,6 +41,7 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
+    //per abilitare il pulsante solo quando email e password sono scritti
     private val textWatcher = object : TextWatcher {
         override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
         override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {checkEnableButton()}
@@ -84,6 +85,11 @@ class LoginActivity : AppCompatActivity() {
 
     private fun checkEnableButton(){ loginBtn.isEnabled = (password.text.toString()!="")&&(email.text.toString()!="") }
 
+    /**
+     * Questa funzione mostra testi di errore di fronte a errori di autenticazione
+     *
+     * @param errorCode è il codice di errore che firebase ci restituisce
+     */
     private fun checkLoginError(errorCode: String){
         emailErr.text=""
         passwordErr.text=""

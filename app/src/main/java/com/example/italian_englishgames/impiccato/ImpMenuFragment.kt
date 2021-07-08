@@ -21,13 +21,7 @@ import com.google.firebase.ktx.Firebase
 
 class ImpMenuFragment : Fragment() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
-
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        // Inflate the layout for this fragment
         val inflater = inflater.inflate(R.layout.fragment_imp_menu, container, false)
         val button: Button = inflater.findViewById<Button>(R.id.startbutton)
         val infoButton = inflater.findViewById<Button>(R.id.infoButtonImp)

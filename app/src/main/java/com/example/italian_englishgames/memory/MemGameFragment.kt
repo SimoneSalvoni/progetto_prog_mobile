@@ -80,6 +80,12 @@ class MemGameFragment : Fragment(), GridAdapter.OnItemClickListener {
         super.onSaveInstanceState(outState)
     }
 
+    /**
+     * Questa funzione scopre una carta, e se la carta è la seconda che viene scoperta di fila si controlla se
+     * le due carte contengono l'una la traduzione dell'altra
+     *
+     * @param position è la posizione della carta nella lista cardList
+     */
     override fun onItemClick(position: Int) {
         val clickedItem: MemCard = cardList[position]
         if (clickedItem.isBack) {
@@ -114,6 +120,9 @@ class MemGameFragment : Fragment(), GridAdapter.OnItemClickListener {
         }
     }
 
+    /**
+     * Modifica del colore delle carte trovare correttamente
+     */
     private fun rightChoice(cardview1:View, cardview2:View){
         cardview1.findViewById<CardView>(R.id.cardView)
             .setBackgroundColor(Color.parseColor("#00c853"))
@@ -122,6 +131,9 @@ class MemGameFragment : Fragment(), GridAdapter.OnItemClickListener {
         checkWin()
     }
 
+    /**
+     * Se si scoprono due carte che non formano una coppia, diventano rosse e poi si ricoprono
+     */
     private fun wrongChoice(cardview1:View, cardview2:View){
         cardview1.findViewById<CardView>(R.id.cardView).setBackgroundColor(Color.parseColor("#ef1c19"))
         cardview2.findViewById<CardView>(R.id.cardView).setBackgroundColor(Color.parseColor("#ef1c19"))
@@ -133,6 +145,10 @@ class MemGameFragment : Fragment(), GridAdapter.OnItemClickListener {
 
     }
 
+    /**
+     * Questa funzione controlla se tutte le carte sono state scoperte, e in caso affermativo
+     * l'utente viene mandato alla schermata di vittoria
+     */
     private fun checkWin() {
         if (viewModel.checkGameState()) {
             val time = binding.viewTimer.text.toString()

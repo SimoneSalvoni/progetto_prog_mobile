@@ -35,7 +35,12 @@ class ImpViewModel(application: Application): AndroidViewModel(application) {
     private val chosenLetters = mutableSetOf<Char>()
     private val ctx = getApplication<Application>().applicationContext
 
-
+    /**
+     * Questa funzione legge dal file una parola a caso e la mette in _chosenWord
+     *
+     * @param br l'istanza di BufferedReader che serve per la lettura
+     * @param times Int che indica quante linee deve leggere, e quindi che parola prendere
+     */
     private suspend fun readFromFile(br: BufferedReader, times: Int ) {
         var dest: String = ""
         withContext(Dispatchers.IO) { for (i in 1..times)  dest=br.readLine() }
@@ -43,6 +48,9 @@ class ImpViewModel(application: Application): AndroidViewModel(application) {
         for (i in 1..dest.length) _shownWord.value += "-"
     }
 
+    /**
+     * Questa funzione sceglie quale parola prendere dal file words_3000 casualmente
+     */
     fun chooseWord() {
         val isr = InputStreamReader (ctx.resources.openRawResource(R.raw.words_3000))
         val br = BufferedReader(isr)
@@ -52,6 +60,12 @@ class ImpViewModel(application: Application): AndroidViewModel(application) {
         }
     }
 
+    /**
+     * Questa funziona modifica le proprietà del viewModel quando una lettera è stata indovinata
+     *
+     * @param letter è la lettera presente nella parola
+     * @param pos è un IntArray che indica la posizione della lettera nella parola
+     */
     private fun letterIsPresent(letter: Char, pos: IntArray ) {
         var arr = _shownWord.value!!.toCharArray()
         for (element in pos)  arr[element] = letter
@@ -60,6 +74,11 @@ class ImpViewModel(application: Application): AndroidViewModel(application) {
         if (_shownWord.value==_chosenWord.value) _gameState.value=State.WIN
     }
 
+    /**
+     * Questa funziona modifica lo stato del viewModel quando l'utente ha scelto una lettera sbagliata
+     *
+     * @param letter è la lettera non presente
+     */
     private fun letterIsNotPresent(letter:Char) {
         chosenLetters.add(letter)
         _wrongLettersString.value+="${letter.toString()} "
@@ -67,6 +86,11 @@ class ImpViewModel(application: Application): AndroidViewModel(application) {
         if (errors.value==6) _gameState.value=State.LOSE
     }
 
+    /**
+     * Qusta funzione controlla se una lettera è presente nella parola da indovinare
+     *
+     * @param c è la lettera da controllare
+     */
     fun checkLetter(c: Char):Boolean {
         val ind = mutableListOf<Int>()
         for (i in _chosenWord.value!!.indices)
@@ -80,16 +104,32 @@ class ImpViewModel(application: Application): AndroidViewModel(application) {
         }
     }
 
+    /**
+     * Questa funzione calcola il punteggio finale
+     *
+     * @param letCount è il numero di lettere della parola
+     * @param time è il tempo impiegato
+     */
     fun pointsCalc(letCount: Int, time: String): String {
         var numTime = time.replace(":", "").toInt()
         if (numTime==0) numTime = 1
         return (1000 * letCount / numTime).toString()
     }
 
+    /**
+     * Funzione che prepara ad un'altra partita
+     */
     fun resetGame(){
         _gameState.value=State.PLAYING
         _errors.value=0
         chosenLetters.clear()
         chooseWord()
+    }
+
+    //PER IL TESTING
+    //PER TESTING
+    fun chooseWordForTesting(){
+        _chosenWord.value="test"
+        _shownWord.value="----"
     }
 }

@@ -31,8 +31,8 @@ class ContattiActivity : AppCompatActivity() {
 
 
 
-        email = findViewById<ImageButton>(R.id.imageEmail)
-        site = findViewById<ImageButton>(R.id.imageSite)
+        email = findViewById(R.id.imageEmail)
+        site = findViewById(R.id.imageSite)
 
         email.setOnClickListener {
             val intent = Intent(Intent.ACTION_SENDTO).apply {

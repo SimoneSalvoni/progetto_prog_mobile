@@ -73,6 +73,9 @@ class BoggleGameFragment : Fragment() {
         viewModel.startGame()
         setLetters(viewModel.letters)
 
+        /**
+         * Qua viene fatto il setup delle varie caselle del boggle
+         */
         for (i in 0 until binding.gridLayout.childCount){
             (binding.gridLayout.getChildAt(i) as Button).setOnClickListener {
                 val index= (it.parent as GridLayout).indexOfChild(it)
@@ -94,6 +97,10 @@ class BoggleGameFragment : Fragment() {
             for (i in 0..15) isChosen[i]=false
         }
 
+        /**
+         * Quando la variabile ready del viewModel diventa true bisogna far partire il countdown
+         * perché il carimento delle parole da file è finito
+         */
         viewModel.ready.observe(viewLifecycleOwner, {
             if (it) {
                 enableAll()
@@ -114,6 +121,9 @@ class BoggleGameFragment : Fragment() {
                         timeLeftText.text = (millisUntilFinished / 1000).toString()
                     }
 
+                    /**
+                     * A fine countdown finisce la partita
+                     */
                     override fun onFinish() {
                         val finalPoints = (binding.pointsBoggleGame.text as String).toInt()
                         val finalFoundWordList = binding.foundWordsBoggle.text.toString()
@@ -129,12 +139,20 @@ class BoggleGameFragment : Fragment() {
         })
     }
 
+    /**
+     * Per mantenere il countdown quando si gira il dispositivo
+     */
     override fun onSaveInstanceState(outState: Bundle) {
         outState.putLong("timeLeft", timeLeft)
         outState.putLong("endTime", endTime)
         super.onSaveInstanceState(outState)
     }
 
+    /**
+     * Questa funzione inserisce le lettere prese dal viewModel nelle caselle
+     *
+     * @param letters è l'Array che contiene le lettere
+     */
     private fun setLetters(letters: Array<String>){
         var btn: Button
        for (i in 0 until binding.gridLayout.childCount){
@@ -143,6 +161,9 @@ class BoggleGameFragment : Fragment() {
        }
     }
 
+    /**
+     * Questa funzione abilita il click a tutte le caselle
+     */
     private fun enableAll(){
         var btn: Button
         for (i in 0 until binding.gridLayout.childCount){
@@ -152,6 +173,11 @@ class BoggleGameFragment : Fragment() {
         }
     }
 
+    /**
+     * Questa funziona abilita il click solo alle caselle adiacenti a l'ultima casella clickata
+     *
+     * @param index è la posizione dell'ultima casella clickata
+     */
     private fun enableNearButtons(index: Int){
         //matrix[ i ][ j ] = array[ i*m + j ].
         var btn: Button
@@ -172,6 +198,11 @@ class BoggleGameFragment : Fragment() {
         }
     }
 
+    /**
+     * Questa funzione controlla se una parola formata dall'utente esiste
+     *
+     * @param wordToCheck è la parola da controllare
+     */
    private suspend fun checkWord(wordToCheck:String){
         withContext(Dispatchers.Default){
             if (!viewModel.isPresent(wordToCheck.toLowerCase(Locale.ROOT))){

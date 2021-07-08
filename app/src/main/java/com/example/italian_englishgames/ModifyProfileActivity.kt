@@ -34,10 +34,24 @@ class ModifyProfileActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+<<<<<<< Updated upstream:app/src/main/java/com/example/italian_englishgames/ModifyProfileActivity.kt
         auth= Firebase.auth
         storage= Firebase.storage
         setContentView(R.layout.activity_modify_profile)
         val toolbar: Toolbar = findViewById(R.id.mainToolbar)
+=======
+
+    }
+
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        auth= Firebase.auth
+        storage= Firebase.storage
+        val layout = inflater.inflate(R.layout.fragment_modify_profile, container, false)
+        val toolbar: Toolbar = layout.findViewById(R.id.mainToolbar)
+>>>>>>> Stashed changes:app/src/main/java/com/example/italian_englishgames/ModifyProfileFragment.kt
         toolbar.setNavigationOnClickListener {
             startActivity(Intent(this, MainActivity::class.java))
         }

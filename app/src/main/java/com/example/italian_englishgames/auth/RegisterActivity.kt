@@ -40,6 +40,7 @@ class RegisterActivity : AppCompatActivity() {
         }
     }
 
+    //controllo del testo inserito per abilitare il pulsante quando i due campi sono non vuoti
     private val textWatcher = object : TextWatcher {
         override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
         override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {checkEnableButton()}
@@ -61,6 +62,7 @@ class RegisterActivity : AppCompatActivity() {
         password.setOnFocusChangeListener {_,_ -> checkEnableButton()}
         email.addTextChangedListener (textWatcher)
         password.addTextChangedListener(textWatcher)
+        //premendo il pulsante di registrazione creaiamo l'utente su firebase e ci muoviamo verso l'activity di completamento registrazione
         regBtn.setOnClickListener {
             auth.createUserWithEmailAndPassword(email.text.toString(), password.text.toString())
                 .addOnCompleteListener(this){ task->
@@ -85,6 +87,11 @@ class RegisterActivity : AppCompatActivity() {
 
     private fun checkEnableButton() { regBtn.isEnabled = (password.text.toString()!="")&&(email.text.toString()!="") }
 
+    /**
+     * Questa funzione mostra testi di errore di fronte a errori di autenticazione
+     *
+     * @param errorCode è il codice di errore che firebase ci restituisce
+     */
     private fun checkLoginError(errorCode: String){
         emailErr.text=""
         passwordErr.text=""

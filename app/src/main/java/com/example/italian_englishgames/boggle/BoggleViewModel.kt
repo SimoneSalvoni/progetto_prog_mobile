@@ -33,6 +33,10 @@ class BoggleViewModel(application: Application): AndroidViewModel(application) {
     val points: LiveData<Int>
         get() = _points
 
+    /**
+     * Questa funzione inizializza le lettere opzionabili per ciascun elemento di options
+     * e inizializza la Map<String, MutableList<String>> dove andranno salvate le parole del dizionario
+     */
     private fun initOptionsAndWords() {
         options = arrayOf(
             arrayOf("R", "I", "F", "O", "B", "X"),
@@ -82,12 +86,19 @@ class BoggleViewModel(application: Application): AndroidViewModel(application) {
         )
     }
 
+    /**
+     * Questa funzione sceglie le lettere tra quelle opzionabili di ciascuna casella
+     */
     private fun chooseLetters() {
         letters = Array(16) {
             options[it][Random.nextInt(0, 5)]
         }
     }
 
+    /**
+     * Questa funzione copia tutte le parole dal file words.txt all'interno di 26 liste presente nella Map words
+     * in modo da potervi accedere ad ogni controllo senza dover ogni volta leggere su file, il quale è molto grande
+     */
     private suspend fun copyWordsFromFile() {
         val isr = InputStreamReader(ctx.resources.openRawResource(R.raw.words))
         val br = BufferedReader(isr)
@@ -103,7 +114,9 @@ class BoggleViewModel(application: Application): AndroidViewModel(application) {
         }
     }
 
-
+    /**
+     * Questa funzione inizializza le variabili che servono per il gioco
+     */
     fun startGame() {
         initOptionsAndWords()
         chooseLetters()
@@ -112,6 +125,11 @@ class BoggleViewModel(application: Application): AndroidViewModel(application) {
         }
     }
 
+    /**
+     * Questa funzone calcola il punteggio di ogni parola trovata, che dipende dalla lunghezza
+     *
+     * @param word la parola trovata
+     */
     private fun calcPoints(word: String): Int {
         val wordLength = word.length
         return if (wordLength <= 4) 1
@@ -125,6 +143,11 @@ class BoggleViewModel(application: Application): AndroidViewModel(application) {
         }
     }
 
+    /**
+     * Questa funzione controlla se la parola formata dall'utente è una parola reale
+     *
+     *  @param word è la String contenente la parola
+     */
     fun isPresent(word: String): Boolean {
         val firstChar = word.subSequence(0, 1).toString()
         val present = words[firstChar]!!.contains(word)

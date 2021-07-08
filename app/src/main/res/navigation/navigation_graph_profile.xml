@@ -2,4 +2,29 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+<<<<<<< Updated upstream
     android:id="@+id/navigation_graph_profile" />
+=======
+    android:id="@+id/navigation_graph_profile"
+    app:startDestination="@id/profileFragment">
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.italian_englishgames.ProfileFragment"
+        android:label="ProfileFragment"
+        tools:layout="@layout/fragment_profile">
+        <action
+            android:id="@+id/action_profileFragment_to_modifyProfileFragment"
+            app:destination="@id/modifyProfileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/modifyProfileFragment"
+        android:name="com.example.italian_englishgames.ModifyProfileFragment"
+        android:label="fragment_modify_profile"
+        tools:layout="@layout/fragment_modify_profile" >
+        <action
+            android:id="@+id/action_modifyProfileFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+</navigation>
+>>>>>>> Stashed changes

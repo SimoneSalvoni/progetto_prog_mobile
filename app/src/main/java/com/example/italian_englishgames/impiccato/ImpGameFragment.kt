@@ -5,12 +5,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.EditText
 import android.widget.TextView
-import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.forEach
-import androidx.core.view.iterator
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -40,6 +37,7 @@ class ImpGameFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.impViewModel = viewModel
         binding.lifecycleOwner = viewLifecycleOwner
+        //se c'è un cambio di orientamento va mantenuto il timer
         if (savedInstanceState != null) {
             checkErrors()
             binding.viewTimer.base = savedInstanceState.getLong("time")
@@ -86,6 +84,9 @@ class ImpGameFragment : Fragment() {
         }
     }
 
+    /**
+     * Cambia immagine a dipendenza del numero di errori
+     */
     private fun checkErrors() {
         val impiccato = binding.impImageView
         when (viewModel.errors.value) {
@@ -98,6 +99,11 @@ class ImpGameFragment : Fragment() {
         }
     }
 
+    /**
+     * Lo stato del gioco è tenuto nel ViewModel. Se l'utente ha trovato la parola è posto a WIN
+     * e si passa alla schermata di vittora. Se l'utente fa 6 errori lo stato è posto a LOSE e
+     * si passa alla schermata di sconfitta
+     */
     private fun checkGameState() {
         when (viewModel.gameState.value) {
             ImpViewModel.State.WIN -> {

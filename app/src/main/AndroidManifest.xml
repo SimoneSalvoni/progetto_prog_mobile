@@ -22,7 +22,8 @@
         <activity android:name=".boggle.BoggleActivity" />
         <activity android:name=".auth.LoginActivity"/>
         <activity android:name=".auth.RegisterActivity" />
-        <activity android:name=".memory.MemActivity"/>
+        <activity android:name=".memory.MemActivity"
+            android:screenOrientation="portrait"/>
         <activity android:name=".impiccato.ImpActivity"/>
         <activity
             android:name=".MainActivity"
@@ -33,5 +34,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <uses-library android:name="android.test.runner"/>
     </application>
 </manifest>
