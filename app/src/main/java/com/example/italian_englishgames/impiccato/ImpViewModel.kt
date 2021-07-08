@@ -81,7 +81,8 @@ class ImpViewModel(application: Application): AndroidViewModel(application) {
     }
 
     fun pointsCalc(letCount: Int, time: String): String {
-        val numTime = time.replace(":", "").toInt()
+        var numTime = time.replace(":", "").toInt()
+        if (numTime==0) numTime = 1
         return (1000 * letCount / numTime).toString()
     }
 

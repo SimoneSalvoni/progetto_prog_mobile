@@ -1,20 +1,16 @@
 package com.example.italian_englishgames
 
+import android.app.Activity
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import android.widget.EditText
-import android.widget.ImageView
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
-import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import com.bumptech.glide.Glide
+import com.example.italian_englishgames.boggle.BoggleActivity
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -24,14 +20,14 @@ import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.ktx.storage
 
 
-class ModifyProfileFragment : Fragment() {
+class ModifyProfileActivity : AppCompatActivity() {
 
 
     private lateinit var auth: FirebaseAuth
     private lateinit var storage: FirebaseStorage
-    private  var imgUri: Uri ?= null
     private lateinit var image: ImageView
-    private val imgRequest = requireActivity().registerForActivityResult(ActivityResultContracts.GetContent()){
+    private  var imgUri: Uri ?= null
+    private val imgRequest = registerForActivityResult(ActivityResultContracts.GetContent()){
         image.setImageURI(it)
         imgUri=it
     }
@@ -40,31 +36,24 @@ class ModifyProfileFragment : Fragment() {
         super.onCreate(savedInstanceState)
         auth= Firebase.auth
         storage= Firebase.storage
-
-    }
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        val layout = inflater.inflate(R.layout.fragment_modify_profile, container, false)
-        val toolbar: Toolbar = layout.findViewById(R.id.mainToolbar)
+        setContentView(R.layout.activity_modify_profile)
+        val toolbar: Toolbar = findViewById(R.id.mainToolbar)
         toolbar.setNavigationOnClickListener {
-            startActivity(Intent(requireActivity(), MainActivity::class.java))
+            startActivity(Intent(this, MainActivity::class.java))
         }
-        return  layout
+
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+    override fun onStart() {
+        super.onStart()
         val currentUser= auth.currentUser
-        val username = view.findViewById<TextView>(R.id.userName)
-        image = view.findViewById(R.id.imageView)
-        val password = view.findViewById<EditText>(R.id.editPassword)
-        val email = view.findViewById<EditText>(R.id.editEmail)
-        val confPass = view.findViewById<EditText>(R.id.confirmPassword)
-        val fab = view.findViewById<FloatingActionButton>(R.id.saveEdit)
-        val button = view.findViewById<FloatingActionButton>(R.id.editImage)
+        val username = findViewById<TextView>(R.id.editUsername)
+        image = findViewById<ImageView>(R.id.imgToEdit)
+        val password = findViewById<EditText>(R.id.editPassword)
+        val email = findViewById<EditText>(R.id.editEmail)
+        val confPass = findViewById<EditText>(R.id.confirmPassword)
+        val fab = findViewById<FloatingActionButton>(R.id.saveEdit)
+        val button = findViewById<Button>(R.id.editImage)
 
 
         username.text = currentUser!!.displayName
@@ -85,6 +74,7 @@ class ModifyProfileFragment : Fragment() {
 
         fab.setOnClickListener{
             currentUser.updateEmail(email.text.toString())
+            val intent = Intent(this, ProfileActivity::class.java)
             val profileUpdates = userProfileChangeRequest {
                 displayName = username.text.toString()
                 if(imgUri != null)photoUri = imgUri
@@ -92,13 +82,14 @@ class ModifyProfileFragment : Fragment() {
             currentUser.updateProfile(profileUpdates)
 
             if(password.text.toString() == "" && confPass.text.toString()=="")
-                fab.findNavController().navigate(R.id.action_modifyProfileFragment_to_profileFragment)
+            startActivity(intent)
+
             else if(password.text==confPass.text){
                 currentUser.updatePassword(password.text.toString())
-                fab.findNavController().navigate(R.id.action_modifyProfileFragment_to_profileFragment)
+                startActivity(intent)
             }
             else{
-                Toast.makeText(requireContext(), "Password non corrispondente!", Toast.LENGTH_SHORT)
+                Toast.makeText(this, "Password non corrispondente!", Toast.LENGTH_SHORT)
                     .show()
             }
         }
@@ -106,7 +97,6 @@ class ModifyProfileFragment : Fragment() {
         button.setOnClickListener{
             imgRequest.launch("image/*")
         }
-
 
     }
 

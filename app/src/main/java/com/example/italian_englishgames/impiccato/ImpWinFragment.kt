@@ -15,22 +15,32 @@ import com.example.italian_englishgames.ContattiActivity
 import com.example.italian_englishgames.ProfileActivity
 import com.example.italian_englishgames.R
 import com.example.italian_englishgames.auth.LoginActivity
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 
 
 class ImpWinFragment : Fragment() {
 
-    private val arg: ImpWinFragmentArgs by navArgs()
+    private val args: ImpWinFragmentArgs by navArgs()
+    private lateinit var db: FirebaseFirestore
+    private lateinit var auth: FirebaseAuth
+    private lateinit var newRecordText: TextView
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val inflater = inflater.inflate(R.layout.fragment_imp_win, container, false)
-        inflater.findViewById<TextView>(R.id.solution).text=arg.word
-        inflater.findViewById<TextView>(R.id.points).text=arg.points
+        inflater.findViewById<TextView>(R.id.solution).text=args.word
+        inflater.findViewById<TextView>(R.id.points).text=args.points
         val retry = inflater.findViewById<Button>(R.id.retryButton)
 
         val toolbar: Toolbar = inflater.findViewById(R.id.menuToolbar)
         setUpToolbar(toolbar)
+
+        db = Firebase.firestore
+        auth = Firebase.auth
+        newRecordText = inflater.findViewById(R.id.newRecordImp)
 
         retry.setOnClickListener{
             retry.findNavController().navigate(R.id.action_impWinFragment_to_impGameFragment)
@@ -42,6 +52,22 @@ class ImpWinFragment : Fragment() {
         return inflater
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val currentUser = auth.currentUser
+        db.collection("userRecords").document(currentUser!!.uid)
+            .get().addOnCompleteListener{
+                if(it.isSuccessful) {
+                    val document = it.result
+                    val record: Int? = document!!.get("impMaxStreak", Int::class.java)
+                    if(args.points.toInt() > record!!) {
+                        newRecordText.text="NUOVO RECORD!"
+                        db.collection("userRecords")
+                            .document(currentUser.uid).update("impMaxStreak", args.points.toInt())
+                    }
+                }
+            }
+    }
 
     private fun setUpToolbar(toolbar: Toolbar){
         toolbar.inflateMenu(R.menu.toolbar_with_profile_menu)

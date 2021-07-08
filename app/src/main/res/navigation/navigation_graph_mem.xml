@@ -61,6 +61,7 @@
             app:popUpTo="@id/memMenuFragment" />
         <action
             android:id="@+id/action_memGameFragment_to_memMenuFragment"
-            app:destination="@id/memMenuFragment" />
+            app:destination="@id/memMenuFragment"
+            app:popUpTo="@id/memMenuFragment" />
     </fragment>
 </navigation>

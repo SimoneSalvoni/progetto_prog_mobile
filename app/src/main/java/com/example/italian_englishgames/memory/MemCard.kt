@@ -1,5 +1,7 @@
 package com.example.italian_englishgames.memory
 
+
+//Ha bisogno di implementare Parcelable se vogliamo passarla onSaveInstanceState
 class MemCard {
     var word:String = ""
     var isBack:Boolean = true
