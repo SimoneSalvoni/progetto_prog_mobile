@@ -52,18 +52,7 @@ class MainActivity : AppCompatActivity() {
         navView = findViewById(R.id.nav_view)
         header= navView.getHeaderView(0)
         drawerLayout = findViewById(R.id.drawerLayout)
-/*
-//RITORNACI SE ABBIAMO TEMPO
-        cm = applicationContext.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
-        val activeNetworks: NetworkInfo? = cm.activeNetworkInfo
-        if(!activeNetworks?.isConnectedOrConnecting!!){
-            val intent = Intent(this, NoConnectionActivity::class.java)
-        }
 
- */
-
-        //setSupportActionBar(findViewById<Toolbar>(R.id.toolbar))
-       // NavigationUI.setupActionBarWithNavController(this, view.find)
 
         val buttonimp = findViewById<Button>(R.id.buttonImp)
         buttonimp.setOnClickListener{

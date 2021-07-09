@@ -22,15 +22,13 @@
         <activity android:name=".boggle.BoggleActivity" />
         <activity android:name=".auth.LoginActivity"/>
         <activity android:name=".auth.RegisterActivity" />
-        <activity android:name=".memory.MemActivity"
-            android:screenOrientation="portrait"/>
+        <activity android:name=".memory.MemActivity" android:screenOrientation="portrait"/>
         <activity android:name=".impiccato.ImpActivity"/>
         <activity
             android:name=".MainActivity"
             android:theme="@style/ourStyle">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

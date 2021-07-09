@@ -58,10 +58,8 @@ class ProfileActivity : AppCompatActivity() {
                 .asBitmap()
                 .load(it)
                 .centerCrop()
+                .placeholder(R.drawable.default_profile)
                 .into(image)
-            // .placeholder(R.drawable.)
-
-
         }
         db.collection("userRecords").document(currentUser.uid)
             .get().addOnCompleteListener {

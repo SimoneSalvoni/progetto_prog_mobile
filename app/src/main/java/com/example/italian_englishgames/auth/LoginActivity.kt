@@ -41,6 +41,7 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
+
     //per abilitare il pulsante solo quando email e password sono scritti
     private val textWatcher = object : TextWatcher {
         override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}

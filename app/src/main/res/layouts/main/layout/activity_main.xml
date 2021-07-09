@@ -8,12 +8,7 @@
     android:id="@+id/drawerLayout"
     tools:context=".MainActivity"
     tools:openDrawer="start">
-
-    <!--
-       <include
-           android:id="@+id/toolbar"
-           layout="@layout/toolbar" />
-   -->
+    
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
