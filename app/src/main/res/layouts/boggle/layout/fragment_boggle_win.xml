@@ -83,7 +83,7 @@
         app:layout_constraintHorizontal_bias="0.06"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/pointsText"
-        app:layout_constraintVertical_bias="0.063" />
+        app:layout_constraintVertical_bias="0.209" />
 
     <TextView
         android:id="@+id/newRecordBoggle"
@@ -92,10 +92,10 @@
         android:textSize="22sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.59"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/pointsBoggleWin"
         app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:layout_constraintVertical_bias="0.073" />
+        app:layout_constraintVertical_bias="0.197" />
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/menuToolbar"

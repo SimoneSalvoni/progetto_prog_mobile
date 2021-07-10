@@ -205,7 +205,13 @@ class BoggleGameFragment : Fragment() {
      */
    private suspend fun checkWord(wordToCheck:String){
         withContext(Dispatchers.Default){
-            if (!viewModel.isPresent(wordToCheck.toLowerCase(Locale.ROOT))){
+            if(wordToCheck.isNullOrEmpty()) {
+                requireActivity().runOnUiThread {
+                    Toast.makeText(requireContext(), "Seleziona una parola", Toast.LENGTH_SHORT)
+                        .show()
+                }
+            }
+            else if (!viewModel.isPresent(wordToCheck.toLowerCase(Locale.ROOT))){
                 requireActivity().runOnUiThread {
                     Toast.makeText(requireContext(), "Parola non esistente", Toast.LENGTH_SHORT)
                         .show()
