@@ -38,6 +38,9 @@ class ProfileActivity : AppCompatActivity() {
         }
     }
 
+    /**
+     * Quando l'activity parte vengono erecuperati i dati dell'utente e messi nella vista
+     */
     override fun onStart(){
         super.onStart()
         val currentUser= auth.currentUser
