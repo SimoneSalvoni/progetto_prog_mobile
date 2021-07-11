@@ -17,7 +17,6 @@
         <activity android:name=".ContattiActivity"></activity>
         <activity android:name=".ProfileActivity" />
         <activity android:name=".ModifyProfileActivity" />
-        <activity android:name=".NoConnectionActivity" />
         <activity android:name=".auth.CompleteRegisterActivity" />
         <activity android:name=".boggle.BoggleActivity" />
         <activity android:name=".auth.LoginActivity"/>

@@ -87,7 +87,11 @@ class BoggleGameFragment : Fragment() {
         }
 
         checkBtn.setOnClickListener {
-            lifecycleScope.launch{checkWord(word)}
+            lifecycleScope.launch{
+                if(viewModel.isNewWord(word)) checkWord(word)
+                else Toast.makeText(requireContext(), "Parola già trovata", Toast.LENGTH_SHORT)
+                    .show()
+            }
             word=""
             for (i in 0..15) isChosen[i]=false
         }

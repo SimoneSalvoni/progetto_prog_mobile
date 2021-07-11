@@ -1,6 +1,7 @@
 package com.example.italian_englishgames.boggle
 
 import android.app.Application
+import androidx.annotation.VisibleForTesting
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -130,7 +131,7 @@ class BoggleViewModel(application: Application): AndroidViewModel(application) {
      *
      * @param word la parola trovata
      */
-    private fun calcPoints(word: String): Int {
+    fun calcPoints(word: String): Int {
         val wordLength = word.length
         return if (wordLength <= 4) 1
         else {
@@ -160,4 +161,12 @@ class BoggleViewModel(application: Application): AndroidViewModel(application) {
         return present
     }
 
+    /**
+     * Questa funzione controlla se una parola è già stata trovata precedentemente
+     *
+     * @param word è la String contenente la parola
+     */
+    fun isNewWord(word: String): Boolean{
+        return word !in foundWords
+    }
 }

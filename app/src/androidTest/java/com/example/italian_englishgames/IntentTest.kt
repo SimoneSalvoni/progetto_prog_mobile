@@ -32,6 +32,7 @@ class IntentTest {
 
     @Before
     fun stubAllExternalIntents() {
+        //blocca gli intent esterni all'app facendole ritornare subito
         intending(not(isInternal())).respondWith(ActivityResult(Activity.RESULT_OK, null))
     }
 

@@ -67,7 +67,6 @@ class RegisterActivity : AppCompatActivity() {
             auth.createUserWithEmailAndPassword(email.text.toString(), password.text.toString())
                 .addOnCompleteListener(this){ task->
                     if(task.isSuccessful) {
-                        // regBtn.findNavController().navigate(R.id.action_firstRegistrationFragment_to_usernamePhotoSelectionFragment)
                         val intent = Intent(this, CompleteRegisterActivity::class.java)
                         finishRegistrationRequest.launch(intent)
                     }
@@ -76,12 +75,6 @@ class RegisterActivity : AppCompatActivity() {
                         checkLoginError(errorCode)
                     }
                 }
-/*
-            val intent = Intent(this, CompleteRegisterActivity::class.java)
-            finishRegistrationRequest.launch(intent)
-
- */
-
         }
     }
 

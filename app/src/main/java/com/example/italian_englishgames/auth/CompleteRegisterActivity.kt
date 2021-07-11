@@ -3,6 +3,8 @@ package com.example.italian_englishgames.auth
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
@@ -28,7 +30,7 @@ class CompleteRegisterActivity : AppCompatActivity() {
     private lateinit var username: EditText
     private lateinit var img: ImageView
     private lateinit var imgUri: Uri
-    private lateinit var btn: Button
+    private lateinit var completeBtn: Button
     private lateinit var imgbtn: Button
 
 
@@ -48,6 +50,13 @@ class CompleteRegisterActivity : AppCompatActivity() {
         }
     }
 
+    //per abilitare il pulsante solo quando è stato inserito il nome utente
+    private val textWatcher = object : TextWatcher {
+        override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
+        override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {checkEnableButton()}
+        override fun afterTextChanged(s: Editable) {}
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_complete_register)
@@ -56,7 +65,7 @@ class CompleteRegisterActivity : AppCompatActivity() {
         db=Firebase.firestore
         username = findViewById(R.id.username)
         img = findViewById(R.id.img)
-        btn = findViewById(R.id.btn)
+        completeBtn = findViewById(R.id.completeBtn)
         imgbtn = findViewById(R.id.imgbtn)
 
 
@@ -64,7 +73,9 @@ class CompleteRegisterActivity : AppCompatActivity() {
             imgRequest.launch(arrayOf("image/*"))
         }
 
-        btn.setOnClickListener {
+        username.addTextChangedListener(textWatcher)
+
+        completeBtn.setOnClickListener {
             val currentUser = auth.currentUser
             val storageRef = storage.reference
             val userInfo = userProfileChangeRequest {
@@ -102,5 +113,7 @@ class CompleteRegisterActivity : AppCompatActivity() {
                 }
         }
     }
+
+    private fun checkEnableButton(){ completeBtn.isEnabled = (username.text.toString()!="") }
 
 }

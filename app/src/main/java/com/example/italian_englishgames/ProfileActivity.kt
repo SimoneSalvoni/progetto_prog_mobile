@@ -1,16 +1,12 @@
 package com.example.italian_englishgames
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
-import androidx.navigation.findNavController
 import com.bumptech.glide.Glide
-import com.example.italian_englishgames.impiccato.ImpActivity
-import com.example.italian_englishgames.memory.MemActivity
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth

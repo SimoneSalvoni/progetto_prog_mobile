@@ -84,6 +84,9 @@ class LoginActivity : AppCompatActivity() {
             }
         }
 
+    /**
+     * Questa funzione abilita il pulsante di login quando entrambe le EditText sono non vuote
+     */
     private fun checkEnableButton(){ loginBtn.isEnabled = (password.text.toString()!="")&&(email.text.toString()!="") }
 
     /**

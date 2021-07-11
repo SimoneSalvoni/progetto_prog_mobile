@@ -30,8 +30,6 @@ class ImpViewModel(application: Application): AndroidViewModel(application) {
     val gameState: LiveData<State>
         get() = _gameState
     private val _wrongLettersString = MutableLiveData<String>("Lettere non presenti: ")
-    val wrongLettersString: LiveData<String>
-    get() = _wrongLettersString
     private val chosenLetters = mutableSetOf<Char>()
     private val ctx = getApplication<Application>().applicationContext
 
@@ -81,7 +79,7 @@ class ImpViewModel(application: Application): AndroidViewModel(application) {
      */
     private fun letterIsNotPresent(letter:Char) {
         chosenLetters.add(letter)
-        _wrongLettersString.value+="${letter.toString()} "
+        _wrongLettersString.value+="$letter "
         _errors.value = _errors.value?.plus(1)
         if (errors.value==6) _gameState.value=State.LOSE
     }

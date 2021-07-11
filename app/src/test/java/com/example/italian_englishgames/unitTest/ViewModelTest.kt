@@ -46,8 +46,10 @@ class ViewModelTest {
     }
 
     @Test
-    fun testPointsCalcImp(){
-        //non lo abbiamo...
+    fun testCalcPointsBoggle(){
+        assertEquals(1, boggleViewModel.calcPoints("two"))
+        assertEquals(2, boggleViewModel.calcPoints("house"))
+        assertEquals(11, boggleViewModel.calcPoints("virtually"))
     }
 
     @Test
@@ -61,14 +63,4 @@ class ViewModelTest {
         assertEquals(memViewModel.check(card1,card2), true)
     }
 
-    @Test
-    fun testIsPresentBoggle(){
-        /*
-        words si azzera... Ma poi nell'app funziona, solo qua accade
-        assertEquals(true, boggleViewModel.isPresent("word"))
-        assertEquals(true, boggleViewModel.isPresent("test"))
-        assertEquals(false, boggleViewModel.isPresent("aoifwoiefmow"))
-
-         */
-    }
 }

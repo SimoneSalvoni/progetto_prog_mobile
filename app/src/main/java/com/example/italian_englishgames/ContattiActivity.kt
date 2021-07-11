@@ -3,13 +3,8 @@ package com.example.italian_englishgames
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import android.text.SpannableString
-import android.text.Spanned
-import android.text.method.LinkMovementMethod
-import android.text.style.ClickableSpan
-import android.view.View
 import android.widget.ImageButton
-import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 
@@ -30,7 +25,6 @@ class ContattiActivity : AppCompatActivity() {
         }
 
 
-
         email = findViewById(R.id.imageEmail)
         site = findViewById(R.id.imageSite)
 
@@ -42,7 +36,12 @@ class ContattiActivity : AppCompatActivity() {
             }
             if (intent.resolveActivity(packageManager) != null) {
                 startActivity(intent)
-            }
+            } else Toast.makeText(
+                this,
+                "Applicazione per gestire le e-mail non trovata",
+                Toast.LENGTH_SHORT
+            )
+                .show()
 
         }
 
@@ -52,7 +51,12 @@ class ContattiActivity : AppCompatActivity() {
             val intent = Intent(Intent.ACTION_VIEW, webpage)
             if (intent.resolveActivity(packageManager) != null) {
                 startActivity(intent)
-            }
+            } else Toast.makeText(
+                this,
+                "Browser non trovato, impossibile aprire il link",
+                Toast.LENGTH_SHORT
+            )
+                .show()
         }
 
     }
