@@ -5,8 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ContattiActivity"
-    android:orientation="vertical">
+    tools:context=".ContattiActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/mainToolbar"
@@ -76,7 +75,7 @@
         app:layout_constraintHorizontal_bias="0.575"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imageSite"
-        app:layout_constraintVertical_bias="0.552" />
+        app:layout_constraintVertical_bias="0.473" />
 
     <ImageButton
         android:id="@+id/imageEmail"

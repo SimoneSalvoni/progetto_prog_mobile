@@ -150,6 +150,7 @@ class BoggleViewModel(application: Application): AndroidViewModel(application) {
      *  @param word è la String contenente la parola
      */
     fun isPresent(word: String): Boolean {
+        if (word.isNullOrEmpty()) return false
         val firstChar = word.subSequence(0, 1).toString()
         val present = words[firstChar]!!.contains(word)
         if (present) {

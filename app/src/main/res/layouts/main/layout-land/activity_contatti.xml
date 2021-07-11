@@ -50,17 +50,17 @@
         app:layout_constraintTop_toBottomOf="@+id/mainToolbar"
         app:layout_constraintVertical_bias="0.225" />
 
-    <ImageView
-        android:id="@+id/imageEmail"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
+    <ImageButton
+        android:id="@+id/imageSite"
+        android:layout_width="73dp"
+        android:layout_height="68dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.394"
+        app:layout_constraintEnd_toStartOf="@+id/site"
+        app:layout_constraintHorizontal_bias="0.711"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/mainToolbar"
-        app:layout_constraintVertical_bias="0.498"
-        app:srcCompat="@drawable/mail_logo" />
+        app:layout_constraintTop_toBottomOf="@+id/textView16"
+        app:layout_constraintVertical_bias="0.662"
+        app:srcCompat="?android:attr/actionModeWebSearchDrawable" />
 
     <TextView
         android:id="@+id/site"
@@ -73,32 +73,19 @@
         app:layout_constraintHorizontal_bias="0.562"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/mainToolbar"
-        app:layout_constraintVertical_bias="0.678" />
+        app:layout_constraintVertical_bias="0.765" />
 
-    <TextView
-        android:id="@+id/telephone"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="800 123 456"
-        android:textSize="22sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.593"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mainToolbar"
-        app:layout_constraintVertical_bias="0.918" />
-
-    <ImageView
-        android:id="@+id/imageSite"
+    <ImageButton
+        android:id="@+id/imageEmail"
         android:layout_width="70dp"
         android:layout_height="70dp"
-        android:src="@drawable/web_logo"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.394"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/mainToolbar"
-        app:layout_constraintVertical_bias="0.741" />
+        app:layout_constraintBottom_toTopOf="@+id/imageSite"
+        app:layout_constraintEnd_toStartOf="@+id/email"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/imageSite"
+        app:layout_constraintTop_toBottomOf="@+id/textView16"
+        app:layout_constraintVertical_bias="0.385"
+        app:srcCompat="@android:drawable/sym_action_email" />
 
     <TextView
         android:id="@+id/email"
@@ -111,19 +98,7 @@
         app:layout_constraintHorizontal_bias="0.632"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/mainToolbar"
-        app:layout_constraintVertical_bias="0.428" />
-
-    <ImageView
-        android:id="@+id/imageTelephone"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.394"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.988"
-        app:srcCompat="@drawable/phone_logo" />
+        app:layout_constraintVertical_bias="0.485" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

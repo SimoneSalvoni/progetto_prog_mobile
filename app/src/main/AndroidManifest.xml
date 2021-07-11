@@ -18,11 +18,11 @@
         <activity android:name=".ProfileActivity" />
         <activity android:name=".ModifyProfileActivity" />
         <activity android:name=".auth.CompleteRegisterActivity" />
-        <activity android:name=".boggle.BoggleActivity" />
+        <activity android:name=".boggle.BoggleActivity" android:screenOrientation="portrait" />
         <activity android:name=".auth.LoginActivity"/>
         <activity android:name=".auth.RegisterActivity" />
         <activity android:name=".memory.MemActivity" android:screenOrientation="portrait"/>
-        <activity android:name=".impiccato.ImpActivity"/>
+        <activity android:name=".impiccato.ImpActivity" android:screenOrientation="portrait"/>
         <activity
             android:name=".MainActivity"
             android:theme="@style/ourStyle">
