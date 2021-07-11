@@ -34,8 +34,8 @@ class BoggleGameFragment : Fragment() {
     private lateinit var timeLeftText: TextView
     private lateinit var points: TextView
     private lateinit var foundWordsList: TextView
-    private var word=""
-    private val isChosen = BooleanArray(16){false}
+    private var word = ""
+    private val isChosen = BooleanArray(16) { false }
     private var timeLeft: Long = 60000
     private var endTime by Delegates.notNull<Long>()
 
@@ -54,7 +54,8 @@ class BoggleGameFragment : Fragment() {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_boggle_game, container, false)
         val toolbar: Toolbar = binding.mainToolbar
         toolbar.setNavigationOnClickListener {
-            toolbar.findNavController().navigate(R.id.action_boggleGameFragment_to_boggleMenuFragment)
+            toolbar.findNavController()
+                .navigate(R.id.action_boggleGameFragment_to_boggleMenuFragment)
         }
         return binding.root
     }
@@ -63,8 +64,8 @@ class BoggleGameFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.boggleViewModel = viewModel
         binding.lifecycleOwner = viewLifecycleOwner
-        checkBtn=binding.checkWordButton
-        cancBtn=binding.cancelBtn
+        checkBtn = binding.checkWordButton
+        cancBtn = binding.cancelBtn
         timeLeftText = binding.timeLeft
         points = binding.pointsBoggleGame
         foundWordsList = binding.foundWordsBoggle
@@ -76,29 +77,29 @@ class BoggleGameFragment : Fragment() {
         /**
          * Qua viene fatto il setup delle varie caselle del boggle
          */
-        for (i in 0 until binding.gridLayout.childCount){
+        for (i in 0 until binding.gridLayout.childCount) {
             (binding.gridLayout.getChildAt(i) as Button).setOnClickListener {
-                val index= (it.parent as GridLayout).indexOfChild(it)
-                isChosen[index]=true
+                val index = (it.parent as GridLayout).indexOfChild(it)
+                isChosen[index] = true
                 it.setBackgroundResource(R.drawable.boggle_button_border)
                 enableNearButtons(index)
-                word=word.plus((it as Button).text)
+                word = word.plus((it as Button).text)
             }
         }
 
         checkBtn.setOnClickListener {
-            lifecycleScope.launch{
-                if(viewModel.isNewWord(word)) checkWord(word)
+            lifecycleScope.launch {
+                if (viewModel.isNewWord(word)) checkWord(word)
                 else Toast.makeText(requireContext(), "Parola già trovata", Toast.LENGTH_SHORT)
                     .show()
             }
-            word=""
-            for (i in 0..15) isChosen[i]=false
+            word = ""
+            for (i in 0..15) isChosen[i] = false
         }
         cancBtn.setOnClickListener {
             enableAll()
-            word=""
-            for (i in 0..15) isChosen[i]=false
+            word = ""
+            for (i in 0..15) isChosen[i] = false
         }
 
         /**
@@ -117,7 +118,7 @@ class BoggleGameFragment : Fragment() {
                 binding.tempo.isVisible = true
                 binding.loadingBoggle.isVisible = false
 
-                endTime=System.currentTimeMillis() + timeLeft
+                endTime = System.currentTimeMillis() + timeLeft
                 object : CountDownTimer(timeLeft, 1000) {
 
                     override fun onTick(millisUntilFinished: Long) {
@@ -157,20 +158,20 @@ class BoggleGameFragment : Fragment() {
      *
      * @param letters è l'Array che contiene le lettere
      */
-    private fun setLetters(letters: Array<String>){
+    private fun setLetters(letters: Array<String>) {
         var btn: Button
-       for (i in 0 until binding.gridLayout.childCount){
-           btn = binding.gridLayout.getChildAt(i) as Button
-           btn.text=letters[i]
-       }
+        for (i in 0 until binding.gridLayout.childCount) {
+            btn = binding.gridLayout.getChildAt(i) as Button
+            btn.text = letters[i]
+        }
     }
 
     /**
      * Questa funzione abilita il click a tutte le caselle
      */
-    private fun enableAll(){
+    private fun enableAll() {
         var btn: Button
-        for (i in 0 until binding.gridLayout.childCount){
+        for (i in 0 until binding.gridLayout.childCount) {
             btn = binding.gridLayout.getChildAt(i) as Button
             btn.isEnabled = true
             btn.setBackgroundResource(R.drawable.boggle_button_no_border)
@@ -182,23 +183,27 @@ class BoggleGameFragment : Fragment() {
      *
      * @param index è la posizione dell'ultima casella clickata
      */
-    private fun enableNearButtons(index: Int){
+    private fun enableNearButtons(index: Int) {
         //matrix[ i ][ j ] = array[ i*m + j ].
         var btn: Button
-        for (i in 0 until binding.gridLayout.childCount){
+        for (i in 0 until binding.gridLayout.childCount) {
             btn = binding.gridLayout.getChildAt(i) as Button
-            if(!isChosen[i]) {
+            if (!isChosen[i]) {
                 if (i == index + 4 && index < 12) btn.isEnabled = true //adiacente inferiore
                 else if (i == index - 4 && index > 3) btn.isEnabled = true //adiacente superiore
                 else if (i == index + 1 && index != 3 && index != 7 && index != 11 && index != 15)
                     btn.isEnabled = true //adiacente destro
-                else if (i == index - 1 && index != 0 && index != 4 && index != 8 && index != 12) btn.isEnabled=true //adiacente sinistro
-                else if (i==index-5 && index > 3 && index != 0 && index != 4 && index != 8 && index != 12) btn.isEnabled = true //diag up sx
-                else if (i==index-3 && index > 3 && index != 3 && index != 7 && index != 11 && index != 15 ) btn.isEnabled=true //diag up dx
-                else if (i==index+3 && index < 12 && index != 0 && index != 4 && index != 8 && index != 12) btn.isEnabled=true //diag dwn sx
-                else btn.isEnabled = i==index+5 && index < 12 && index != 3 && index != 7 && index != 11 && index != 15 //diag dwn dx o disable
-            }
-            else btn.isEnabled = false //disable
+                else if (i == index - 1 && index != 0 && index != 4 && index != 8 && index != 12) btn.isEnabled =
+                    true //adiacente sinistro
+                else if (i == index - 5 && index > 3 && index != 0 && index != 4 && index != 8 && index != 12) btn.isEnabled =
+                    true //diag up sx
+                else if (i == index - 3 && index > 3 && index != 3 && index != 7 && index != 11 && index != 15) btn.isEnabled =
+                    true //diag up dx
+                else if (i == index + 3 && index < 12 && index != 0 && index != 4 && index != 8 && index != 12) btn.isEnabled =
+                    true //diag dwn sx
+                else btn.isEnabled =
+                    i == index + 5 && index < 12 && index != 3 && index != 7 && index != 11 && index != 15 //diag dwn dx o disable
+            } else btn.isEnabled = false //disable
         }
     }
 
@@ -207,22 +212,21 @@ class BoggleGameFragment : Fragment() {
      *
      * @param wordToCheck è la parola da controllare
      */
-   private suspend fun checkWord(wordToCheck:String){
-        withContext(Dispatchers.Default){
-            if(wordToCheck.isNullOrEmpty()) {
+    private suspend fun checkWord(wordToCheck: String) {
+        withContext(Dispatchers.Default) {
+            if (wordToCheck.isNullOrEmpty()) {
                 requireActivity().runOnUiThread {
                     Toast.makeText(requireContext(), "Seleziona una parola", Toast.LENGTH_SHORT)
                         .show()
                 }
-            }
-            else if (!viewModel.isPresent(wordToCheck.toLowerCase(Locale.ROOT))){
+            } else if (!viewModel.isPresent(wordToCheck.toLowerCase(Locale.ROOT))) {
                 requireActivity().runOnUiThread {
                     Toast.makeText(requireContext(), "Parola non esistente", Toast.LENGTH_SHORT)
                         .show()
                 }
             }
         }
-       enableAll()
+        enableAll()
     }
 
 }

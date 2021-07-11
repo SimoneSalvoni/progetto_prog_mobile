@@ -1,7 +1,6 @@
 package com.example.italian_englishgames.boggle
 
 import android.app.Application
-import androidx.annotation.VisibleForTesting
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -12,12 +11,11 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import java.io.BufferedReader
 import java.io.InputStreamReader
-import java.lang.Exception
 import kotlin.random.Random
 
 private const val NUM_OF_WORDS = 466405
 
-class BoggleViewModel(application: Application): AndroidViewModel(application) {
+class BoggleViewModel(application: Application) : AndroidViewModel(application) {
 
     private val ctx = getApplication<Application>().applicationContext
     private var options: Array<Array<String>> = emptyArray()
@@ -26,7 +24,7 @@ class BoggleViewModel(application: Application): AndroidViewModel(application) {
     private val foundWords = mutableListOf<String>()
     private val _ready = MutableLiveData<Boolean>(false)
     val ready: LiveData<Boolean>
-    get()=_ready
+        get() = _ready
     private val _foundWordsText = MutableLiveData<String>("Parole trovate: ")
     val foundWordsText: LiveData<String>
         get() = _foundWordsText
@@ -156,7 +154,9 @@ class BoggleViewModel(application: Application): AndroidViewModel(application) {
         if (present) {
             _points.postValue(_points.value?.plus(calcPoints(word)))
             foundWords.add(word)
-            if (_foundWordsText.value == "Parole trovate: ") _foundWordsText.postValue(_foundWordsText.value.plus(word))
+            if (_foundWordsText.value == "Parole trovate: ") _foundWordsText.postValue(
+                _foundWordsText.value.plus(word)
+            )
             else _foundWordsText.postValue(_foundWordsText.value.plus(", $word"))
         }
         return present
@@ -167,7 +167,7 @@ class BoggleViewModel(application: Application): AndroidViewModel(application) {
      *
      * @param word è la String contenente la parola
      */
-    fun isNewWord(word: String): Boolean{
+    fun isNewWord(word: String): Boolean {
         return word !in foundWords
     }
 }
