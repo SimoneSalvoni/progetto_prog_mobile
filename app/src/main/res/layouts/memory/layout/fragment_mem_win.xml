@@ -19,7 +19,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/menuToolbar"
-        app:layout_constraintVertical_bias="0.244" />
+        app:layout_constraintVertical_bias="0.22" />
 
     <Button
         android:id="@+id/retryButton"
@@ -32,7 +32,7 @@
         app:layout_constraintHorizontal_bias="0.122"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:layout_constraintVertical_bias="0.636" />
+        app:layout_constraintVertical_bias="0.809" />
 
     <Button
         android:id="@+id/goHomeButton"
@@ -42,10 +42,10 @@
         android:text="@string/torna"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.783"
+        app:layout_constraintHorizontal_bias="0.775"
         app:layout_constraintStart_toEndOf="@+id/retryButton"
         app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:layout_constraintVertical_bias="0.628" />
+        app:layout_constraintVertical_bias="0.799" />
 
     <TextView
         android:id="@+id/textView7"
@@ -55,10 +55,10 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.165"
+        app:layout_constraintHorizontal_bias="0.151"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:layout_constraintVertical_bias="0.163" />
+        app:layout_constraintVertical_bias="0.247" />
 
     <TextView
         android:id="@+id/timer"
@@ -67,10 +67,10 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.076"
+        app:layout_constraintHorizontal_bias="0.058"
         app:layout_constraintStart_toEndOf="@+id/textView7"
         app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:layout_constraintVertical_bias="0.161" />
+        app:layout_constraintVertical_bias="0.247" />
 
     <TextView
         android:id="@+id/newRecordMem"
@@ -79,10 +79,10 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/timer"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:layout_constraintVertical_bias="0.295" />
+        app:layout_constraintVertical_bias="0.422" />
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/menuToolbar"

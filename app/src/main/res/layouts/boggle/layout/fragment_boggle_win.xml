@@ -32,7 +32,7 @@
         app:layout_constraintHorizontal_bias="0.122"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:layout_constraintVertical_bias="0.531" />
+        app:layout_constraintVertical_bias="0.775" />
 
     <Button
         android:id="@+id/goHomeButton"
@@ -46,7 +46,7 @@
         app:layout_constraintHorizontal_bias="0.842"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:layout_constraintVertical_bias="0.531" />
+        app:layout_constraintVertical_bias="0.775" />
 
     <TextView
         android:id="@+id/pointsText"
@@ -83,7 +83,7 @@
         app:layout_constraintHorizontal_bias="0.06"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/pointsText"
-        app:layout_constraintVertical_bias="0.209" />
+        app:layout_constraintVertical_bias="0.274" />
 
     <TextView
         android:id="@+id/newRecordBoggle"
@@ -92,8 +92,8 @@
         android:textSize="22sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/pointsBoggleWin"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2"
         app:layout_constraintVertical_bias="0.197" />
 

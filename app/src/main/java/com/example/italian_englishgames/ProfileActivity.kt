@@ -25,8 +25,8 @@ class ProfileActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile)
-        auth= Firebase.auth
-        storage= Firebase.storage
+        auth = Firebase.auth
+        storage = Firebase.storage
         db = Firebase.firestore
         val toolbar: Toolbar = findViewById(R.id.mainToolbar)
         toolbar.setNavigationOnClickListener {
@@ -37,9 +37,9 @@ class ProfileActivity : AppCompatActivity() {
     /**
      * Quando l'activity parte vengono erecuperati i dati dell'utente e messi nella vista
      */
-    override fun onStart(){
+    override fun onStart() {
         super.onStart()
-        val currentUser= auth.currentUser
+        val currentUser = auth.currentUser
         val username = findViewById<TextView>(R.id.userName)
         val image = findViewById<ImageView>(R.id.imageView)
         val impRecord = findViewById<TextView>(R.id.impRecord)
@@ -51,7 +51,7 @@ class ProfileActivity : AppCompatActivity() {
         username.text = currentUser!!.displayName
         val storageRef = storage.reference
         val imageRef = storageRef.child(currentUser.uid)
-        val maxSize: Long = 1024*1024*20
+        val maxSize: Long = 1024 * 1024 * 20
         imageRef.getBytes(maxSize).addOnSuccessListener {
             Glide.with(this)
                 .asBitmap()
@@ -62,13 +62,13 @@ class ProfileActivity : AppCompatActivity() {
         }
         db.collection("userRecords").document(currentUser.uid)
             .get().addOnCompleteListener {
-                if(it.isSuccessful) {
+                if (it.isSuccessful) {
                     val document = it.result
-
                     val record1: Int? = document?.get("impMaxStreak", Int::class.java)
                     impRecord.text = record1.toString()
                     val record2: String? = document?.get("memBestTime", String::class.java)
-                    memRecord.text = record2
+                    if (record2 == "") memRecord.text = "-"
+                    else memRecord.text = record2
                     val record3: Int? = document?.get("boggleMaxPoints", Int::class.java)
                     bogRecord.text = record3.toString()
                 }
