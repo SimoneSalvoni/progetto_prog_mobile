@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.forEach
 import androidx.databinding.DataBindingUtil
@@ -72,10 +73,10 @@ class ImpGameFragment : Fragment() {
                     checkErrors()
                     checkGameState()
                     key.setOnClickListener {
-                        Snackbar.make(
-                            binding.keyRow1,
+                        Toast.makeText(
+                            requireContext(),
                             "Letterà già premuta",
-                            Snackbar.LENGTH_SHORT
+                            Toast.LENGTH_SHORT
                         )
                             .show()
                     }

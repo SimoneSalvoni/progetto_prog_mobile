@@ -7,6 +7,7 @@ import android.text.TextWatcher
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import com.example.italian_englishgames.MainActivity
@@ -95,19 +96,27 @@ class LoginActivity : AppCompatActivity() {
      * @param errorCode è il codice di errore che firebase ci restituisce
      */
     private fun checkLoginError(errorCode: String){
-        emailErr.text=""
-        passwordErr.text=""
-        otherErr.text=""
+       var errorText=""
+
         when(errorCode){
-            "ERROR_INVALID_CREDENTIAL"-> otherErr.text="The supplied auth credential is malformed or has expired"
-            "ERROR_INVALID_EMAIL" ->  emailErr.text = "The email address is badly formatted"
-            "ERROR_WRONG_PASSWORD" -> passwordErr.text ="The password is invalid"
-            "ERROR_USER_NOT_FOUND" -> otherErr.text="There is no user record corresponding to this identifier. The user may have been deleted."
+            "ERROR_INVALID_CREDENTIAL"-> errorText ="Le credenziali di accesso sono errate o scadute."
+            "ERROR_INVALID_EMAIL" ->  errorText = "L'indirizzo email è errato"
+            "ERROR_WRONG_PASSWORD" -> errorText ="La password inserita è errata"
+            "ERROR_USER_NOT_FOUND" -> errorText ="Non esiste alcun utente con queste credenziali, potrebbe essere stato eliminato"
             else-> {
                 val intent = Intent(this, MainActivity::class.java)
                 setResult(RESULT_CANCELED, intent)
                 finish()
             }
+
+        }
+        if (errorText != "") {
+            Toast.makeText(
+                this,
+                errorText,
+                Toast.LENGTH_SHORT
+            )
+                .show()
         }
     }
 }
