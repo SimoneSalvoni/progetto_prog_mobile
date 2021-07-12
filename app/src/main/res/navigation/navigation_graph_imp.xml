@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph_imp"
+    app:startDestination="@id/impMenuFragment">
+
+    <fragment
+        android:id="@+id/impMenuFragment"
+        android:name="com.example.italian_englishgames.impiccato.ImpMenuFragment"
+        android:label="ImpMenuFragment"
+        tools:layout="@layout/fragment_imp_menu">
+        <action
+            android:id="@+id/action_impMenuFragment_to_impGameFragment"
+            app:destination="@id/impGameFragment"
+            app:popUpTo="@id/impMenuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/impGameFragment"
+        android:name="com.example.italian_englishgames.impiccato.ImpGameFragment"
+        android:label="fragment_imp_game"
+        tools:layout="@layout/fragment_imp_game" >
+        <action
+            android:id="@+id/action_impGameFragment_to_impWinFragment"
+            app:destination="@id/impWinFragment"
+            app:popUpTo="@id/impMenuFragment" />
+        <action
+            android:id="@+id/action_impGameFragment_to_impLoseFragment"
+            app:destination="@id/impLoseFragment"
+            app:popUpTo="@id/impMenuFragment" />
+        <action
+            android:id="@+id/action_impGameFragment_to_impMenuFragment"
+            app:destination="@id/impMenuFragment"
+            app:popUpTo="@id/impMenuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/impLoseFragment"
+        android:name="com.example.italian_englishgames.impiccato.ImpLoseFragment"
+        android:label="fragment_imp_lose"
+        tools:layout="@layout/fragment_imp_lose" >
+        <action
+            android:id="@+id/action_impLoseFragment_to_impGameFragment"
+            app:destination="@id/impGameFragment"
+            app:popUpTo="@id/impMenuFragment" />
+        <action
+            android:id="@+id/action_impLoseFragment_to_impMenuFragment"
+            app:destination="@id/impMenuFragment"
+            app:popUpTo="@id/impMenuFragment" />
+        <argument
+            android:name="word"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/impWinFragment"
+        android:name="com.example.italian_englishgames.impiccato.ImpWinFragment"
+        android:label="fragment_imp_win"
+        tools:layout="@layout/fragment_imp_win" >
+        <action
+            android:id="@+id/action_impWinFragment_to_impGameFragment"
+            app:destination="@id/impGameFragment"
+            app:popUpTo="@id/impMenuFragment" />
+        <action
+            android:id="@+id/action_impWinFragment_to_impMenuFragment"
+            app:destination="@id/impMenuFragment"
+            app:popUpTo="@id/impMenuFragment" />
+        <argument
+            android:name="word"
+            app:argType="string" />
+        <argument
+            android:name="points"
+            app:argType="string" />
+    </fragment>
+
+</navigation>

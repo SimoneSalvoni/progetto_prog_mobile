@@ -13,4 +13,19 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+    <style name="Theme.ItalianEnglishGames.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <style name="Theme.ItalianEnglishGames.AppBarOverlay"
+        parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="Theme.ItalianEnglishGames.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+
+    <style name="ourStyle" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <item name="background">@color/white</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="colorPrimary">@color/main_blue</item>
+        <item name="colorSecondary">@color/main_yellow</item>
+    </style>
 </resources>

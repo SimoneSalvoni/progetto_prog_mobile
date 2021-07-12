@@ -1,3 +1,61 @@
 <resources>
     <string name="app_name">Italian-English Games</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="gioca">Gioca!</string>
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="maxScoreImpiccato">Numero massimo di parole indovinate:</string>
+    <string name="profilo">Profilo</string>
+    <string name="contatti">Contatti</string>
+    <string name="impostazioni">Impostazioni</string>
+    <string name="logout">Logout</string>
+    <string name="impiccato">IMPICCATO</string>
+    <string name="impiccato_min">Impiccato</string>
+    <string name="memory">MEMORY</string>
+    <string name="memory_min">Memory</string>
+    <string name="boggle">BOGGLE</string>
+    <string name="boggle_min">Boggle</string>
+    <string name="about">about</string>
+    <string name="info_imp_short">Indovina la parola inglese che verrà selezionata casualmente ad ogni partita! Quanto è ampio il
+    tuo vocabolario?</string>
+    <string name="info_mem_short">Trova le coppie di parole con lo stesso significato nelle due lingue il più velocemente
+        per migliorare sempre di più il tuo punteggio!</string>
+    <string name="info_boggle_short">Trova il maggior numero di parole nel tempo massimo, mettendo assieme le lettere verticalmente,
+    orizzontalmente o diagonalmente!</string>
+    <string name="info_impiccato">Questo è un gioco in cui bisogna scoprire una parola. Saprai quante lettere compone quella parola (inglese!).
+    Per ogni lettera inserita saprai se fa parte della parola o meno. Ma fai attenzione: hai un numero limitato di errori!</string>
+    <string name="info_memory">In questo gioco devi trovare tutte le coppie di parole che hanno lo stesso significato nelle due lingue.
+    Queste parole sono nascoste: dovrai toccare le carte che le contengono per rivelare il loro contentuo. Se la seconda che tocchi è quella corretta
+    allora rimarranno visibili, altrimenti torneranno coperte. Trova tutte le coppie!</string>
+    <string name="info_boggle">In questo gioco bisogna unire le lettere presenti nelle caselle per formare delle parole inglesi.
+    Per giocare clicca sulle lettere nell\'ordine che vuoi per formare una parola. Questa verrà quindi controllata nel
+    dizionario. Le parole possono essere però costruite solamente seguendo un certo ordine: muovendoti orizzontalmente, verticalmente
+    o in diagonale</string>
+    <string name="info_game">info</string>string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="vittoria">HAI VINTO!</string>
+    <string name="sconfitta">HAI PERSO...</string>
+    <string name="riprova">RIPROVA</string>
+    <string name="torna">TORNA AL MENU\'</string>
+    <!-- Strings related to login -->
+    <string name="prompt_username">Nome utente</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="registra">Registrati</string>
+    <string name="plsregister">Non hai ancora un account? Registrati!</string>
+    <string name="login">Accedi</string>
+    <string name="welcome">"Benvenuto!</string>
+    <string name="invalid_username">Username non valido</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login fallito"</string>
+    <string name="prompt_extra">Scegli il tuo username e la tua foto profilo</string>
+    <string name="scegli_immagine">Scegli immagine</string>
+
+    <string name="contattiIntro">Contattaci pure per qualunque cosa. Saremo lieti di risolvere qualunque tuo problema
+    o di rispondere a qualunque tuo dubbio!</string>
 </resources>

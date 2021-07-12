@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "369622671956",
+    "project_id": "italianenglishgames",
+    "storage_bucket": "italianenglishgames.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:369622671956:android:e0068e565e41ed412083c1",
+        "android_client_info": {
+          "package_name": "com.example.italian_englishgames"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "369622671956-khfn42b9g19lh7029s94d7muhnmkn91f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCssxThBeQ8QjHsCbR-mlpCBnsMQFPnMuM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "369622671956-khfn42b9g19lh7029s94d7muhnmkn91f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

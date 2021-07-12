@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="boggleViewModel"
+            type="com.example.italian_englishgames.boggle.BoggleViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".boggle.BoggleGameFragment">
+
+        <androidx.gridlayout.widget.GridLayout
+            android:id="@+id/gridLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:columnCount="4"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/loadingBoggle"
+            app:rowCount="4">
+
+            <Button
+                android:id="@+id/letter00"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:background="@drawable/boggle_button_no_border"
+                android:enabled="false"
+                android:foregroundGravity="center"
+                app:layout_column="0"
+                app:layout_row="0" />
+
+            <Button
+                android:id="@+id/letter01"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:background="@drawable/boggle_button_no_border"
+                android:enabled="false"
+                android:text=""
+                app:layout_column="1"
+                app:layout_row="0" />
+
+            <Button
+                android:id="@+id/letter02"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:background="@drawable/boggle_button_no_border"
+                android:enabled="false"
+                android:rotationX="0"
+                android:text=""
+                app:layout_column="2"
+                app:layout_row="0" />
+
+            <Button
+                android:id="@+id/letter03"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:background="@drawable/boggle_button_no_border"
+                android:enabled="false"
+                android:text=""
+                app:layout_column="3"
+                app:layout_row="0" />
+
+            <Button
+                android:id="@+id/letter10"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:background="@drawable/boggle_button_no_border"
+                android:enabled="false"
+                android:text=""
+                app:layout_column="0"
+                app:layout_row="1" />
+
+            <Button
+                android:id="@+id/letter11"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:background="@drawable/boggle_button_no_border"
+                android:enabled="false"
+                android:text=""
+                app:layout_column="1"
+                app:layout_row="1" />
+
+            <Button
+                android:id="@+id/letter12"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:background="@drawable/boggle_button_no_border"
+                android:enabled="false"
+                android:text=""
+                app:layout_column="2"
+                app:layout_row="1" />
+
+            <Button
+                android:id="@+id/letter13"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:background="@drawable/boggle_button_no_border"
+                android:enabled="false"
+                android:text=""
+                app:layout_column="3"
+                app:layout_row="1" />
+
+            <Button
+                android:id="@+id/letter20"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:background="@drawable/boggle_button_no_border"
+                android:enabled="false"
+                android:text=""
+                app:layout_column="0"
+                app:layout_row="2" />
+
+            <Button
+                android:id="@+id/letter21"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:background="@drawable/boggle_button_no_border"
+                android:enabled="false"
+                android:text=""
+                app:layout_column="1"
+                app:layout_row="2" />
+
+            <Button
+                android:id="@+id/letter22"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:background="@drawable/boggle_button_no_border"
+                android:enabled="false"
+                android:text=""
+                app:layout_column="2"
+                app:layout_row="2" />
+
+            <Button
+                android:id="@+id/letter23"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:background="@drawable/boggle_button_no_border"
+                android:enabled="false"
+                android:text=""
+                app:layout_column="3"
+                app:layout_row="2" />
+
+            <Button
+                android:id="@+id/letter30"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:background="@drawable/boggle_button_no_border"
+                android:enabled="false"
+                android:text=""
+                app:layout_column="0"
+                app:layout_row="3" />
+
+            <Button
+                android:id="@+id/letter31"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:background="@drawable/boggle_button_no_border"
+                android:enabled="false"
+                android:text=""
+                app:layout_column="1"
+                app:layout_row="3" />
+
+            <Button
+                android:id="@+id/letter32"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:background="@drawable/boggle_button_no_border"
+                android:enabled="false"
+                android:text=""
+                app:layout_column="2"
+                app:layout_row="3" />
+
+            <Button
+                android:id="@+id/letter33"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:background="@drawable/boggle_button_no_border"
+                android:enabled="false"
+                android:text=""
+                app:layout_column="3"
+                app:layout_row="3" />
+
+        </androidx.gridlayout.widget.GridLayout>
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/mainToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/main_blue"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:navigationIcon="?homeAsUpIndicator"
+            app:title="@string/boggle_min" />
+
+        <TextView
+            android:id="@+id/tempo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TEMPO:"
+            android:textSize="22sp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@+id/gridLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.024"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mainToolbar"
+            app:layout_constraintVertical_bias="0.521" />
+
+        <TextView
+            android:id="@+id/foundWordsBoggle"
+            android:layout_width="189dp"
+            android:layout_height="275dp"
+            android:text="@{boggleViewModel.foundWordsText}"
+            android:textSize="22sp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.384"
+            app:layout_constraintStart_toEndOf="@+id/gridLayout"
+            app:layout_constraintTop_toBottomOf="@+id/loadingBoggle"
+            app:layout_constraintVertical_bias="0.652" />
+
+        <Button
+            android:id="@+id/checkWordButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            android:text="Controlla parola"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.028"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.498" />
+
+        <Button
+            android:id="@+id/cancelBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            android:text="Annulla"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.083"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mainToolbar"
+            app:layout_constraintVertical_bias="0.666" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Punti: "
+            android:textSize="22sp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@+id/gridLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.21"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mainToolbar"
+            app:layout_constraintVertical_bias="0.521" />
+
+        <TextView
+            android:id="@+id/pointsBoggleGame"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{boggleViewModel.points.toString()}"
+            android:textSize="22sp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@+id/gridLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.705"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mainToolbar"
+            app:layout_constraintVertical_bias="0.521" />
+
+        <TextView
+            android:id="@+id/timeLeft"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:textSize="22sp"
+            app:layout_constraintStart_toEndOf="@+id/tempo"
+            app:layout_constraintTop_toBottomOf="@+id/mainToolbar"
+            android:visibility="invisible"/>
+
+        <TextView
+            android:id="@+id/loadingBoggle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Caricamento..."
+            android:textSize="22sp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.633"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mainToolbar"
+            app:layout_constraintVertical_bias="0.036" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
