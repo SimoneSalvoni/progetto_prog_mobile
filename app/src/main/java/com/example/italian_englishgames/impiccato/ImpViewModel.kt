@@ -29,8 +29,6 @@ class ImpViewModel(application: Application): AndroidViewModel(application) {
     private val _gameState = MutableLiveData<State>(State.PLAYING)
     val gameState: LiveData<State>
         get() = _gameState
-    private val _wrongLettersString = MutableLiveData<String>("Lettere non presenti: ")
-    private val chosenLetters = mutableSetOf<Char>()
     private val ctx = getApplication<Application>().applicationContext
 
     /**
@@ -68,7 +66,6 @@ class ImpViewModel(application: Application): AndroidViewModel(application) {
         var arr = _shownWord.value!!.toCharArray()
         for (element in pos)  arr[element] = letter
         _shownWord.value = String(arr)
-        chosenLetters.add(letter)
         if (_shownWord.value==_chosenWord.value) _gameState.value=State.WIN
     }
 
@@ -78,8 +75,6 @@ class ImpViewModel(application: Application): AndroidViewModel(application) {
      * @param letter è la lettera non presente
      */
     private fun letterIsNotPresent(letter:Char) {
-        chosenLetters.add(letter)
-        _wrongLettersString.value+="$letter "
         _errors.value = _errors.value?.plus(1)
         if (errors.value==6) _gameState.value=State.LOSE
     }
@@ -120,12 +115,10 @@ class ImpViewModel(application: Application): AndroidViewModel(application) {
     fun resetGame(){
         _gameState.value=State.PLAYING
         _errors.value=0
-        chosenLetters.clear()
         chooseWord()
     }
 
     //PER IL TESTING
-    //PER TESTING
     fun chooseWordForTesting(){
         _chosenWord.value="test"
         _shownWord.value="----"

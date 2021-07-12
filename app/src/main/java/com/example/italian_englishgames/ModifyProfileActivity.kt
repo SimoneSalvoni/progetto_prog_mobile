@@ -55,7 +55,7 @@ class ModifyProfileActivity : AppCompatActivity() {
         setContentView(R.layout.activity_modify_profile)
         val toolbar: Toolbar = findViewById(R.id.mainToolbar)
         toolbar.setNavigationOnClickListener {
-            startActivity(Intent(this, MainActivity::class.java))
+            startActivity(Intent(this, ProfileActivity::class.java))
         }
     }
 
@@ -70,7 +70,7 @@ class ModifyProfileActivity : AppCompatActivity() {
         confPass = findViewById(R.id.confirmPassword)
         val fab = findViewById<FloatingActionButton>(R.id.saveEdit)
         val button = findViewById<Button>(R.id.editImage)
-        //Qua otteniamo i dati dell'utente e li inseriamo nella vista
+        //Otteniamo i dati dell'utente e li inseriamo nella vista
         username.setText(currentUser!!.displayName)
         email.setText(currentUser.email)
         val storageRef = storage.reference

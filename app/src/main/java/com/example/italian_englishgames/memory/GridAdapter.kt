@@ -34,8 +34,8 @@ class GridAdapter(var context: Context, val dataSet: MutableList<MemCard>, val l
 
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view),
         View.OnClickListener {
-        var front = view.findViewById<TextView>(R.id.card_front)
-        var card = view.findViewById<CardView>(R.id.cardView)
+        var front: TextView = view.findViewById<TextView>(R.id.card_front)
+        var card: CardView = view.findViewById<CardView>(R.id.cardView)
         override fun onClick(v: View?) {
             val position = adapterPosition
             if (position != RecyclerView.NO_POSITION) {

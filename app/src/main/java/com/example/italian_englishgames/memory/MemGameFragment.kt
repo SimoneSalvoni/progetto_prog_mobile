@@ -1,6 +1,5 @@
 package com.example.italian_englishgames.memory
 
-import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.os.Handler
@@ -9,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.widget.Toolbar
 import androidx.cardview.widget.CardView
 import androidx.databinding.DataBindingUtil
@@ -16,18 +16,13 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
-import com.example.italian_englishgames.MainActivity
 import com.example.italian_englishgames.R
 import com.example.italian_englishgames.databinding.FragmentMemGameBinding
-import com.google.android.material.snackbar.Snackbar
 
 
 class MemGameFragment : Fragment(), GridAdapter.OnItemClickListener {
 
     lateinit var binding: FragmentMemGameBinding
-
-    //lateinit var front_anim: AnimatorSet
-    //lateinit var back_anim: AnimatorSet
     private val viewModel: MemViewModel by viewModels()
 
     private var card1 = MemCard()
@@ -66,11 +61,6 @@ class MemGameFragment : Fragment(), GridAdapter.OnItemClickListener {
         else binding.gameTable.layoutManager = GridLayoutManager(requireContext(), 4)
         binding.gameTable.setHasFixedSize(true)
         binding.viewTimer.start()
-        /* animazioni, serve prendere il context
-        front_anim = AnimatorInflater.loadAnimator(applicationContext,R.animator.front_animator)
-                as AnimatorSet
-        back_anim = AnimatorInflater.loadAnimator(applicationContext,R.animator.back_animator)
-                as AnimatorSet */
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
@@ -103,18 +93,16 @@ class MemGameFragment : Fragment(), GridAdapter.OnItemClickListener {
                 if (viewModel.check(card1, clickedItem)) {
                     rightChoice(cardview1, cardview2)
                 } else {
-                    wrongChoice(cardview1,cardview2)
-                    card1.isBack = true
-                    clickedItem.isBack = true
+                    wrongChoice(cardview1,cardview2, card1, clickedItem)
                 }
                 card1 = MemCard()
                 pos1 = 999
             }
         } else {
-            Snackbar.make(
-                binding.ConstraintLayout,
+            Toast.makeText(
+                requireContext(),
                 "Carta già scoperta!",
-                Snackbar.LENGTH_SHORT
+                Toast.LENGTH_SHORT
             )
                 .show()
         }
@@ -134,14 +122,16 @@ class MemGameFragment : Fragment(), GridAdapter.OnItemClickListener {
     /**
      * Se si scoprono due carte che non formano una coppia, diventano rosse e poi si ricoprono
      */
-    private fun wrongChoice(cardview1:View, cardview2:View){
+    private fun wrongChoice(cardview1:View, cardview2:View, card1: MemCard, card2: MemCard){
         cardview1.findViewById<CardView>(R.id.cardView).setBackgroundColor(Color.parseColor("#ef1c19"))
         cardview2.findViewById<CardView>(R.id.cardView).setBackgroundColor(Color.parseColor("#ef1c19"))
         Handler(Looper.getMainLooper()).postDelayed({
             cardview1.findViewById<CardView>(R.id.cardView).setBackgroundColor(Color.parseColor("#fdd835"))
             cardview2.findViewById<CardView>(R.id.cardView).setBackgroundColor(Color.parseColor("#fdd835"))
             cardview1.findViewById<TextView>(R.id.card_front).visibility = View.INVISIBLE
-            cardview2.findViewById<TextView>(R.id.card_front).visibility = View.INVISIBLE },500)
+            cardview2.findViewById<TextView>(R.id.card_front).visibility = View.INVISIBLE
+            card1.isBack = true
+            card2.isBack = true                                        },500)
 
     }
 
@@ -161,18 +151,3 @@ class MemGameFragment : Fragment(), GridAdapter.OnItemClickListener {
 
 }
 
-/*fun backToFront(){
-    front_anim.setTarget(card_front)
-    back_anim.setTarget(card_back)
-    front_anim.start()
-    back_anim.start()
-}
-
-fun frontToBack(){
-    front_anim.setTarget(card_back)
-    back_anim.setTarget(card_front)
-    front_anim.start()
-    back_anim.start()
-}
-
- */
