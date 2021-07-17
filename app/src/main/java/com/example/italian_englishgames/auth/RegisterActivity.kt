@@ -24,6 +24,9 @@ class RegisterActivity : AppCompatActivity() {
     private lateinit var email: EditText
     private lateinit var password: EditText
     private lateinit var regBtn: Button
+    private lateinit var emailErr: TextView
+    private lateinit var passwordErr: TextView
+    private lateinit var otherErr: TextView
 
     private val finishRegistrationRequest =
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
@@ -55,6 +58,9 @@ class RegisterActivity : AppCompatActivity() {
         email = findViewById(R.id.email)
         password = findViewById(R.id.password)
         regBtn = findViewById(R.id.register)
+        emailErr = findViewById(R.id.errorEmailReg)
+        passwordErr = findViewById(R.id.errorEmailReg)
+        otherErr = findViewById(R.id.generalErrorReg)
 
         email.setOnFocusChangeListener { _, _ -> checkEnableButton() }
         password.setOnFocusChangeListener { _, _ -> checkEnableButton() }
