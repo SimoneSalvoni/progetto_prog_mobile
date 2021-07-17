@@ -25,9 +25,6 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var password: EditText
     private lateinit var loginBtn: Button
     private lateinit var newAccountBtn: Button
-    private lateinit var emailErr:TextView
-    private lateinit var passwordErr:TextView
-    private lateinit var otherErr:TextView
 
     private val registerRequest = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
         if (it.resultCode == RESULT_OK) {
@@ -59,9 +56,6 @@ class LoginActivity : AppCompatActivity() {
             newAccountBtn = findViewById(R.id.newaccount)
             email = findViewById(R.id.email)
             password = findViewById(R.id.password)
-            emailErr = findViewById(R.id.errorEmailLogin)
-            passwordErr = findViewById(R.id.errorEmailLogin)
-            otherErr = findViewById(R.id.generalErrorLogin)
 
             email.addTextChangedListener(textWatcher)
             password.addTextChangedListener(textWatcher)
